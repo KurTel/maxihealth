@@ -13,7 +13,14 @@ NPM идёт с NodeJS.
     при этом NPM подхватит файл package.json, в котором перечислены необходимые пакеты, он их все установит.
 6. Теперь можно пользоваться командами Gulp, которые написаны в gulpfile.js.(команды = названия тасков)
 
-Gulp нужен не обяхательно, но тогда нужен отдельный препроцессор SCSS
+Команды:
+'gulp' = clean + build + webserver + watch
+'gulp build' = build
+'gulp deploy' = build to deploy
+
+Другие команды смотреть в самом gulpfile.js
+
+Gulp нужен не обязательно, но тогда нужен отдельный препроцессор SCSS.
 
 Проект использует SCSS, файл SCSS = css\scss\styles.scss компилируется в css\style.css
 
