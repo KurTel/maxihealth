@@ -21,6 +21,7 @@
     "gulp-watch": "^4.3.11",
     "imagemin-pngquant": "^5.0.1",
     "lazypipe": "^1.0.1",
+    "pixel-glass": "^1.0.13",
     "pump": "^1.0.2",
     "rimraf": "^2.6.1",
     "run-sequence": "^1.2.2",

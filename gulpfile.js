@@ -44,7 +44,8 @@ var path = {
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         js: 'src/js/main.js',//В стилях и скриптах нам понадобятся только main файлы
-        css: 'src/css/main.scss',
+        scss: 'src/css/main.scss',
+        css: 'src/css/main.css',
         img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         fonts: 'src/fonts/inuse/**/*.*'
     },
@@ -124,7 +125,7 @@ gulp.task('js:build', function (cb) {
 /* ---------- CSS ---------- */
 
 gulp.task('css:deploy', function (cb) {
-    gulp.src(path.src.css) //Выберем наш main.scss
+    gulp.src(path.src.scss) //Выберем наш main.scss
         .pipe(sourcemaps.init()) //То же самое что и с js
         .pipe(sass()) //Скомпилируем
         .pipe(prefixer()) //Добавим вендорные префиксы
@@ -143,17 +144,35 @@ gulp.task('css:deploy', function (cb) {
 });
 
 gulp.task('css:build', function (cb) {
-    gulp.src(path.src.css) //Выберем наш main.scss
-        .pipe(sass()) //Скомпилируем
-        .pipe(prefixer()) //Добавим вендорные префиксы
-        .pipe(cleanCSS({debug: true},
+    
+    pump([
+        gulp.src([path.src.scss]),
+        sass().on('error', sass.logError),
+        prefixer(),
+        cleanCSS({debug: true},
                  function(details) {
                     console.log(details.name + ' before: ' + details.stats.originalSize);
                     console.log(details.name + ' after: ' + details.stats.minifiedSize);}
-                )) //Сожмем
-        .pipe(gulp.dest(path.build.css)) //И в build
-        .pipe(reload({stream: true}));
-    cb();
+                ),
+        reload({stream: true}),
+        gulp.dest(path.build.css),
+        reload({stream: true})
+    ],
+        cb
+    );
+    
+//    gulp.src(path.src.css) //Выберем наш main.scss
+//        .pipe(rigger())
+//        .pipe(sass()) //Скомпилируем
+//        .pipe(prefixer()) //Добавим вендорные префиксы
+//        .pipe(cleanCSS({debug: true},
+//                 function(details) {
+//                    console.log(details.name + ' before: ' + details.stats.originalSize);
+//                    console.log(details.name + ' after: ' + details.stats.minifiedSize);}
+//                )) //Сожмем
+//        .pipe(gulp.dest(path.build.css)) //И в build
+//        .pipe(reload({stream: true}));
+//    cb();
 });
 
 /* ---------- IMAGE ---------- */
