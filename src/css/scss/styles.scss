@@ -167,6 +167,18 @@ input, textarea{
   font-size: 3.63em;
 }
 
+
+/* ----- HACK ----- */
+
+  body::after {
+    content:
+        url("../img/target-lose-icon-off.png")
+        url("../img/target-lose-icon-on.png")
+        url("../img/target-gain-icon-on.png")
+        url("../img/target-maintenance-icon-on.png");
+    display: none;
+  }
+
 /* ----- HEADER ----- */
 
 header{
