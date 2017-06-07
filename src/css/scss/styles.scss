@@ -43,6 +43,7 @@ button, input, optgroup, select, textarea{
 body{
   width: 100%;
   height: 100%;
+  min-width: 1180px;
 }
 
 h1{
@@ -777,6 +778,10 @@ header{
 
     .calc__list__line__target{
       padding-top:68px;
+
+      label{
+        padding-top: 68px;
+      }
     }
 
     .calc__target__radio__loss{
@@ -1073,13 +1078,16 @@ header{
     padding-bottom: 18px;
   }
 
+  .footer__requsites{
+    float: left;
+  }
+
   .footer__contacts{
-    padding-left: 65px;
+    float: right;
   }
 
   .footer__requsites, .footer__contacts{
     padding-top: 30px;
-    float: left;
   }
 
   .requsits__header__text, .contacts__header__text{
@@ -1100,4 +1108,81 @@ header{
   .contacts__highlight{
     color: #BD1318; 
   }
+}
+
+/* ----- OTHER ----- */
+
+.text__red{
+  color: #ef7666;
+}
+
+.bottom__fix{
+  z-index: 100;
+  position: fixed;
+  bottom:0px;
+  width: 100%;
+  line-height: 34px;
+  height: 34px;
+
+  visibility: visible;
+
+  background: rgba(black,.85);
+
+  transition: 1s;
+  
+  a, a:visited, a:hover, a:active{
+    text-decoration: none;
+  }
+
+  .action{
+    float: left;
+  }
+
+  .close__action{
+    float: right;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  .action__text, .close__action__text {
+    padding-top: 2px;
+    padding-left: 87px;
+    padding-right: 500px;
+    background: url("../img/action-background-icon.png") no-repeat 36px center;
+    
+    font-size: 1rem;
+    text-decoration: none;
+    vertical-align: center;
+    
+    .text__h, .text__t{
+      font-size: 1rem;
+      text-decoration: none;
+      vertical-align: center;
+    }
+
+    .action__white{
+      color: white;
+    }
+  }
+
+  .close__action__text{
+      padding-left: 87px;
+      background: url("../img/action-background-close-icon.png") no-repeat right 36px center;
+
+      float: right;
+      padding-left: 0;
+      padding-right: 81px;
+
+      .close__t{
+        color: #888888;
+      }
+    }
+}
+
+.bottom__fix__hide{
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s;
 }

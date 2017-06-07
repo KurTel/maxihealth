@@ -65,7 +65,7 @@ var config = {
             },
         tunnel: true,
         host: 'localhost',
-        port: 9000,
+        port: 3000,
         logPrefix: "Frontend_Devil"
     },
     deploy: {
@@ -74,7 +74,7 @@ var config = {
             },
         tunnel: true,
         host: 'localhost',
-        port: 9001,
+        port: 4000,
         logPrefix: "Frontend_Devil"
     }
 };
