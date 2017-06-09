@@ -121,7 +121,9 @@ input, textarea{
   @extend .btn;
 
   padding: 0;
-  width: 230px;
+  //width: 230px;
+  padding-left: 40px;
+  padding-right: 40px;
   height: 50px;
 
   color: white;
@@ -143,6 +145,7 @@ input, textarea{
 .button__red__img{
   @extend .button__red;
 
+  width: 230px;
   padding-left: 25px;
   text-align: left;
   background: url("../img/button-icon-2.png") no-repeat 98% center;
@@ -854,6 +857,81 @@ header{
       background-image: none;
       padding: 0;
     }
+
+    .calc__result{
+      color: #3d3c3c;
+
+      text-align: center;
+
+      .inner__header{
+        display: inline-block;
+        padding-left: 40px;
+        background: url("../img/red-arrow-to-down.png") no-repeat left center;
+
+      }
+
+      .inner__header__text{
+        font-size: 2.08rem;
+        vertical-align: center;
+      }
+
+      .landmarks{
+        padding-top: 50px;
+
+        .inner__header{
+          vertical-align: center;
+          padding-right: 72px;
+          line-height: 52px;
+          background: 
+                      url("../img/red-arrow-to-down.png") no-repeat left center,
+                      url("../img/target-maintenance-icon-on.png") no-repeat right center;
+        }
+      }
+
+      .inner__body{
+        padding-top: 23px;
+
+        .formulas__list{
+          display: inline-block;
+          text-align: left;
+        }
+
+        .formula__element{
+          line-height: 50px;
+        }
+
+        .formula__type, .formula__delimeter, .formula__result{
+          float: left;
+        }
+
+        .formula__type{
+          width:285px;
+        }
+
+        .formula__type__text{
+          font-size: 1.11rem;
+          text-align: right;
+        }
+
+        .formula__delimeter__img{
+          vertical-align: top;
+          padding-top: 24px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+  
+        .formula__result__text{
+          font-size: 1.9rem;
+        }
+
+      }
+
+      .button__recalc{
+        padding-top: 60px;
+      }
+
+    }
+
   }
 }
 
@@ -1185,4 +1263,8 @@ header{
   opacity: 0;
   visibility: hidden;
   transition: 1s;
+}
+
+.develop__hide{
+  display: none;
 }

@@ -193,10 +193,9 @@ gulp.task('image:deploy', function (cb) {
 });
 
 gulp.task('image:build', function (cb) {
-    gulp.src(path.src.img) //Выберем наши картинки
+    return gulp.src(path.src.img) //Выберем наши картинки
         .pipe(gulp.dest(path.build.img)) //И бросим в build
         .pipe(reload({stream: true}));
-    cb();
 });
 
 /* ---------- FONTS ---------- */

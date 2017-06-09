@@ -2,4 +2,4 @@ node_modules/
 app1/
 dist/
 build/
-daploy/
+deploy/
