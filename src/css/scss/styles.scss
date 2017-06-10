@@ -66,6 +66,9 @@ a, a:visited, a:hover, a:active{
 
 .wrapper{
   position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 ul{
@@ -179,7 +182,9 @@ input, textarea{
         url("../img/target-lose-icon-off.png")
         url("../img/target-lose-icon-on.png")
         url("../img/target-gain-icon-on.png")
-        url("../img/target-maintenance-icon-on.png");
+        url("../img/target-maintenance-icon-on.png")
+        url("../img/markers-right.png")
+        url("../img/markers-left.png");
     display: none;
   }
 
@@ -295,14 +300,144 @@ header{
   background: #BCE073;
 }
 
-
-
 /* ----- BLOCK-1 ----- */
 
-.block__1{
-  background: url("../img/block-1-background.png") no-repeat center center;
-  height: 588px;
+.block-1{
+  margin: 0 auto;
+  display: inline-block;
 }
+
+.block__1__slider{
+  position: relative;
+  height: 587px;
+}
+
+.dark_background{
+  background: #0f1623; /* Old browsers */
+  background: -moz-linear-gradient(to top right, #0f1623 0%, #1a1e26 23%, #151a26 68%, #313f5c 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(to top right, #0f1623 0%,#1a1e26 23%,#151a26 68%,#313f5c 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to top right, #0f1623 0%,#1a1e26 23%,#151a26 68%,#313f5c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f1623', endColorstr='#313f5c',GradientType=0 ); /* IE6-9 */
+  transition: 2s;
+}
+
+.light_background{
+  background: #2989d8; /* Old browsers */
+  background: #c6e3f6; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #c6e3f6 0%, #4aa5e1 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #c6e3f6 0%,#4aa5e1 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #c6e3f6 0%,#4aa5e1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6e3f6', endColorstr='#4aa5e1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  transition: 2s;
+}
+
+.slider__markers{
+  padding-top: 6px;
+  padding-left: 10px;
+}
+
+.slider__markers__position{
+  width: 37px;
+  height: 17px;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.slider__markers__position-left{
+  background: url("../img/markers-left.png") no-repeat center center;
+}
+
+.slider__markers__position-right{
+  background: url("../img/markers-right.png") no-repeat center center;
+}
+
+
+.slide__show{
+  // visibility: visible;
+  display: block;
+}
+
+.slide__hide{
+  // visibility: hidden;
+  display: none;
+}
+
+.slide__position__left{
+  // left: -400px;
+  // transform: scaleX(2);
+  // opacity: 0;
+  // transition: 3s;
+  animation: animate 2s forwards;
+}
+
+.slide__position__center{
+  // opacity: 1;
+  // left: 0px;
+  // transition: 2s;
+  animation: animate_lol 2s forwards;
+}
+
+.slide__position__right{
+  left: 100px;
+  transition: 2s;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 1;
+    z-index: 500;
+    left: 0;
+    transform: scale(1);
+  }
+  99.9% {
+    opacity: 0;
+    z-index: 500;
+    // left: -400px;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+    left: 0;
+  }
+}
+
+@keyframes animate_lol {
+  0% {
+    transform: scale(0.8);
+    left: 0;
+    opacity: 0;
+    z-index: 0;
+  }
+  99.9% {
+    transform: scale(1);
+    left: 0;
+    opacity: 1;
+    z-index: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+    z-index: 500;
+  }
+}
+
+/* -----BLOCK-1__SLIDE-1 ----- */
+
+.block__1__slide__element{
+  opacity: 1;
+  position: absolute;
+  width: 100%;
+}
+
+.block__1__slide-1,{
+  background: url("../img/block-1-background.png") no-repeat center center;
+  height: 587px;
+  z-index: 50;
+}
+
 
 .block__1__header{
   width: 42%;
@@ -367,10 +502,6 @@ header{
   padding-left: 25px;
 }
 
-.btn__order{
-
-}
-
 .block__1__prouct{
   z-index: 1;
   position: absolute;
@@ -378,11 +509,27 @@ header{
   left: 360px;
 }
 
+/* -----BLOCK-1__SLIDE-2 ----- */
+
+.block__1__slide-2{
+  background: url("../img/block-1-background-2-slide.png") no-repeat center center;
+  height: 587px;
+}
+
+.typebuttons{
+  padding-top: 500px;
+  text-align: center;
+}
+
+.typebuttons__item, .spacingdiv{
+  display: inline-block;
+}
+
+.spacingdiv{
+  width: 190px;
+}
 
 /* ----- BLOCK-2 ----- */
-
-.block__2{
-}
 
 .block__2__wrapper{
   position: relative;

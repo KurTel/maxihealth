@@ -13,8 +13,8 @@
 
   <script src="js/main.js"></script>
 
-</head>
-<body>
+  </head>
+  <body>
   <div class="wrapper">
     <header class="header">
       <div class="container">
@@ -70,36 +70,58 @@
       </div>
     </header>
 
+    
     <div class="block__1">
-      <div class="container">
-        <div class="block__1__left">
-          <div class="block__1__header">
-            <h1 class="header__1 h2header__big">ЗДОРОВОЕ ПИТАНИЕ</h1>
-            <h1 class="header__2">С ДОСТАВКОЙ НА ДОМ</h1>
-            <p class="header__city">В НОВОСИБИРСКЕ</p><span class="gps__marker"></span>
-          </div>
-          <div class="block__1__description">
-            <ul class="des__menu bigtext">
-              <li class="des__menu__item">
-                &ndash; ДРОБНОЕ 5-РАЗОВОЕ ПИТАНИЕ НА КАЖДЫЙ ДЕНЬ
-              </li>
-              <li class="des__menu__item">
-                &ndash; ВСЕ ПРИЁМЫ СБАЛАНСИРОВАНЫ ПО КБЖУ
-              </li>
-              <li class="des__menu__item">
-                &ndash; НЕ НУЖНО СТОЯТЬ У ПЛИТЫ И ХОДИТЬ В МАГАЗИН
-              </li>
-              <li class="des__menu__item">
-                &ndash; ЦЕНА ЗА ПОРЦИЮ...
-              </li>
-            </ul>
-          </div>
-          <div class="order__button">
-            <button class="button__red__img btn__order">ОФОРМИТЬ ЗАКАЗ</button>
+      <div class="block__1__slider" id="slider">
+        <div hidden class="block__1__slide-1 block__1__slide__element slide__show">
+          <div class="container">
+            <div class="block__1__left">
+              <div class="block__1__header">
+                <h1 class="header__1 h2header__big">ЗДОРОВОЕ ПИТАНИЕ</h1>
+                <h1 class="header__2">С ДОСТАВКОЙ НА ДОМ</h1>
+                <p class="header__city">В НОВОСИБИРСКЕ</p><span class="gps__marker"></span>
+              </div>
+              <div class="block__1__description">
+                <ul class="des__menu bigtext">
+                  <li class="des__menu__item">
+                    &ndash; ДРОБНОЕ 5-РАЗОВОЕ ПИТАНИЕ НА КАЖДЫЙ ДЕНЬ
+                  </li>
+                  <li class="des__menu__item">
+                    &ndash; ВСЕ ПРИЁМЫ СБАЛАНСИРОВАНЫ ПО КБЖУ
+                  </li>
+                  <li class="des__menu__item">
+                    &ndash; НЕ НУЖНО СТОЯТЬ У ПЛИТЫ И ХОДИТЬ В МАГАЗИН
+                  </li>
+                  <li class="des__menu__item">
+                    &ndash; ЦЕНА ЗА ПОРЦИЮ...
+                  </li>
+                </ul>
+              </div>
+              <div class="order__button">
+                <button class="button__red__img btn__order">ОФОРМИТЬ ЗАКАЗ</button>
+              </div>
+            </div>
+            <div class="block__1__prouct">
+              <img src="img/maxihealth_product.png " alt="" class="maxihealth_product">
+            </div>
           </div>
         </div>
-        <div class="block__1__prouct">
-          <img src="img/maxihealth_product.png " alt="" class="maxihealth_product">
+
+        <div hidden class="block__1__slide-2 block__1__slide__element slide__show">
+          <div class="container">
+            <div class="typebuttons">
+              <div class="typebuttons__item"><button class="button__red__img typebutton">НА МАССУ</button></div>
+              <div class="spacingdiv"></div>
+              <div class="typebuttons__item"><button class="button__red__img typebutton">НА ПОДДЕРЖАНИЕ</button></div>
+              <div class="spacingdiv"></div>
+              <div class="typebuttons__item"><button class="button__red__img typebutton">НА СНИЖЕНИЕ</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider__markers">
+        <div class="container">
+          <div class="slider__markers__position slider__markers__position-left" id="slider__markers__position"></div>
         </div>
       </div>
     </div>

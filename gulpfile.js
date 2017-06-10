@@ -154,7 +154,6 @@ gulp.task('css:build', function (cb) {
                     console.log(details.name + ' before: ' + details.stats.originalSize);
                     console.log(details.name + ' after: ' + details.stats.minifiedSize);}
                 ),
-        reload({stream: true}),
         gulp.dest(path.build.css),
         reload({stream: true})
     ],
