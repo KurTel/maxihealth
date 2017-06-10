@@ -4,13 +4,14 @@ window.onload = function(){
 
   //находим слайдер на сцене и создаём объект слайдер
   var slider = new Slider(document.getElementById("slider"));
-
-  setInterval(slider.sliderNextElement, 8000);
 }
 
 function Slider(slider){
   //находим элементы слайдера и превращаем их из коллекции в массив
   var sliderElements = [].slice.call(getSliderElements());
+
+  var sliderChangeInterval = 8000;
+  var timerId = setInterval(sliderNextElement, sliderChangeInterval);
 
   var classPositionLeft = "slide__position__left";
   var classPositionCenter = "slide__position__center";
@@ -31,12 +32,10 @@ function Slider(slider){
   var markers = document.getElementById("slider__markers__position");
   markers.addEventListener("click", sliderNextElement);
 
-
   function getSliderElements(){
     return slider.getElementsByClassName("block__1__slide__element");
   }
 
-  this.sliderNextElement = sliderNextElement;
   function sliderNextElement(){
 
     if(isAnimatedNow) return;
@@ -52,6 +51,8 @@ function Slider(slider){
     PrefixedEvent(sliderElements[1], "animationend", function(){
 
       isAnimatedNow = false;
+      clearInterval(timerId);
+      timerId = setInterval(sliderNextElement, sliderChangeInterval);
 
     })
 
