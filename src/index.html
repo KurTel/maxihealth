@@ -236,8 +236,8 @@
               </div>
             </div>
           </div>
-          <div class=" develop__hide      calc__body calc__body__front bigtext">
-            <form action="" class="calcform">
+          <div class="              calc__body calc__body__front bigtext" id="calc__body__front">
+            <form class="calcform" name="calculator" onsubmit="calculator.logFunction">
               <ul class="calc__list__parameters">
                 <li class="calc__list__line gender__line">
                   <div class="calc__line">
@@ -248,12 +248,12 @@
                     </div>
                     <div class="calc__input__wrapper gender__wrapper">
                       <div class="calc__radio__1">
-                        <input type="radio" checked class="calc__radio" name="gender" id="gender_male">
+                        <input required type="radio" checked class="calc__radio" name="gender" id="gender_male" value="male">
                         <label for="gender_male"">МУЖСКОЙ</label>
                         <div class="check"></div>
                       </div>
                       <div class="calc__radio__2">
-                        <input type="radio" class="calc__radio" name="gender" id="gender_female">
+                        <input required type="radio" class="calc__radio" name="gender" id="gender_female" value="female">
                         <label for="gender_female">ЖЕНСКИЙ</label>
                         <div class="check"></div>
                       </div>
@@ -268,7 +268,7 @@
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
-                      <input type="text" checked class="" name="gender" id="calc__age">
+                      <input required type="text" checked class="" name="age" id="calc__age">
                       <label class="lineend" for="calc__age">ЛЕТ</label>
                     </div>
                   </div>
@@ -281,7 +281,7 @@
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
-                      <input type="text" checked class="" name="gender" id="calc__height">
+                      <input required type="text" checked class="" name="height" id="calc__height">
                       <label class="lineend" for="calc__height">СМ</label>
                     </div>
                   </div>
@@ -294,7 +294,7 @@
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
-                      <input type="text" checked class="" name="gender" id="calc__height">
+                      <input required type="text" checked class="" name="weight" id="calc__height">
                       <label class="lineend" for="calc__height">КГ</label>
                     </div>
                   </div>
@@ -308,10 +308,10 @@
                     </div>
                     <div class="calc__input__wrapper">
                       <div class="activity__wrapper">
-                        <select name="activity" class="select__activity" id="calc__activity">
-                          <option checked value="низкая активность">НИЗКАЯ АКТИВНОСТЬ</option>
-                          <option value="средняя активность">СРЕДНЯЯ АКТИВНОСТЬ</option>
-                          <option value="высокая активность">ВЫСОКАЯ АКТИВНОСТЬ</option>
+                        <select required name="activity" class="select__activity" id="calc__activity">
+                          <option checked value="low">НИЗКАЯ АКТИВНОСТЬ</option>
+                          <option value="norm">СРЕДНЯЯ АКТИВНОСТЬ</option>
+                          <option value="high">ВЫСОКАЯ АКТИВНОСТЬ</option>
                         </select>
                       </div>
                     </div>
@@ -326,19 +326,19 @@
                     </div>
                     <div class="calc__input__wrapper">
                       <div class="calc__target__radio__loss">
-                        <input type="radio" checked class="calc__radio" name="target" id="target_loss_weight">
+                        <input required type="radio" checked class="calc__radio" name="target" id="target_loss_weight" value="lose">
                         <label for="target_loss_weight"">СБРОСИТЬ ВЕС</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__loss"></div>
                       </div>
                       <div class="calc__target__radio__gain">
-                        <input type="radio" class="calc__radio" name="target" id="target_gain_weight">
+                        <input required type="radio" class="calc__radio" name="target" id="target_gain_weight"  value="gain">
                         <label for="target_gain_weight">НАБРАТЬ МАССУ</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__gain"></div>
                       </div>
                       <div class="calc__target__radio__main">
-                        <input type="radio" class="calc__radio" name="target" id="target_maintenance_weight">
+                        <input required type="radio" class="calc__radio" name="target" id="target_maintenance_weight"  value="main">
                         <label for="target_maintenance_weight">ПОДДЕРЖАТЬ ВЕС</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__main"></div>
@@ -352,7 +352,7 @@
               </div>
             </form>
           </div>
-          <div class="         calc__body calc__body__result bigtext">
+          <div class="develop__hide calc__body calc__body__result bigtext" id="calc__body__result">
             <div class="calc__result">
               <div class="calc__result__inner daily__allowance">
                 <div class="inner__header">

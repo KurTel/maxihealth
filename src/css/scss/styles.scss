@@ -389,13 +389,11 @@ header{
     opacity: 1;
     z-index: 500;
     left: 0;
-    transform: scale(1);
   }
   99.9% {
     opacity: 0;
     z-index: 500;
-    // left: -400px;
-    transform: scale(0.95);
+    left: -400px;
   }
   100% {
     opacity: 0;
@@ -406,13 +404,11 @@ header{
 
 @keyframes animate_lol {
   0% {
-    transform: scale(0.8);
     left: 0;
     opacity: 0;
     z-index: 10;
   }
   99.9% {
-    transform: scale(1);
     left: 0;
     opacity: 1;
     z-index: 10;
@@ -878,7 +874,7 @@ header{
         vertical-align: middle;
         overflow: hidden;
         width: 250px;
-        background: url("../img/activity_arrow.png") no-repeat scroll 93% center white !important;
+        background: url("../img/activity-arrow.png") no-repeat scroll 93% center white !important;
       }
   
       .select__activity{

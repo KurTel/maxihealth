@@ -1,10 +1,11 @@
 "use strict"
 
-window.onload = function(){
+var slider = null;
 
+onloadInit.push( function(){
   //находим слайдер на сцене и создаём объект слайдер
-  var slider = new Slider(document.getElementById("slider"));
-}
+  slider = new Slider(document.getElementById("slider"));
+});
 
 function Slider(slider){
   //находим элементы слайдера и превращаем их из коллекции в массив
@@ -63,11 +64,11 @@ function Slider(slider){
   }
 
   function shiftElements(){
-    console.log(sliderElements);
+    // console.log(sliderElements);
 
     sliderElements.push(sliderElements.shift());
 
-    console.log(sliderElements);
+    // console.log(sliderElements);
   }
 
   function changeMarkers(){
