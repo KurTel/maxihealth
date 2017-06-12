@@ -8,4 +8,6 @@
 //= partials/common.js
 //= partials/onload.js
 //= partials/app.js
-//= kbju.js
+//= partials/block-1-carousel.js
+//= partials/calculator.js
+//= partials/kbju.js

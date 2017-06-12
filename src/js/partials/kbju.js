@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
         var mifflinStJeorMaleResult = 9.99 * weight + 6.25 * height + 4.92 * age + 5;
         var mifflinStJeorFemaleResult = 9.99 * weight + 6.25 * height + 4.92 * age - 161;
         const activityMap = {};
-        activityMap['низкая активность'] = {lowerBound: 1.3, upperBound: 1.4};
-        activityMap['средняя активность'] = {lowerBound: 1.5, upperBound: 1.6};
-        activityMap['высокая активность'] = {lowerBound: 1.7, upperBound: 1.8};
+        activityMap['low'] = {lowerBound: 1.3, upperBound: 1.4};
+        activityMap['mid'] = {lowerBound: 1.5, upperBound: 1.6};
+        activityMap['high'] = {lowerBound: 1.7, upperBound: 1.8};
         var activityInput = document.getElementById('calc__activity');
         var key = activityInput.options[activityInput.selectedIndex].value;
         // todo: либо так (в новом js можно использовать нормальный Map), либо добавить в каждый option select'а html тег, в котором передавать значение
