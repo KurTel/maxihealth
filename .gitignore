@@ -2,4 +2,8 @@ node_modules/
 app1/
 dist/
 build/
-daploy/
+deploy/
+
+# idea files and folders
+.idea/
+*.iml
