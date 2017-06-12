@@ -65,7 +65,7 @@ var config = {
             },
         tunnel: true,
         host: 'localhost',
-        port: 9000,
+        port: 3000,
         logPrefix: "Frontend_Devil"
     },
     deploy: {
@@ -74,7 +74,7 @@ var config = {
             },
         tunnel: true,
         host: 'localhost',
-        port: 9001,
+        port: 4000,
         logPrefix: "Frontend_Devil"
     }
 };
@@ -154,7 +154,6 @@ gulp.task('css:build', function (cb) {
                     console.log(details.name + ' before: ' + details.stats.originalSize);
                     console.log(details.name + ' after: ' + details.stats.minifiedSize);}
                 ),
-        reload({stream: true}),
         gulp.dest(path.build.css),
         reload({stream: true})
     ],
@@ -193,10 +192,9 @@ gulp.task('image:deploy', function (cb) {
 });
 
 gulp.task('image:build', function (cb) {
-    gulp.src(path.src.img) //Выберем наши картинки
+    return gulp.src(path.src.img) //Выберем наши картинки
         .pipe(gulp.dest(path.build.img)) //И бросим в build
         .pipe(reload({stream: true}));
-    cb();
 });
 
 /* ---------- FONTS ---------- */

@@ -7,14 +7,14 @@
 
   <title>Maxihealth kitchen</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=0">
 
   <link rel="stylesheet" type="text/css" href="css/main.css">
 
   <script src="js/main.js"></script>
 
-</head>
-<body>
+  </head>
+  <body>
   <div class="wrapper">
     <header class="header">
       <div class="container">
@@ -71,35 +71,56 @@
     </header>
 
     <div class="block__1">
-      <div class="container">
-        <div class="block__1__left">
-          <div class="block__1__header">
-            <h1 class="header__1 h2header__big">ЗДОРОВОЕ ПИТАНИЕ</h1>
-            <h1 class="header__2">С ДОСТАВКОЙ НА ДОМ</h1>
-            <p class="header__city">В НОВОСИБИРСКЕ</p><span class="gps__marker"></span>
-          </div>
-          <div class="block__1__description">
-            <ul class="des__menu bigtext">
-              <li class="des__menu__item">
-                &ndash; ДРОБНОЕ 5-РАЗОВОЕ ПИТАНИЕ НА КАЖДЫЙ ДЕНЬ
-              </li>
-              <li class="des__menu__item">
-                &ndash; ВСЕ ПРИЁМЫ СБАЛАНСИРОВАНЫ ПО КБЖУ
-              </li>
-              <li class="des__menu__item">
-                &ndash; НЕ НУЖНО СТОЯТЬ У ПЛИТЫ И ХОДИТЬ В МАГАЗИН
-              </li>
-              <li class="des__menu__item">
-                &ndash; ЦЕНА ЗА ПОРЦИЮ...
-              </li>
-            </ul>
-          </div>
-          <div class="order__button">
-            <button class="button__red__img btn__order">ОФОРМИТЬ ЗАКАЗ</button>
+      <div class="block__1__slider" id="slider">
+        <div hidden class="block__1__slide-1 block__1__slide__element slide__show">
+          <div class="container">
+            <div class="block__1__left">
+              <div class="block__1__header">
+                <h1 class="header__1 h2header__big">ЗДОРОВОЕ ПИТАНИЕ</h1>
+                <h1 class="header__2">С ДОСТАВКОЙ НА ДОМ</h1>
+                <p class="header__city">В НОВОСИБИРСКЕ</p><span class="gps__marker"></span>
+              </div>
+              <div class="block__1__description">
+                <ul class="des__menu bigtext">
+                  <li class="des__menu__item">
+                    &ndash; ДРОБНОЕ 5-РАЗОВОЕ ПИТАНИЕ НА КАЖДЫЙ ДЕНЬ
+                  </li>
+                  <li class="des__menu__item">
+                    &ndash; ВСЕ ПРИЁМЫ СБАЛАНСИРОВАНЫ ПО КБЖУ
+                  </li>
+                  <li class="des__menu__item">
+                    &ndash; НЕ НУЖНО СТОЯТЬ У ПЛИТЫ И ХОДИТЬ В МАГАЗИН
+                  </li>
+                  <li class="des__menu__item">
+                    &ndash; ЦЕНА ЗА ПОРЦИЮ...
+                  </li>
+                </ul>
+              </div>
+              <div class="order__button">
+                <button class="button__red__img btn__order">ОФОРМИТЬ ЗАКАЗ</button>
+              </div>
+            </div>
+            <div class="block__1__prouct">
+              <img src="img/maxihealth_product.png " alt="" class="maxihealth_product">
+            </div>
           </div>
         </div>
-        <div class="block__1__prouct">
-          <img src="img/maxihealth_product.png " alt="" class="maxihealth_product">
+
+        <div hidden class="block__1__slide-2 block__1__slide__element slide__show">
+          <div class="container">
+            <div class="typebuttons">
+              <div class="typebuttons__item"><button class="button__red__img typebutton">НА МАССУ</button></div>
+              <div class="spacingdiv"></div>
+              <div class="typebuttons__item"><button class="button__red__img typebutton">НА ПОДДЕРЖАНИЕ</button></div>
+              <div class="spacingdiv"></div>
+              <div class="typebuttons__item"><button class="button__red__img typebutton">НА СНИЖЕНИЕ</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider__markers">
+        <div class="container">
+          <div class="slider__markers__position slider__markers__position-left" id="slider__markers__position"></div>
         </div>
       </div>
     </div>
@@ -116,7 +137,7 @@
               <p class="text">
                 Мышь кошельковая — довольно популярный сувенир. Но следует знать, что он имеет свою историю и магическое значение. Еще одна версия происхождения денежного талисмана под названием «кошельковая мышка» связывает его с городом Мышкин. Он был построен в 13-м веке на том месте, где мышь спасла от нападения змеи русского князя, и, если верить легенде, первая денежная кошельковая мышь появилась именно там. <br/> <br/>
 
-                Мышь кошельковая представляет собой небольшую, около сантиметра, фигурку мыши из натурального камня или металла. Как правило, она не мешает пользоваться кошельком благодаря минимальным габаритам. Мышка кошельковая не только притягивает деньги и помогает повысить доходы. Она еще и служит оберегом для вашего кошелька, защищая ваши денежные средства от ненужных трат, воровства и сглаза.
+                Мышь кошельковая представляет собой небольшую, около сантиметра, фигурку мыши из натурального камня или металла. Как правило, она не мешает пользоваться кошельком благодаря минимальным габаритам. Мышка кошельковая не только притягивает деньги и помогает повысить доходы. Она еще и служит оберегом для вашего кошелька, защищая ваши денежные средства от ненужных трат, воровства и сглаза. 
               </p>
             </div>
           </div>
@@ -195,14 +216,14 @@
     </div>
 
     <!-- КБЖУ -->
-    <div class="block__5">
+    <div class="block__5" id="calculator">
       <div class="container">
         <div class="calc__wrapper">
           <div class="calkheader">
             <div class="header__wraper">
               <div class="header">
                 <h2 class="h2header__min">
-                  КАЛЬУКЛЯТОР БЖУ*
+                  КАЛЬКУЛЯТОР БЖУ*
                 </h2>
               </div>
               <div class="refinement">
@@ -215,8 +236,8 @@
               </div>
             </div>
           </div>
-          <div class="calc__body bigtext" id="calculator">
-            <form id="kbju_form" class="calcform">
+          <div class="calc__body calc__body__front bigtext calc__show__display" id="calc__body__front">
+            <form class="calcform" name="calculator" onsubmit="calculator.logFunction">
               <ul class="calc__list__parameters">
                 <li class="calc__list__line gender__line">
                   <div class="calc__line">
@@ -227,12 +248,12 @@
                     </div>
                     <div class="calc__input__wrapper gender__wrapper">
                       <div class="calc__radio__1">
-                        <input type="radio" checked class="calc__radio" name="gender" id="gender_male">
-                        <label for="gender_male">МУЖСКОЙ</label>
+                        <input required type="radio" checked class="calc__radio" name="gender" id="gender_male" value="male">
+                        <label for="gender_male"">МУЖСКОЙ</label>
                         <div class="check"></div>
                       </div>
                       <div class="calc__radio__2">
-                        <input type="radio" class="calc__radio" name="gender" id="gender_female">
+                        <input required type="radio" class="calc__radio" name="gender" id="gender_female" value="female">
                         <label for="gender_female">ЖЕНСКИЙ</label>
                         <div class="check"></div>
                       </div>
@@ -247,7 +268,7 @@
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
-                      <input type="text" checked class="" name="gender" id="calc__age">
+                      <input required type="number" checked class="" name="age" id="calc__age">
                       <label class="lineend" for="calc__age">ЛЕТ</label>
                     </div>
                   </div>
@@ -260,7 +281,7 @@
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
-                      <input type="text" checked class="" name="gender" id="calc__height">
+                      <input required type="number" checked class="" name="height" id="calc__height">
                       <label class="lineend" for="calc__height">СМ</label>
                     </div>
                   </div>
@@ -273,8 +294,8 @@
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
-                      <input type="text" checked class="" name="gender" id="calc__weight">
-                      <label class="lineend" for="calc__weight">КГ</label>
+                      <input required type="number" checked class="" name="weight" id="calc__height">
+                      <label class="lineend" for="calc__height">КГ</label>
                     </div>
                   </div>
                 </li>
@@ -287,10 +308,10 @@
                     </div>
                     <div class="calc__input__wrapper">
                       <div class="activity__wrapper">
-                        <select name="activity" class="select__activity" id="calc__activity">
-                          <option selected value="низкая активность">НИЗКАЯ АКТИВНОСТЬ</option>
-                          <option value="средняя активность">СРЕДНЯЯ АКТИВНОСТЬ</option>
-                          <option value="высокая активность">ВЫСОКАЯ АКТИВНОСТЬ</option>
+                        <select required name="activity" class="select__activity" id="calc__activity">
+                          <option selected value="low">НИЗКАЯ АКТИВНОСТЬ</option>
+                          <option value="norm">СРЕДНЯЯ АКТИВНОСТЬ</option>
+                          <option value="high">ВЫСОКАЯ АКТИВНОСТЬ</option>
                         </select>
                       </div>
                     </div>
@@ -305,19 +326,19 @@
                     </div>
                     <div class="calc__input__wrapper">
                       <div class="calc__target__radio__loss">
-                        <input type="radio" checked class="calc__radio" name="target" id="target_loss_weight">
-                        <label for="target_loss_weight">СБРОСИТЬ ВЕС</label>
+                        <input required type="radio" checked class="calc__radio" name="target" id="target_loss_weight" value="lose">
+                        <label for="target_loss_weight"">СБРОСИТЬ ВЕС</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__loss"></div>
                       </div>
                       <div class="calc__target__radio__gain">
-                        <input type="radio" class="calc__radio" name="target" id="target_gain_weight">
+                        <input required type="radio" class="calc__radio" name="target" id="target_gain_weight"  value="gain">
                         <label for="target_gain_weight">НАБРАТЬ МАССУ</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__gain"></div>
                       </div>
                       <div class="calc__target__radio__main">
-                        <input type="radio" class="calc__radio" name="target" id="target_maintenance_weight">
+                        <input required type="radio" class="calc__radio" name="target" id="target_maintenance_weight"  value="main">
                         <label for="target_maintenance_weight">ПОДДЕРЖАТЬ ВЕС</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__main"></div>
@@ -330,6 +351,85 @@
                 <button id="kbju_button" class="button__red">ПОСЧИТАТЬ</button>
               </div>
             </form>
+          </div>
+          <div class="calc__body calc__body__result bigtext calc__hide__display" id="calc__body__result">
+            <div class="calc__result">
+              <div class="calc__result__inner daily__allowance">
+                <div class="inner__header">
+                  <p class="inner__header__text">СУТОЧНАЯ НОРМА КАЛОРИЙ</p>
+                </div>
+                <div class="inner__body">
+                  <ul class="formulas__list">
+                    <li class="formula__element">
+                      <div class="formula__type">
+                        <p class="formula__type__text">ПО СРЕДНЕМУ РАСХОДУ НА КИЛОГРАММ</p>
+                      </div>
+                      <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
+                      <div class="formula__result">
+                        <p class="formula__result__text"><span>2964</span> &#8212; <span>3120</span></p>
+                      </div>
+                    </li>
+                    <li class="formula__element">
+                      <div class="formula__type">
+                        <p class="formula__type__text">ПО ФОРМУЛЕ ХАРРИСА-БЕНЕДИКТА</p>
+                      </div>
+                      <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
+                      <div class="formula__result">
+                        <p class="formula__result__text">2855</p>
+                      </div>
+                    </li>
+                    <li class="formula__element">
+                      <div class="formula__type">
+                        <p class="formula__type__text">ПО ФОРМУЛЕ МИФФЛИНА - САН ЖЕОРА</p>
+                      </div>
+                      <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
+                      <div class="formula__result">
+                        <p class="formula__result__text">2736</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="calc__result__inner landmarks">
+                <div class="inner__header">
+                  <p class="inner__header__text">ОРИЕНТИРЫ ДЛЯ <span>ПОДДЕРЖАНИЯ ВЕСА</span></p>
+                </div>
+                <div class="inner__body">
+                  <ul class="formulas__list">
+                    <li class="formula__element">
+                      <div class="formula__type">
+                        <p class="formula__type__text">ДИАПАЗОН КАЛОРИЙ</p>
+                      </div>
+                      <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
+                      <div class="formula__result">
+                        <p class="formula__result__text"><span>3076</span> &#8212; <span>3356</span></p>
+                      </div>
+                    </li>
+                    <li class="formula__element">
+                      <div class="formula__type">
+                        <p class="formula__type__text">ПО ФОРМУЛЕ ХАРРИСА-БЕНЕДИКТА</p>
+                      </div>
+                      <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
+                      <div class="formula__result">
+                        <p class="formula__result__text">2855</p>
+                      </div>
+                    </li>
+                    <li class="formula__element">
+                      <div class="formula__type">
+                        <p class="formula__type__text">ПО ФОРМУЛЕ МИФФЛИНА - САН ЖЕОРА</p>
+                      </div>
+                      <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
+                      <div class="formula__result">
+                        <p class="formula__result__text">2736</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="button__recalc">
+                <button class="button__red" id="button__recalc">ПЕРЕСЧИТАТЬ С ДРУГИМИ ПАРАМЕТРАМИ</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -442,7 +542,6 @@
                       </p>
                     </div>
                     <div class="message__input__wrapper textarea__wrapper"><textarea type="text"></textarea>
-                    </div>
                   </li>
                 </ul>
                 <div class="button__submit__wrapper">
@@ -542,33 +641,20 @@
       </div>
     </footer>
 
+    <!-- <div class="bottom__fix" id="bottom__fix">
+      <div class="container">
+        <div class="action">
+          <a href="" class="action__link">
+            <p class="action__text"><span class="text__h text__red">АКЦИЯ</span><span class="text__t action__white"> "ЗАКАЗ НА ОДИН ДЕНЬ"</span></p>
+          </a>
+        </div>
+        <div class="close__action" onclick="document.getElementById('bottom__fix').classList.add('bottom__fix__hide');">
+          <p class="close__action__text">
+            <span class="close__t">СКРЫТЬ</span>
+          </p>
+        </div>
+      </div>
+    </div> -->
 
-
-   <!-- <footer class="footer">
-      <div class="footer__contacts">
-        наши контакты
-      </div>
-      <div class="footer__reginfo">
-        ИНН 780621518596
-        ОГРН 316470400068995
-      </div>
-      <div class="footer__requsites">
-        Реквизиты:
-        Северо-Западный банк ПАО
-        Сбербанк г. Новосибирск
-        Счет №:40817810255033390791
-        ИНН: 7707083893
-        К/с: 30101810500000000653
-        Бик: 044030653
-      </div>
-      <div class="footer__contactus">
-        связаться с нами:
-        Тел.ефон:  +7 999 999-99-99
-        E-mail:  info@mail.ru
-        Офис:  Новосибирск, ул. Новосибирская, 1
-      </div>
-  </footer> -->
-
-  </div>
 </body>
 </html>
