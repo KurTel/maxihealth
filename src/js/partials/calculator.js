@@ -20,6 +20,12 @@ onloadInit.push( function(){
 });
 
 function Calculator(){
+
+  var BMRcoef = {
+    male : [88.362, 13.397, 4.799, 5.677],
+    famale : [447.593, 9.247, 3.098, 4.330]
+  }
+
   var animationDuration = 1000; // 1s
 
   var calcBodyFront = document.getElementById("calc__body__front");
@@ -35,16 +41,17 @@ function Calculator(){
   var classHideDisplay = "calc__hide__display";
 
   //назначаем нашу функцию на кнопку.
-  //TODO надо проверить все поля на валидность, тоесть там где должно быть число, а там слово, нужно исправить.
   calcForm.onsubmit = calculate;
 
   function calculate(){
     console.log(calcForm.gender.value);
-    console.log(isNaN(+calcForm.age.value));
-    console.log(isNaN(+calcForm.height.value));
-    console.log(isNaN(+calcForm.weight.value));
+    console.log(calcForm.age.value);
+    console.log(calcForm.height.value);
+    console.log(calcForm.weight.value);
     console.log(calcForm.activity.value);
     console.log(calcForm.target.value);
+
+    console.log(calculateBMR(calcForm.gender.value, calcForm.weight.value, calcForm.height.value, calcForm.age.value));
 
     changeToResult();
     return false;
@@ -63,7 +70,6 @@ function Calculator(){
       calcBodyResult.classList.add(classShowDisplay);
       calcBodyResult.classList.remove(classHide);
       calcBodyResult.classList.add(classShow);
-      console.log("calcBodyFront animationend");
     }, animationDuration);
   }
 
@@ -79,7 +85,18 @@ function Calculator(){
       calcBodyFront.classList.add(classShowDisplay);
       calcBodyFront.classList.remove(classHide);
       calcBodyFront.classList.add(classShow);
-      console.log("calcBodyFront animationend");
     }, animationDuration);
   }
+
+/*
+  Мужчины
+    BMR = 88.362 + (13.397 x вес в кг) + (4.799 x рост в сантиметрах) - (5.677 x возраст в годах)
+  Женщины
+    BMR = 447.593 + (9.247 x вес в кг) + (3.098 x рост в сантиметрах) - (4.330 x возраст в годах)
+*/
+
+  function calculateBMR(gender, weight, height, age){
+    return BMRcoef[gender][0] + (BMRcoef[gender][1] * weight) + (BMRcoef[gender][2] * height) + (BMRcoef[gender][3] * age);
+  }
+
 }
