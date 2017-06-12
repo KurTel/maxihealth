@@ -236,7 +236,7 @@
               </div>
             </div>
           </div>
-          <div class="              calc__body calc__body__front bigtext" id="calc__body__front">
+          <div class="calc__body calc__body__front bigtext calc__show__display" id="calc__body__front">
             <form class="calcform" name="calculator" onsubmit="calculator.logFunction">
               <ul class="calc__list__parameters">
                 <li class="calc__list__line gender__line">
@@ -268,7 +268,7 @@
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
-                      <input required type="text" checked class="" name="age" id="calc__age">
+                      <input required type="number" checked class="" name="age" id="calc__age">
                       <label class="lineend" for="calc__age">ЛЕТ</label>
                     </div>
                   </div>
@@ -281,7 +281,7 @@
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
-                      <input required type="text" checked class="" name="height" id="calc__height">
+                      <input required type="number" checked class="" name="height" id="calc__height">
                       <label class="lineend" for="calc__height">СМ</label>
                     </div>
                   </div>
@@ -294,7 +294,7 @@
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
-                      <input required type="text" checked class="" name="weight" id="calc__height">
+                      <input required type="number" checked class="" name="weight" id="calc__height">
                       <label class="lineend" for="calc__height">КГ</label>
                     </div>
                   </div>
@@ -352,7 +352,7 @@
               </div>
             </form>
           </div>
-          <div class="develop__hide calc__body calc__body__result bigtext" id="calc__body__result">
+          <div class="calc__body calc__body__result bigtext calc__hide__display" id="calc__body__result">
             <div class="calc__result">
               <div class="calc__result__inner daily__allowance">
                 <div class="inner__header">
@@ -427,7 +427,7 @@
                 </div>
               </div>
               <div class="button__recalc">
-                <button class="button__red">ПЕРЕСЧИТАТЬ С ДРУГИМИ ПАРАМЕТРАМИ</button>
+                <button class="button__red" id="button__recalc">ПЕРЕСЧИТАТЬ С ДРУГИМИ ПАРАМЕТРАМИ</button>
               </div>
             </div>
           </div>

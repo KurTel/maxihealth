@@ -5,6 +5,7 @@
 /*
  * Custom
  */
+//= partials/common.js
 //= partials/onload.js
 //= partials/app.js
 //= partials/block-1-carousel.js

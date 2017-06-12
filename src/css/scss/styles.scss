@@ -98,6 +98,15 @@ input, textarea{
   font-size: 1.3em;
 }
 
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .btn {
   display: inline-block;
   padding: 0px 0px;
@@ -389,11 +398,13 @@ header{
     opacity: 1;
     z-index: 500;
     left: 0;
+    transform: scale(1);
   }
   99.9% {
     opacity: 0;
     z-index: 500;
-    left: -400px;
+    // left: -400px;
+    transform: scale(0.95);
   }
   100% {
     opacity: 0;
@@ -404,11 +415,13 @@ header{
 
 @keyframes animate_lol {
   0% {
+    transform: scale(0.8);
     left: 0;
     opacity: 0;
     z-index: 10;
   }
   99.9% {
+    transform: scale(1);
     left: 0;
     opacity: 1;
     z-index: 10;
@@ -749,8 +762,58 @@ header{
     }
   }
 
-  .calc__body{
+  //время анимации так же жёстко задано в calculator.js, если править, то править и так и тут. Там переменная animationDuration
 
+  .calc__show{
+    animation: calc_show 1s forwards;
+  }
+
+  .calc__show__display{
+    display: block;
+  }
+
+  .calc__hide{
+    animation: calc_hide 1s forwards;
+  }
+
+  .calc__hide__display{
+    display: none;
+  }
+
+  @keyframes calc_hide {
+    0% {
+      opacity: 1;
+      z-index: 500;
+    }
+    99.9% {
+      opacity: 0;
+      z-index: 500;
+    }
+    100% {
+      opacity: 0;
+      z-index: 10;
+    }
+  }
+
+  @keyframes calc_show {
+    0% {
+      opacity: 0;
+      z-index: 10;
+    }
+    99.9% {
+      opacity: 1;
+      z-index: 10;
+    }
+    100% {
+      opacity: 1;
+      z-index: 500;
+    }
+  }
+
+  .calc__body__result{
+  }
+
+  .calc__body{
     padding-top: 35px;
 
     input[type=radio]{
