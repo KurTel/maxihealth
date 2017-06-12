@@ -70,7 +70,6 @@
       </div>
     </header>
 
-    
     <div class="block__1">
       <div class="block__1__slider" id="slider">
         <div hidden class="block__1__slide-1 block__1__slide__element slide__show">
@@ -184,7 +183,7 @@
     </div>
 
     <div class="block__4">
-      <div class="block__4__header"> 
+      <div class="block__4__header">
         <div class="container">
           <div class="logo">
             <img src="img/logo.png" alt="" class="logopic">
@@ -216,7 +215,7 @@
       </div>
     </div>
 
-    <div class="block__5"  id="calculator">
+    <div class="block__5" id="calculator">
       <div class="container">
         <div class="calc__wrapper">
           <div class="calkheader">
@@ -237,7 +236,7 @@
             </div>
           </div>
           <div class="calc__body calc__body__front bigtext calc__show__display" id="calc__body__front">
-            <form class="calcform" name="calculator" onsubmit="calculator.logFunction">
+            <form class="calcform" name="calculator">
               <ul class="calc__list__parameters">
                 <li class="calc__list__line gender__line">
                   <div class="calc__line">
@@ -249,7 +248,7 @@
                     <div class="calc__input__wrapper gender__wrapper">
                       <div class="calc__radio__1">
                         <input required type="radio" checked class="calc__radio" name="gender" id="gender_male" value="male">
-                        <label for="gender_male"">МУЖСКОЙ</label>
+                        <label for="gender_male">МУЖСКОЙ</label>
                         <div class="check"></div>
                       </div>
                       <div class="calc__radio__2">
@@ -294,8 +293,8 @@
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
-                      <input required type="number" checked class="" name="weight" id="calc__height">
-                      <label class="lineend" for="calc__height">КГ</label>
+                      <input required type="number" checked class="" name="weight" id="calc__weight">
+                      <label class="lineend" for="calc__weight">КГ</label>
                     </div>
                   </div>
                 </li>
@@ -309,8 +308,8 @@
                     <div class="calc__input__wrapper">
                       <div class="activity__wrapper">
                         <select required name="activity" class="select__activity" id="calc__activity">
-                          <option checked value="low">НИЗКАЯ АКТИВНОСТЬ</option>
-                          <option value="norm">СРЕДНЯЯ АКТИВНОСТЬ</option>
+                          <option selected value="low">НИЗКАЯ АКТИВНОСТЬ</option>
+                          <option value="mid">СРЕДНЯЯ АКТИВНОСТЬ</option>
                           <option value="high">ВЫСОКАЯ АКТИВНОСТЬ</option>
                         </select>
                       </div>
@@ -327,7 +326,7 @@
                     <div class="calc__input__wrapper">
                       <div class="calc__target__radio__loss">
                         <input required type="radio" checked class="calc__radio" name="target" id="target_loss_weight" value="lose">
-                        <label for="target_loss_weight"">СБРОСИТЬ ВЕС</label>
+                        <label for="target_loss_weight">СБРОСИТЬ ВЕС</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__loss"></div>
                       </div>
@@ -542,6 +541,7 @@
                       </p>
                     </div>
                     <div class="message__input__wrapper textarea__wrapper"><textarea type="text"></textarea>
+                    </div>
                   </li>
                 </ul>
                 <div class="button__submit__wrapper">
@@ -656,5 +656,6 @@
       </div>
     </div> -->
 
-</body>
+  </div>
+  </body>
 </html>

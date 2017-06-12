@@ -55,7 +55,7 @@ var path = {
         css: 'src/css/**/*.scss',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
-    },
+    }
 };
 
 var config = {
