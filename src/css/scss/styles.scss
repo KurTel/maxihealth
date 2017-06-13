@@ -69,6 +69,7 @@ a, a:visited, a:hover, a:active{
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+  // width: 1260px;
 }
 
 ul{
@@ -168,6 +169,7 @@ input::-webkit-inner-spin-button {
   width: 1180px;
   margin: 0 auto;
   position: relative;
+  text-align: left;
 }
 
 .bigtext{
@@ -614,6 +616,10 @@ header{
   height: 657px;
   text-align: center;
 
+  .container{
+    text-align: center;
+  }
+
   .logo{
     padding-top: 15px;
   }
@@ -657,16 +663,90 @@ header{
 /* ----- BLOCK-4 ----- */
 
 .block__4{
+
+  .container{
+    text-align: center;
+  }
+
+  .logo{
+
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .change__icons{
+    margin: 0 auto;
+    width: 62px;
+    height: 62px;
+
+    animation-name: change__icons__animation;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: forwards;
+  }
+
+  @keyframes change__icons__animation {
+    0%{
+      background: url("../img/icon-weight-gain-red.png") no-repeat center center;
+      opacity: 0;
+    }
+    8.3%{
+      background: url("../img/icon-weight-gain-red.png") no-repeat center center;
+      opacity: 1;
+    }
+    24.9%{
+      background: url("../img/icon-weight-gain-red.png") no-repeat center center;
+      opacity: 1;
+    }
+    33.2%{
+      background: url("../img/icon-weight-gain-red.png") no-repeat center center;
+      opacity: 0;
+    }
+    33.3%{
+      background: url("../img/icon-weight-loss-red.png") no-repeat center center;
+      opacity: 0;
+    }
+    41.6%{
+      background: url("../img/icon-weight-loss-red.png") no-repeat center center;
+      opacity: 1;
+    }
+    56.6%{
+      background: url("../img/icon-weight-loss-red.png") no-repeat center center;
+      opacity: 1;
+    }
+    65.5%{
+      background: url("../img/icon-weight-loss-red.png") no-repeat center center;
+      opacity: 0;
+    }
+    66.6%{
+      background: url("../img/icon-weight-maintenance-red.png") no-repeat center center;
+      opacity: 0;
+    }
+    74.6%{
+      background: url("../img/icon-weight-maintenance-red.png") no-repeat center center;
+      opacity: 1;
+    }
+    92.7%{
+      background: url("../img/icon-weight-maintenance-red.png") no-repeat center center;
+      opacity: 1;
+    }
+    100%{
+      background: url("../img/icon-weight-maintenance-red.png") no-repeat center center;
+      opacity: 0;
+    }
+  }
+
   .block__4__header{
       text-align: center;
 
     .logo{
-      padding-top: 28px;
+      padding-top: 60px;
     }
 
     .header{
 
-      padding-top: 50px;
+      padding-top: 40px;
       line-height: 1;
       color: #3d3c3c;
 
@@ -1072,7 +1152,7 @@ header{
       .inner__header{
         display: inline-block;
         padding-left: 40px;
-        background: url("../img/red-arrow-to-down.png") no-repeat left center;
+        // background: url("../img/red-arrow-to-down.png") no-repeat left center;
 
       }
 
@@ -1088,9 +1168,6 @@ header{
           vertical-align: center;
           padding-right: 72px;
           line-height: 52px;
-          background: 
-                      url("../img/red-arrow-to-down.png") no-repeat left center,
-                      url("../img/target-maintenance-icon-on.png") no-repeat right center;
         }
       }
 
@@ -1141,11 +1218,34 @@ header{
   }
 }
 
+.landmarks__background__lose{
+  background: 
+                      url("../img/red-arrow-to-down.png") no-repeat left center,
+                      url("../img/target-lose-icon-on.png") no-repeat right center;
+}
+
+.landmarks__background__gain{
+  background: 
+                      url("../img/red-arrow-to-down.png") no-repeat left center,
+                      url("../img/target-gain-icon-on.png") no-repeat right center;
+}
+
+.landmarks__background__main{
+  background: 
+                      url("../img/red-arrow-to-down.png") no-repeat left center,
+                      url("../img/target-maintenance-icon-on.png") no-repeat right center;
+}
+
+
 /* ----- BLOCK-6 ----- */
 
 .block__6{
   height: 625px;
   text-align: center;
+
+  .block__6__wrapper{
+    text-align: center;
+  }
 
   .block__6__header{
     padding-top: 85px;
@@ -1226,6 +1326,10 @@ header{
   height: 825px;
   text-align: center;
   color: #3d3c3c;
+
+  .block__7__wrapper{
+    text-align: center;
+  }
 
   .block__7__header{
     padding-top: 57px;
@@ -1474,3 +1578,244 @@ header{
 .develop__hide{
   display: none;
 }
+
+
+
+
+
+
+
+/* ----- BLOCK-SLIDER ----- */
+
+.wrapper{
+  text-align: center;
+}
+
+.block__slider{
+  height: 587px;
+
+  .slide__inner{
+    text-align: left;
+  }
+}
+
+.slide__1{
+  z-index: 1;
+  position: absolute;
+  background: url("../img/back__1-3-final2.png") no-repeat center center;
+  height: 587px;
+  width: 100%;
+}
+
+.slide__2{
+  z-index: 0;
+}
+
+.slide__2__inner{
+  z-index: 3;
+  position: absolute;
+  height: 587px;
+  width: 445px;
+  // width: 881px;
+
+  background: url("../img/back__2__crop-4-final.png") no-repeat center center;
+
+  margin: 0 auto;
+  left: 100px;
+  right: 0;
+
+  transform: skewX(-20deg);
+
+  transition: width 1s, left 1s, background-position 1s;
+
+  border-left: 4px solid white;
+  border-right: 4px solid white;
+
+  overflow: hidden;
+
+  .slide__2__inner__text{
+    transform: skewX(20deg);
+  }
+
+  .button__wrapper{
+    transform: skewX(20deg);
+  }
+}
+
+.slide__2__inner__open{
+  width: 802px;
+  transition: 1s;
+}
+
+.slide__3{
+  position: absolute;
+  height: 587px;
+  width: 100%;
+}
+
+.slide__3__inner{
+  position: absolute;
+  padding-left: 930px;
+  z-index: 2;
+
+  transition: 1s;
+  
+  .slide__inner__text__comment{
+    .text__comment{
+      width: 440px;
+    }
+  }
+
+  .button__wrapper{
+    z-index: 2;
+    margin-left: -170px;
+    padding-left: 150px;
+    padding-bottom: 100px;
+  }
+}
+
+.slide__3__inner__open{
+  padding-left: 650px;
+  transition: 1s;
+}
+
+.slide__3__inner__text{
+  padding-bottom: 600px
+}
+
+.button__wrapper{
+  position: absolute;
+  padding-top: 500px;
+  padding-left: 40px;
+  transition: 1s;
+}
+
+.slide__2__inner__toright{
+  left: 385px;
+  width: 200px;
+  transition: 1s;
+}
+
+.slide__2__inner__toleft{
+  left: -305px;
+  width: 210px;
+  transition: 1s;
+}
+
+.slide__2__button__open{
+  padding-left: 100px;
+  transition: 1s;
+}
+
+.slide__2__button__open__left__hide{
+  opacity: 0;
+  transition: 1s;
+  margin-left: -400px;
+}
+
+.slide__2__button__open__right__hide{
+  opacity: 0;
+  transition: 1s;
+  margin-left: 250px !important;
+}
+
+.slide__3__button__open__center__hidetoleft{
+  opacity: 0;
+  transition: 1s;
+  margin-left: -250px !important;
+}
+
+.slide__3__button__open__left__hide{
+  opacity: 0;
+  transition: 1s;
+  margin-left: -200px;
+}
+
+.button__hide{
+  opacity: 0;
+  transition: 1s;
+}
+
+.slide__3__button__open{
+  margin-left: -250px !important;
+  padding-left: 250px !important;
+  transition: 1s;
+}
+
+.slide__3__button__hide{
+  opacity: 0;
+  transition: 1s;
+  margin-left: 20px !important;
+}
+
+.slide__inner__text{
+  position: absolute;
+  z-index: 1;
+  padding-top: 90px;
+  padding-left: 200px;
+
+  opacity: 0;
+
+  font-size: 4rem;
+  color: white;
+
+  transition: 1s;
+}
+
+.slide__inner__text__show{
+  opacity: 1;
+  transition: 1s;
+  padding-left: 40px;
+}
+
+.slide__3__inner__text__show{
+  opacity: 1;
+  transition: 1s;
+  padding-left: 0px;
+  padding-right: 600px;
+}
+
+.slide__inner__text__header{
+  height: 70px;
+}
+
+.slide__1__inner__text__header{
+  background: url("../img/icon-weight-gain.png") no-repeat left center;
+}
+
+.slide__2__inner__text__header{
+  background: url("../img/icon-weight-maintenance.png") no-repeat left center;
+}
+
+.slide__3__inner__text__header{
+  background: url("../img/icon-weight-loss.png") no-repeat left center;
+}
+
+
+.slide__inner__text__header__inner{
+  padding-left: 80px;
+
+  .header__1{
+    font-size: 2.66rem;
+  }
+  .header__2{
+    font-size: 1.77rem;
+  }
+}
+
+.slide__inner__text__comment{
+  padding-left: 80px;
+  padding-top: 35px;
+
+  .text__comment{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 0.9rem;
+    width: 540px;
+  }
+}
+
+
+
+
+
+

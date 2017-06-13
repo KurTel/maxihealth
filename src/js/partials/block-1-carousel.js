@@ -11,7 +11,7 @@ function Slider(slider){
   //находим элементы слайдера и превращаем их из коллекции в массив
   var sliderElements = [].slice.call(getSliderElements());
 
-  var sliderChangeInterval = 8000;
+  var sliderChangeInterval = 4000;
   var timerId = setInterval(sliderNextElement, sliderChangeInterval);
 
   var classPositionLeft = "slide__position__left";
