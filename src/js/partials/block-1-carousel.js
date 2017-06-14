@@ -11,7 +11,8 @@ function Slider(slider){
   //находим элементы слайдера и превращаем их из коллекции в массив
   var sliderElements = [].slice.call(getSliderElements());
 
-  var sliderChangeInterval = 4000;
+  var sliderChangeInterval = 8000;
+
   var timerId = setInterval(sliderNextElement, sliderChangeInterval);
 
   var classPositionLeft = "slide__position__left";
@@ -44,8 +45,18 @@ function Slider(slider){
     sliderElements[0].classList.remove(classPositionCenter);
     sliderElements[0].classList.add(classPositionLeft);
 
-    sliderElements[1].classList.remove(classPositionLeft);
+    sliderElements[1].classList.remove(classPositionRight);
     sliderElements[1].classList.add(classPositionCenter);
+
+    setTimeout( function (){
+      
+      sliderElements[0].classList.remove(classPositionLeft);
+      sliderElements[0].classList.add(classPositionRight);
+
+      shiftElements();
+      isAnimatedNow = false;
+
+      }, 2000);
 
     isAnimatedNow = true;
 
@@ -57,10 +68,10 @@ function Slider(slider){
 
     })
 
-    //changeBackground();
+    // //changeBackground();
 
-    shiftElements();
-    changeMarkers();
+    // shiftElements();
+    // changeMarkers();
   }
 
   function shiftElements(){

@@ -380,19 +380,25 @@ header{
   // transform: scaleX(2);
   // opacity: 0;
   // transition: 3s;
-  animation: animate 2s forwards;
+  // animation: animate 2s forwards;
+  left: -100%;
+  transition: 2s;
+  // visibility: hidden;
 }
 
 .slide__position__center{
   // opacity: 1;
   // left: 0px;
   // transition: 2s;
-  animation: animate_lol 2s forwards;
+  // animation: animate_lol 2s forwards;
+  left: 0px;
+  transition: 2s;
 }
 
 .slide__position__right{
-  left: 100px;
-  transition: 2s;
+  left: 100%;
+  // transition: 2s;
+  // visibility: hidden;
 }
 
 @keyframes animate {
