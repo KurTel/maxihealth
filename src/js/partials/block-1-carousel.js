@@ -71,7 +71,7 @@ function Slider(slider){
     // //changeBackground();
 
     // shiftElements();
-    // changeMarkers();
+    changeMarkers();
   }
 
   function shiftElements(){
