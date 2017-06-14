@@ -108,7 +108,7 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-.btn {
+.btn, .btn:active, .btn:hover{
   display: inline-block;
   padding: 0px 0px;
   margin-bottom: 0;
@@ -130,7 +130,7 @@ input::-webkit-inner-spin-button {
   border-radius: 4px;
 }
 
-.button__red{
+.button__red, .button__red:active, .button__red:hover{
   @extend .btn;
 
   padding: 0;
@@ -155,7 +155,7 @@ input::-webkit-inner-spin-button {
   box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.15);
 }
 
-.button__red__img{
+.button__red__img, .button__red__img:active, .button__red__img:hover{
   @extend .button__red;
 
   width: 230px;
