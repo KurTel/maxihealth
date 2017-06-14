@@ -1820,8 +1820,37 @@ header{
   }
 }
 
+/* ----- MODAL WINDOW ----- */
 
+.close{
+  color: red;
+}
 
+.modal__window{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(black, 0.8);
+  z-index: 1000;
+  display: none;
+  pointer-events: none;
+}
 
+.modal__window:target{
+  display: block;
+  pointer-events: auto;
+}
 
+.modal__window__inner{
+  position: relative;
+  margin: 0 auto;
+  color: white;
+  font-size: 2rem;
+  width: 1180px;
+  left: 0;
+  right: 0;
+
+}
 
