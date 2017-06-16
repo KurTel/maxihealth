@@ -128,6 +128,9 @@ input::-webkit-inner-spin-button {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+
+  &:focus {outline:none;}
+  &::-moz-focus-inner {border:0;}
 }
 
 .button__red, .button__red:active, .button__red:hover{
@@ -1823,4 +1826,46 @@ header{
     font-size: 0.9rem;
     width: 540px;
   }
+}
+
+/* ----- SCROLL-ON-TOP ----- */
+
+.button__scrollontop__wrapper{
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  z-index: 500;
+}
+
+.scrollontop {
+  vertical-align: middle;
+}
+
+.button__scrollontop, .button__scrollontop:hover, .button__scrollontop:active{
+  // height: 100px;
+  // width: 100px;
+  height: 6vw;
+  width: 6vw;
+  padding:0;
+  // border-radius: 100px;
+  border-radius: 10vw;
+  background-image: url("../img/scrollontop-icon.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  // background-size: 80px 80px;
+  background-size: 5vw 5vw;
+
+  opacity: 0.8;
+}
+
+.button__scrollontop__show{
+  opacity: 1;
+  transition: 2s;
+  z-index: 500;
+}
+
+.button__scrollontop__hide{
+  opacity: 0;
+  transition: 1s;
+  z-index: -500;
 }
