@@ -652,7 +652,7 @@ header{
     padding-top: 48px;
   }
 
-  .playbutton{
+  .playbutton, .playbutton:hover, .playbutton:active{
 
     @extend .btn;
     width: 180px;
