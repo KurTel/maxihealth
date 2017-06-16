@@ -1,3 +1,8 @@
+/* --- SCSS VARUIABLES --- */
+
+$RED_COLOR: #BD1318;
+$GREY_COLOR: #3d3c3c;
+
 /* ----- FONTS ----- */
 
 @font-face {
@@ -22,6 +27,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'PTRoubleSans';
+  src: url('../fonts/PTRoubleSans/PTRoubleSans.eot');
+  src: url('../fonts/PTRoubleSans/PTRoubleSans.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/PTRoubleSans/PTRoubleSans.woff') format('woff'),
+    url('../fonts/PTRoubleSans/PTRoubleSans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* ----- adjustment ----- */
 
 * {
@@ -38,6 +53,7 @@ html{
 
 button, input, optgroup, select, textarea{
   font-family: 'RopaSansProRegular', sans-serif;
+  text-transform: uppercase;
 }
 
 body{
@@ -108,6 +124,12 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
+input::placeholder{
+  font-size: 1.01rem;
+  text-align: left;
+  margin-left: 16px;
+}
+
 .btn, .btn:active, .btn:hover{
   display: inline-block;
   padding: 0px 0px;
@@ -148,11 +170,18 @@ input::-webkit-inner-spin-button {
   background-image: none;
 
   border: 0px solid rgba( black, .15 );
-  background-color: #BD1318;
+  background-color: $RED_COLOR;
 
   -webkit-box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.15);
   -moz-box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.15);
   box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.15);
+
+  transition: color 200ms;
+}
+
+.button__red:hover{
+  color: black;
+  transition: color 200ms;
 }
 
 .button__red__img, .button__red__img:active, .button__red__img:hover{
@@ -162,7 +191,14 @@ input::-webkit-inner-spin-button {
   padding-left: 25px;
   text-align: left;
   background: url("../img/button-icon-2.png") no-repeat 98% center;
-  background-color: #BD1318;
+  background-color: $RED_COLOR;
+
+  transition: color 200ms;
+}
+
+.button__red__img:hover{
+  color: black;
+  transition: 200ms;
 }
 
 .container{
@@ -178,11 +214,18 @@ input::-webkit-inner-spin-button {
 
 .h2header__min{
   font-size: 3.1em;
-  color :#3d3c3c;
+  color :$GREY_COLOR;
 }
 
 .h2header__big{
   font-size: 3.63em;
+}
+
+.paragraph-text{
+  font-family: 'PT Sans', sans-serif; 
+  font-size: 15.2px;
+  line-height: 1.6;
+  color: #616161;
 }
 
 
@@ -300,7 +343,7 @@ header{
   }
 
   a:hover{
-    border-bottom: 2px solid #BD1318;
+    border-bottom: 2px solid $RED_COLOR;
   }
 }
 
@@ -584,13 +627,6 @@ header{
   .panel__text{
     padding-top: 20px;
     height: 385px;
-
-    .text{
-      font-family: 'PT Sans', sans-serif;
-      font-size: 15.2px;
-      line-height: 1.6;
-      color: #616161;
-    }
   }
 }
 
@@ -754,7 +790,7 @@ header{
 
       padding-top: 40px;
       line-height: 1;
-      color: #3d3c3c;
+      color: $GREY_COLOR;
 
       .firstline{
         font-size: 2.5em;
@@ -816,7 +852,7 @@ header{
 .block__5{
   background: url("../img/block-5-background.png") no-repeat center center;
   height: 921px;
-  color: #3d3c3c;
+  color: $GREY_COLOR;
 
   .header__wraper{
     text-align: center;
@@ -1027,6 +1063,10 @@ header{
       }
   
       .select__activity{
+        color: #6c6c6c;
+        color: rgba(#6c6c6c,0);
+        text-shadow: 0 0 0 #6c6c6c;
+
         cursor: pointer;
         padding-left: 15px;
         padding-top: 2px;
@@ -1038,7 +1078,7 @@ header{
         text-align: left;
         width: 250px;
         vertical-align: top;
-        color: #6c6c6c;
+        //color: #6c6c6c;
         font-size: 1.2rem;
 
         -moz-appearance: none;
@@ -1151,7 +1191,7 @@ header{
     }
 
     .calc__result{
-      color: #3d3c3c;
+      color: $GREY_COLOR;
 
       text-align: center;
 
@@ -1331,7 +1371,7 @@ header{
   background: url("../img/block-7-relations.png") no-repeat center center;
   height: 825px;
   text-align: center;
-  color: #3d3c3c;
+  color: $GREY_COLOR;
 
   .block__7__wrapper{
     text-align: center;
@@ -1500,7 +1540,7 @@ header{
   }
 
   .contacts__highlight{
-    color: #BD1318; 
+    color: $RED_COLOR; 
   }
 }
 
@@ -1822,8 +1862,15 @@ header{
 
 /* ----- MODAL WINDOW ----- */
 
-.close{
-  color: red;
+.modal__text__red{
+  color: $RED_COLOR;
+}
+
+.img__wrapper{
+  position: absolute;
+  display: block;
+  right: 10px;
+  top: -35px;
 }
 
 .modal__window{
@@ -1836,21 +1883,281 @@ header{
   z-index: 1000;
   display: none;
   pointer-events: none;
+  width: 100%;
+  height: 100%;
 }
 
 .modal__window:target{
   display: block;
   pointer-events: auto;
+  animation-name: modal__show;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  animation-direction: forwards;
+}
+
+@keyframes modal__show {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 
 .modal__window__inner{
-  position: relative;
   margin: 0 auto;
-  color: white;
   font-size: 2rem;
   width: 1180px;
-  left: 0;
-  right: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.modal__body__left__panel{
+  float: left;
+  margin-left: -10px;
+  padding-top: 85px;
+  color: white;
+}
+
+.days__list__element{
+  padding: 34px 0;
+
+  .element__inner{
+    display: inline-block;
+    width: 105px;
+    background: $RED_COLOR;
+    border-radius: 10px 10px 0 0;
+    -webkit-transform: rotate(-90deg); //Chrome, Safari
+    -moz-transform: rotate(-90deg); //Firefox
+    -o-transform: rotate(-90deg); //Opera
+    -ms-transform: rotate(-90deg); //IE
+    transform: rotate(-90deg); //браузеры без префексов
+  }
+
+  .element__inner__text{
+    font-size: 1.23rem;
+    padding: 10px;
+    display: inline-block;
+  }
+}
+
+.modal__body__center{
+  position: relative;
+  width: 1060px;
+  height: 600px;
+  float: left;
+  margin-left: -33px;
+  text-align: left;
+}
+
+.body__center__left{
+  background: white;
+  width: 60%;
+  height: 100%;
+  float: left;
+  color: $GREY_COLOR;
+}
+
+.body__left__center__inner{
+  padding-left: 38px;
+}
+
+.body__center__left__header{
+  display: inline-block;
+  margin-top: 35px;
+  padding-right: 79px;
+  background: url("../img/icon-weight-loss-red.png") no-repeat right top;
+}
+
+.header__1__line{
+  padding-top: 15px;
+  font-size: 2.53rem; //2.23 ДЛЯ ПОДДЕРЖАНИЯ ВЕСА
 
 }
+.header__2__line *{
+  font-size: 1.52rem;
+}
+
+.modal__dots__wrapper{
+  display: inline;
+}
+
+.modal__dots, .modal__slash{
+  vertical-align: middle;
+}
+
+.body__center__left__description{
+  padding-top: 25px;
+}
+
+.description__wrapper{
+  max-height: 120px;
+  width: 550px;
+  overflow: hidden;
+}
+
+.body__center__left__facts{
+  padding-top: 10px;
+}
+
+.body__center__left__facts > *{
+  display: inline-block;
+  padding-right: 30px;
+}
+
+.modal__nutrition__text, .modal__delivery__text{
+  font-size: 1.14rem;
+  vertical-align: middle;
+
+}
+
+.body__center__left__delimiter__wrapper-1{
+    padding-top: 35px;
+}
+
+.body__center__left__delimiter{
+  margin-left: -10px;
+  height: 2px;
+  background: url("../img/dashes-horizontal.png") no-repeat left center;
+}
+
+.body__center__left__priceandpaymant{
+  padding: 10px 0;
+  line-height: 55px;
+  >*{
+    font-size: 2.78rem;
+  }
+}
+
+.priceandpaymant__rouble{
+  font-family: 'PTRoubleSans', sans-serif;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: -5px;
+  font-size: 2.34rem;
+}
+
+.typeofpayment__wrapper, .typeofpayment__wrapper:hover, .typeofpayment__wrapper:active{
+  // @extend input;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  width: 180px;
+  background: url("../img/activity-arrow-red.png") no-repeat scroll 93% 35% white !important;
+}
+
+.typeofpayment__select,
+.typeofpayment__select:hover,
+.typeofpayment__select:active,
+.typeofpayment__select:enabled{
+  color: $GREY_COLOR;
+  color: rgba($GREY_COLOR,0);
+  text-shadow: 0 0 0 $GREY_COLOR;
+
+  height: 40px;
+  margin-top: -30px;
+
+  cursor: pointer;
+  padding-left: 15px;
+  padding-top: 2px;
+  background: transparent none repeat scroll 0 0;
+
+  border: 0px solid #cccccc; //цвет рамки
+  border-radius: 0;
+  text-align: left;
+  width: 180px;
+  vertical-align: middle;
+  //color: #6c6c6c;
+  font-size: 1.14rem;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.typeofpayment__select option{
+  border: 0px solid #cccccc; //цвет рамки
+  background: #ffffff !important; // желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым
+  outline: none; // удаляет обводку в браузерах хром(желтая) и сафари(синяя)
+  height: 40px; // высота на свое усмотрение
+  // width: 250px; // ширина на свое усмотрение
+  color: #6c6c6c; //цвет шрифта в обычном состоянии
+  padding-left: 18px;
+  text-align: left;
+  font-size: 1.14rem;
+  vertical-align: middle;
+  line-height:85px;
+
+  padding-top: 10px;
+}
+
+.form__order__wrapper{
+  padding-top: 35px;
+}
+
+.typeofpayment__button__wrapper{
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.button__modal, .button__modal:hover, .button__modal:active{
+  padding: 0 20px;
+  font-size: 1.01rem;
+  height: 42px;
+}
+
+.form__order{
+  input{
+    height: 40px;
+    font-size: 1.01rem;
+    text-align: left;
+    padding-left: 20px;
+  }
+}
+
+.list__element{
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.form__order__input__name{
+  width: 212px;
+}
+
+.form__order__input__phone{
+  width: 176px;
+}
+
+.form__order__button, .form__order__button:hover{
+  padding: 0 10px;
+  margin-top: 7px;
+}
+
+.comment__wrapper{
+  padding-top: 25px;
+  width: 550px;
+}
+
+.comment-text{
+  line-height: 1;
+  font-size: 13.8px;
+}
+
+.body__center__right{
+  background: #ebebeb;
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+
+
 
