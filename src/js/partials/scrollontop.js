@@ -24,7 +24,7 @@ onloadInit.push( function(){
 
     setInterval( function (){
       
-        if(document.documentElement.scrollTop > offsetToShow){
+        if( window.scrollY > offsetToShow ){
             buttonOnTop.classList.remove("button__scrollontop__hide");
             buttonOnTop.classList.add("button__scrollontop__show");
         } else {
