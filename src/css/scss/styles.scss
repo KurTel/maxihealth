@@ -622,6 +622,11 @@ header{
   height: 657px;
   text-align: center;
 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   .container{
     text-align: center;
   }
@@ -1819,9 +1824,3 @@ header{
     width: 540px;
   }
 }
-
-
-
-
-
-
