@@ -1833,7 +1833,7 @@ header{
 .button__scrollontop__wrapper{
   position: fixed;
   left: 30px;
-  bottom: 30px;
+  bottom: 50px;
   z-index: 500;
 }
 
@@ -1855,11 +1855,11 @@ header{
   // background-size: 80px 80px;
   background-size: 5vw 5vw;
 
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 .button__scrollontop__show{
-  opacity: 1;
+  opacity: 0.75;
   transition: 2s;
   z-index: 500;
 }
@@ -1868,4 +1868,8 @@ header{
   opacity: 0;
   transition: 1s;
   z-index: -500;
+  height: 2vw;
+  width: 2vw;
+  background-size: 3vw 3vw;
+  margin-left: 1vw;
 }
