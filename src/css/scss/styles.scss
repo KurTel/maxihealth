@@ -1858,13 +1858,13 @@ header{
   opacity: 0.75;
 }
 
-.button__scrollontop__show{
+.button__scrollontop__show, .button__scrollontop__show:hover, .button__scrollontop__show:active{
   opacity: 0.75;
   transition: 2s;
   z-index: 500;
 }
 
-.button__scrollontop__hide{
+.button__scrollontop__hide,  .button__scrollontop__hide:hover, .button__scrollontop__hide:active{
   opacity: 0;
   transition: 1s;
   z-index: -500;
@@ -1872,4 +1872,5 @@ header{
   width: 2vw;
   background-size: 3vw 3vw;
   margin-left: 1vw;
+  visibility: hidden;
 }
