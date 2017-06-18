@@ -14,7 +14,7 @@
   <script src="js/main.js"></script>
 
 </head>
-<body id="top">
+<body>
   <div class="wrapper">
     <header class="header">
       <div class="container">
@@ -23,7 +23,6 @@
             <div class="header__logo">
               <a href="#" class="logo">
                 <img src="img/logo.png" alt="" class="logo_pic logo_main">
-                <!-- <img src="img/logo-text.png" alt="" class="logo_pic logo_text"> -->
               </a>
             </div>
           </div>
@@ -56,12 +55,12 @@
             <div class="header__menu">
               <nav class="nav">
                 <ul class="nav__menu">
-                  <li class="nav__menu__item"><a href="#about_us" class="nav__link">О компании</a></li>
-                  <li class="nav__menu__item"><a href="" class="nav__link">Наше меню</a></li>
-                  <li class="nav__menu__item"><a href="#calculator" class="nav__link">Калькулятор КБЖУ</a></li>
-                  <li class="nav__menu__item"><a href="#howitworks" class="nav__link">Как это работает</a></li>
-                  <li class="nav__menu__item"><a href="#relations" class="nav__link">Обратная связь</a></li>
-                  <li class="nav__menu__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+                  <li class="nav__menu__item"><a href="#about_us" scrollable class="nav__link">О компании</a></li>
+                  <li class="nav__menu__item"><a href="#modal__window"  class="nav__link">Наше меню</a></li>
+                  <li class="nav__menu__item"><a href="#calculator" scrollable class="nav__link">Калькулятор КБЖУ</a></li>
+                  <li class="nav__menu__item"><a href="#howitworks" scrollable class="nav__link">Как это работает</a></li>
+                  <li class="nav__menu__item"><a href="#relations" scrollable class="nav__link">Обратная связь</a></li>
+                  <li class="nav__menu__item"><a href="#contacts" scrollable class="nav__link">Контакты</a></li>
                 </ul>
               </nav>
             </div>
@@ -134,7 +133,7 @@
               <p class="maxihealth h2header__big">MAXI HEALTH KITCHEN?</p>
             </div>
             <div class="panel__text">
-              <p class="text">
+              <p class="paragraph-text">
                 Мышь кошельковая — довольно популярный сувенир. Но следует знать, что он имеет свою историю и магическое значение. Еще одна версия происхождения денежного талисмана под названием «кошельковая мышка» связывает его с городом Мышкин. Он был построен в 13-м веке на том месте, где мышь спасла от нападения змеи русского князя, и, если верить легенде, первая денежная кошельковая мышь появилась именно там. <br/> <br/>
 
                 Мышь кошельковая представляет собой небольшую, около сантиметра, фигурку мыши из натурального камня или металла. Как правило, она не мешает пользоваться кошельком благодаря минимальным габаритам. Мышка кошельковая не только притягивает деньги и помогает повысить доходы. Она еще и служит оберегом для вашего кошелька, защищая ваши денежные средства от ненужных трат, воровства и сглаза. 
@@ -325,7 +324,7 @@
                     <div class="calc__input__wrapper gender__wrapper">
                       <div class="calc__radio__1">
                         <input required type="radio" checked class="calc__radio" name="gender" id="gender_male" value="male">
-                        <label for="gender_male"">МУЖСКОЙ</label>
+                        <label for="gender_male">МУЖСКОЙ</label>
                         <div class="check"></div>
                       </div>
                       <div class="calc__radio__2">
@@ -403,7 +402,7 @@
                     <div class="calc__input__wrapper">
                       <div class="calc__target__radio__loss">
                         <input required type="radio" checked class="calc__radio" name="target" id="target_loss_weight" value="lose">
-                        <label for="target_loss_weight"">СБРОСИТЬ ВЕС</label>
+                        <label for="target_loss_weight">СБРОСИТЬ ВЕС</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__loss"></div>
                       </div>
@@ -736,5 +735,110 @@
       <button class="button__red button__scrollontop button__scrollontop__hide"  onclick="scrollOnTop(1000);" id="on-top-button"></button>
     </div>
 
+  <div class="modal__window" id="modal__window">
+    <div class="modal__window__inner">
+      <div class="img__wrapper">
+        <a href="#close" title="Закрыть" class="close">
+          <img src="/img/close-img.png" class="close-img" alt="close-img">
+        </a>
+      </div>
+      <div class="modal__body__wrapper">
+        <div class="modal__body__left__panel">
+          <ul class="days__list">
+            <li class="days__list__element ">
+              <div class="element__inner">
+                <p class="element__inner__text">14 ДНЕЙ</p>
+              </div>
+            </li>
+            <li class="days__list__element">
+              <div class="element__inner">
+                <p class="element__inner__text">7 ДНЕЙ</p>
+              </div>
+            </li>
+            <li class="days__list__element">
+              <div class="element__inner">
+                <p class="element__inner__text">5 ДНЕЙ</p>
+              </div>
+            </li>
+            <li class="days__list__element">
+              <div class="element__inner">
+                <p class="element__inner__text">3 ДНЯ</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="modal__body__center">
+          <div class="body__center__left">
+            <div class="body__left__center__inner">
+              <div class="body__center__left__header">
+                <div class="header__1__line">ПИТАНИЕ НА СНИЖЕНИЕ ВЕСА</div>
+                <div class="header__2__line">
+                  <span class="header__2__line__inner">НА 30 ДНЕЙ</span>
+                  <img src="img/modal-dots.png" alt="dots" class="modal__dots">
+                  <span class="terget__kcal modal__text__red">1200 ККАЛ</span>
+                  <img src="img/modal-slash.png" alt="slash" class="modal__slash">
+                  <span class="terget__kcal2">1500 ККАЛ</span>
+                </div>
+              </div>
+              <div class="body__center__left__description ">
+                <div class="description__wrapper">
+                  <p class="paragraph-text">Мышь кошельковая — довольно популярный сувенир. Но следует знать, что он имеет свою историю и магическое значение. Мышь кошельковая представляет собой небольшую, около сантиметра, фигурку мыши из натурального камня или металла. Как правило, она не мешает пользоваться кошельком благодаря минимальным габаритам.
+                  </p>
+                </div>
+              </div>
+              <div class="body__center__left__facts">
+                <div class="modal__nutrition">
+                  <img src="/img/modal-nutrition.png" alt="nutrition" class="nutririon-img">
+                  <span class="modal__nutrition__text">5 - РАЗОВОЕ ПИТАНИЕ</span>
+                </div>
+                <div class="modal__delivery">
+                  <img src="/img/modal-delivery.png" alt="delivery" class="delivery-img">
+                  <span class="modal__delivery__text">ДОСТАВКА НА ДОМ</span>
+                </div>
+              </div>
+              <div class="body__center__left__delimiter__wrapper-1">
+                <div class="body__center__left__delimiter"></div>
+              </div>
+              <div class="body__center__left__priceandpaymant">
+                <span class="priceandpaymant__price">3000</span>
+                <span class="priceandpaymant__rouble">Л</span>
+                <div class="typeofpayment__wrapper">
+                  <select required name="type-of-payment" class="typeofpayment__select" id="type-of-payment">
+                    <option checked value="online">ОПЛАТА ОНЛАЙН</option>
+                    <option value="cash">ОПЛАТА ПРИ ПОЛУЧЕНИИ</option>
+                  </select>
+                </div>
+                <div class="typeofpayment__button__wrapper">
+                  <button class="button__red button__modal">ПЕРЕЙТИ К ОПЛАТЕ КАРТОЙ</button>
+                </div>
+              </div>
+              <div class="body__center__left__delimiter__wrapper-2">
+                <div class="body__center__left__delimiter"></div>
+              </div>
+              <div class="form__order__wrapper">
+                <form action="" onsubmit="return false;" class="form__order">
+                  <div class="list__wrapper">
+                    <ul class="form__list">
+                      <li class="list__element"><input type="text" class="form__order__input form__order__input__name" placeholder="ВВЕДИТЕ ВАШЕ ИМЯ"></li>
+                      <li class="list__element"><input type="text" class="form__order__input form__order__input__phone" placeholder="ВАШЕ ТЕЛЕФОН"></li>
+                      <li class="list__element element__button"><button class="button__red button__modal form__order__button" >ЗАКАЗАТЬ ДОСТАВКУ</button></li>
+                    </ul>
+                  </div>
+                </form>
+              </div>
+              <div class="comment__wrapper">
+                <div class="comment paragraph-text comment-text">
+                  Введите своё имя и номер телефона. Наш менеджер свяжется с вами для уточнения заказа и ответит на все ваши вопросы.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="body__center__right"></div>
+        </div>
+        <div class="modal__body__right__panel">
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
