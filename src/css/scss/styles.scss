@@ -86,20 +86,20 @@ button, input, optgroup, select, textarea{
   text-transform: uppercase;
 }
 
-input:focus,
-input:hover,
-input:active,
-input:checked,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-    border: none;
-    background: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    outline-color: transparent;
-    box-shadow:none;
-}
+// input:focus,
+// input:hover,
+// input:active,
+// input:checked,
+// select:focus,
+// textarea:focus,
+// button:focus {
+//     outline: none;
+//     border: none;
+//     background: none;
+//     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+//     outline-color: transparent;
+//     box-shadow:none;
+// }
 
 body{
   width: 100%;
@@ -131,10 +131,20 @@ a, a:visited, a:hover, a:active{
 
 .wrapper{
   position: relative;
-  width: 100%;
+  
   margin: 0 auto;
   overflow: hidden;
-  // width: 1260px;
+  
+  //на десктопах чтобы показывалось 1920+
+  //на мобайлах и таблетах скейлилось под 1260
+  @media (min-width:320px) { width: 100%; }
+  @media (min-width:321px) and (max-width:480px)  { width: 100%; }
+  @media (min-width:481px) and (max-width:640px)  { width: 1260px; }
+  @media (min-width:641px) and (max-width:960px)  { width: 1260px; }
+  @media (min-width:961px) and (max-width:1024px)  { width: 1260px; }
+  @media (min-width:1025px) and (max-width:1280px) { width: 1260px; }
+  @media (min-width:1281px) and (min-width:1920px) { width: 100%; }
+  @media (min-width:1921px) { width: 1920px; }
 }
 
 ul{
