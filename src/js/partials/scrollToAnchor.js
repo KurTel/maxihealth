@@ -14,7 +14,7 @@ onloadInit.push(
 
 //5321.111328125
 
-    function scrollToAnchor(scrollDuration, distToTop) {
+    function scrollToAnchor(scrollDuration, distToTop, href) {
     const   scrollHeight = window.scrollY,
             scrollStep = Math.PI / ( scrollDuration / 15 );
             // cosParameter = scrollHeight / 2;
@@ -47,14 +47,11 @@ onloadInit.push(
                     scrollCount = scrollCount + 1;  
                     scrollMargin = cosParameter - cosParameter * Math.cos( scrollCount * scrollStep );
                     window.scrollTo( 0, ( scrollHeight + scrollMargin ) );
-                    // console.log("cosParameter = " + cosParameter);
-                    // console.log("scrollStep = " + scrollStep);
-                    // console.log("scrollCount = " + scrollCount);
-                    // console.log("scrollMargin = " + scrollMargin);
-                    // console.log("distToTop = " + distToTop);
-                    // console.log("scrollHeight = " + scrollHeight);
                 } 
-                else clearInterval(scrollInterval);
+                else {
+                    clearInterval(scrollInterval);
+                    location = href;
+                }
             }, 15);
     }
     
@@ -64,21 +61,14 @@ onloadInit.push(
             disttotop = idofhref.offsetTop,
             length = Math.abs(disttotop - bod.scrollTop),
             timing;
-        // if (Math.abs(length) < 500) {
             timing = 1000;
-        // }
-        // if (Math.abs(length) > 2500) {
-        //     timing = 2500;
-        // } else {
-        //     timing = length;
-        // }
-        scrollToAnchor(timing, disttotop);
+
+        scrollToAnchor(timing, disttotop, this.getAttribute('href'));
         evt.preventDefault();
     }
 
     var elements = document.getElementsByTagName("a");
-    // console.log(elements);
-    // console.log(elements.length);
+
     for (var i = 0; i < elements.length; ++i) {
 
         console.log("elements");
@@ -88,4 +78,21 @@ onloadInit.push(
             elements[i].addEventListener('click', boo);
         }
     }
+
+    var headerMenu = document.getElementById("header-menu");
+    var headerLinks = headerMenu.getElementsByTagName("a");
+
+    // for (var i = 0; i < elements.length; ++i) {
+
+    //     console.log("elements");
+    //     var href = elements[i].getAttribute('href');
+
+    //     if (href.indexOf("#") === 0 && elements[i].hasAttribute("scrollable")) {
+    //         elements[i].addEventListener('click', function(){
+    //                 headerMenu.classList.add("header__hide");
+    //             }
+    //         )
+    //     }
+    // }
+
 });

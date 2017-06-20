@@ -7,7 +7,8 @@
 
   <title>Maxihealth kitchen</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=0">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -45,18 +46,30 @@
                       <img src="img/logo_vk.png" alt="" class="social_pic">
                     </a>
                   </li>
+                  <li class="social__item display-hide">
+                    <a href="" class="social_link">
+                      <img src="img/telephone-icon.png" alt="" class="social_pic">
+                    </a>
+                  </li>
                 </ul>
               </div>
-              <div class="header__phone">
+              <div class="header__phone mobile-hide">
                 +7 913 894-00-28
               </div>
-
+              <div class="mobile__menu__button__wrapper display-hide">
+                <a href="#header-menu"><img src="img/menu-icon.png" alt="" class="mobile__menu__icon"></a>
+              </div>
+        
             </div>
-            <div class="header__menu">
+            <div class="header__menu" id="header-menu">
+              <div class="close__button__wrapper display-hide">
+                <a href="#close"><img src="img/close-img.png" alt="" class="close__button"></a>
+              </div>
               <nav class="nav">
                 <ul class="nav__menu">
                   <li class="nav__menu__item"><a href="#about_us" scrollable class="nav__link">О компании</a></li>
-                  <li class="nav__menu__item"><a href="#modal__window"  class="nav__link">Наше меню</a></li>
+                  <li class="nav__menu__item"><a href="" class="nav__link">Наше меню</a></li>
+                  <!-- <li class="nav__menu__item"><a href="#modal__window" class="nav__link">Наше меню</a></li> -->
                   <li class="nav__menu__item"><a href="#calculator" scrollable class="nav__link">Калькулятор КБЖУ</a></li>
                   <li class="nav__menu__item"><a href="#howitworks" scrollable class="nav__link">Как это работает</a></li>
                   <li class="nav__menu__item"><a href="#relations" scrollable class="nav__link">Обратная связь</a></li>
@@ -82,16 +95,16 @@
               <div class="block__1__description">
                 <ul class="des__menu bigtext">
                   <li class="des__menu__item">
-                    &ndash; ДРОБНОЕ 5-РАЗОВОЕ ПИТАНИЕ НА КАЖДЫЙ ДЕНЬ
+                    <span class="li__inner__dash">&ndash;</span>  <span class="li__inner__text">ДРОБНОЕ 5-РАЗОВОЕ ПИТАНИЕ НА КАЖДЫЙ ДЕНЬ</span>
                   </li>
                   <li class="des__menu__item">
-                    &ndash; ВСЕ ПРИЁМЫ СБАЛАНСИРОВАНЫ ПО КБЖУ
+                    <span class="li__inner__dash">&ndash;</span>  <span class="li__inner__text">ВСЕ ПРИЁМЫ СБАЛАНСИРОВАНЫ ПО КБЖУ</span>
                   </li>
                   <li class="des__menu__item">
-                    &ndash; НЕ НУЖНО СТОЯТЬ У ПЛИТЫ И ХОДИТЬ В МАГАЗИН
+                    <span class="li__inner__dash">&ndash;</span>  <span class="li__inner__text">НЕ НУЖНО СТОЯТЬ У ПЛИТЫ И ХОДИТЬ В МАГАЗИН</span>
                   </li>
                   <li class="des__menu__item">
-                    &ndash; ЦЕНА ЗА ПОРЦИЮ...
+                    <span class="li__inner__dash">&ndash;</span>  <span class="li__inner__text">ЦЕНА ЗА ПОРЦИЮ...</span>
                   </li>
                 </ul>
               </div>
@@ -99,8 +112,8 @@
                 <button class="button__red__img btn__order">ОФОРМИТЬ ЗАКАЗ</button>
               </div>
             </div>
-            <div class="block__1__prouct">
-              <img src="img/maxihealth_product.png " alt="" class="maxihealth_product">
+            <div class="block__1__prouct mobile-hide">
+              <img src="img/maxihealth_product.png " alt="maxihealth-product" class="maxihealth_product">
             </div>
           </div>
         </div>
@@ -164,18 +177,6 @@
       </div>
     </div>
 
-<!-- 
-    <div class="parallax">
-      <div class="parallax__layer parallax__layer--back">
-        <div class="par__back">BACKGROUND</div>
-      </div>
-      <div class="parallax__layer parallax__layer--base">
-        <div class="par__front">FOREGROUND</div>
-      </div>
-    </div>
- -->
-
-
 
     <div class="block__3">
       <div class="container">
@@ -203,30 +204,12 @@
           </div>
           <div class="header">
             <h2 class="firstline">УСПЕХ ДЛЯ КАЖДОГО</h2>
-            <h2 class="secondline">ВЫБЕРИ ПРОГРАММУ ДЛЯ СЕБЯ</h2>
+            <h2 class="secondline">ВЫБЕРИ ПРОГРАММУ ДЛЯ СЕБЯ!</h2>
           </div>
         </div>
       </div>
       <div class="divspacing"></div>
-      <!-- <div class="block__4__type">
-        <div class="container">
-          <div class="block__4__type__wrapper">
-            <div class="typeicons">
-              <div class="typeicons__item typeicons__item___1"><img src="img/icon-weight-gain.png" alt="" class="typeicon"></div>
-              <div class="typeicons__item typeicons__item___2"><img src="img/icon-weight-maintenance.png" alt="" class="typeicon"></div>
-              <div class="typeicons__item typeicons__item___3"><img src="img/icon-weight-loss.png" alt="" class="typeicon"></div>
-            </div>
-            <div class="typebuttons">
-              <div class="typebuttons__item"><button class="button__red__img typebutton">НА МАССУ</button></div>
-              <div class="spacingdiv"></div>
-              <div class="typebuttons__item"><button class="button__red__img typebutton">НА ПОДДЕРЖАНИЕ</button></div>
-              <div class="spacingdiv"></div>
-              <div class="typebuttons__item"><button class="button__red__img typebutton">НА СНИЖЕНИЕ</button></div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <div class="block__slider" id="superslider">
+      <div class="block__slider mobile-hide" id="superslider">
         <div class="slide slide__1">
           <div class="container">
             <div class="slide__inner">
@@ -289,6 +272,17 @@
           </div>
         </div>
       </div>
+      <div class="block__1__slide-2 block__1__slide__element slide__show slide__position__center display-hide">
+          <div class="container">
+            <div class="typebuttons">
+              <div class="typebuttons__item"><button class="button__red__img typebutton">НА МАССУ</button></div>
+              <div class="spacingdiv"></div>
+              <div class="typebuttons__item"><button class="button__red__img typebutton">НА ПОДДЕРЖАНИЕ</button></div>
+              <div class="spacingdiv"></div>
+              <div class="typebuttons__item"><button class="button__red__img typebutton">НА СНИЖЕНИЕ</button></div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <div class="block__5"  id="calculator">
@@ -311,25 +305,25 @@
               </div>
             </div>
           </div>
-          <div class="calc__body calc__body__front bigtext calc__show__display" id="calc__body__front">
+          <div class="calc__body calc__body__front calc__parameter__text calc__show__display" id="calc__body__front">
             <form class="calcform" name="calculator" onsubmit="calculator.logFunction">
               <ul class="calc__list__parameters">
                 <li class="calc__list__line gender__line">
                   <div class="calc__line">
                     <div class="calc__parameter">
-                      <p class="parameter__text">ВАШ ПОЛ</p>
+                      <p class="parameter__text calc__parameter__text">ВАШ ПОЛ</p>
                     </div>
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper gender__wrapper">
                       <div class="calc__radio__1">
                         <input required type="radio" checked class="calc__radio" name="gender" id="gender_male" value="male">
-                        <label for="gender_male">МУЖСКОЙ</label>
+                        <label class="calc__parameter__text" for="gender_male">МУЖСКОЙ</label>
                         <div class="check"></div>
                       </div>
                       <div class="calc__radio__2">
                         <input required type="radio" class="calc__radio" name="gender" id="gender_female" value="female">
-                        <label for="gender_female">ЖЕНСКИЙ</label>
+                        <label class="calc__parameter__text" for="gender_female">ЖЕНСКИЙ</label>
                         <div class="check"></div>
                       </div>
                     </div>
@@ -338,55 +332,55 @@
                 <li class="calc__list__line age__line">
                   <div class="calc__line">
                     <div class="calc__parameter">
-                      <p class="parameter__text">ВАШ ВОЗРАСТ</p>
+                      <p class="parameter__text calc__parameter__text" >ВАШ ВОЗРАСТ</p>
                     </div>
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
                       <input required type="number" checked class="" name="age" id="calc__age">
-                      <label class="lineend" for="calc__age">ЛЕТ</label>
+                      <label class="lineend calc__parameter__text" for="calc__age" >ЛЕТ</label>
                     </div>
                   </div>
                 </li>
                 <li class="calc__list__line height__line">
                   <div class="calc__line">
                     <div class="calc__parameter">
-                      <p class="parameter__text">ВАШ РОСТ</p>
+                      <p class="parameter__text calc__parameter__text">ВАШ РОСТ</p>
                     </div>
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
                       <input required type="number" checked class="" name="height" id="calc__height">
-                      <label class="lineend" for="calc__height">СМ</label>
+                      <label class="lineend calc__parameter__text" for="calc__height">СМ</label>
                     </div>
                   </div>
                 </li>
                 <li class="calc__list__line weight__line">
                   <div class="calc__line">
                     <div class="calc__parameter">
-                      <p class="parameter__text">ВАШ ВЕС</p>
+                      <p class="parameter__text calc__parameter__text">ВАШ ВЕС</p>
                     </div>
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
                       <input required type="number" checked class="" name="weight" id="calc__height">
-                      <label class="lineend" for="calc__height">КГ</label>
+                      <label class="lineend" for="calc__height calc__parameter__text">КГ</label>
                     </div>
                   </div>
                 </li>
                 <li class="calc__list__line activity__line">
                   <div class="calc__line">
                     <div class="calc__parameter">
-                      <p class="parameter__text">ОБРАЗ ЖИЗНИ</p>
+                      <p class="parameter__text calc__parameter__text">ОБРАЗ ЖИЗНИ</p>
                     </div>
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
                       <div class="activity__wrapper">
                         <select required name="activity" class="select__activity" id="calc__activity">
-                          <option checked value="low">НИЗКАЯ АКТИВНОСТЬ</option>
-                          <option value="norm">СРЕДНЯЯ АКТИВНОСТЬ</option>
-                          <option value="high">ВЫСОКАЯ АКТИВНОСТЬ</option>
+                          <option checked class="calc__parameter__text" value="low">НИЗКАЯ АКТИВНОСТЬ</option>
+                          <option class="calc__parameter__text" value="norm">СРЕДНЯЯ АКТИВНОСТЬ</option>
+                          <option class="calc__parameter__text" value="high">ВЫСОКАЯ АКТИВНОСТЬ</option>
                         </select>
                       </div>
                     </div>
@@ -394,27 +388,27 @@
                 </li>
                 <li class="calc__list__line calc__list__line__target">
                   <div class="calc__line">
-                    <div class="calc__parameter">
-                      <p class="parameter__text">ВАША ЦЕЛЬ</p>
+                    <div class="calc__parameter calc__parameter__target">
+                      <p class="parameter__text calc__parameter__text">ВАША ЦЕЛЬ</p>
                     </div>
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
                       <div class="calc__target__radio__loss">
                         <input required type="radio" checked class="calc__radio" name="target" id="target_loss_weight" value="lose">
-                        <label for="target_loss_weight">СБРОСИТЬ ВЕС</label>
+                        <label  class="calc__parameter__text" for="target_loss_weight">СБРОСИТЬ ВЕС</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__loss"></div>
                       </div>
                       <div class="calc__target__radio__gain">
                         <input required type="radio" class="calc__radio" name="target" id="target_gain_weight"  value="gain">
-                        <label for="target_gain_weight">НАБРАТЬ МАССУ</label>
+                        <label class="calc__parameter__text" for="target_gain_weight">НАБРАТЬ МАССУ</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__gain"></div>
                       </div>
                       <div class="calc__target__radio__main">
                         <input required type="radio" class="calc__radio" name="target" id="target_maintenance_weight"  value="main">
-                        <label for="target_maintenance_weight">ПОДДЕРЖАТЬ ВЕC</label>
+                        <label class="calc__parameter__text" for="target_maintenance_weight">ПОДДЕРЖАТЬ ВЕC</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__main"></div>
                       </div>
@@ -430,14 +424,14 @@
           <div class="calc__body calc__body__result bigtext calc__hide__display" id="calc__body__result">
             <div class="calc__result">
               <div class="calc__result__inner daily__allowance">
-                <div class="inner__header">
+                <div class="inner__header inner__header__daily">
                   <p class="inner__header__text">СУТОЧНАЯ НОРМА КАЛОРИЙ</p>
                 </div>
                 <div class="inner__body">
                   <ul class="formulas__list">
                     <li class="formula__element">
                       <div class="formula__type">
-                        <p class="formula__type__text">ПО СРЕДНЕМУ РАСХОДУ НА КИЛОГРАММ</p>
+                        <p class="formula__type__text bigtext bigtext">ПО СРЕДНЕМУ РАСХОДУ НА КИЛОГРАММ</p>
                       </div>
                       <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
                       <div class="formula__result">
@@ -446,7 +440,7 @@
                     </li>
                     <li class="formula__element">
                       <div class="formula__type">
-                        <p class="formula__type__text">ПО ФОРМУЛЕ ХАРРИСА-БЕНЕДИКТА</p>
+                        <p class="formula__type__text bigtext">ПО ФОРМУЛЕ ХАРРИСА-БЕНЕДИКТА</p>
                       </div>
                       <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
                       <div class="formula__result">
@@ -455,7 +449,7 @@
                     </li>
                     <li class="formula__element">
                       <div class="formula__type">
-                        <p class="formula__type__text">ПО ФОРМУЛЕ МИФФЛИНА - САН ЖЕОРА</p>
+                        <p class="formula__type__text bigtext">ПО ФОРМУЛЕ МИФФЛИНА - САН ЖЕОРА</p>
                       </div>
                       <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
                       <div class="formula__result">
@@ -473,7 +467,7 @@
                   <ul class="formulas__list">
                     <li class="formula__element">
                       <div class="formula__type">
-                        <p class="formula__type__text">ДИАПАЗОН КАЛОРИЙ</p>
+                        <p class="formula__type__text bigtext">ДИАПАЗОН КАЛОРИЙ</p>
                       </div>
                       <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
                       <div class="formula__result">
@@ -482,7 +476,7 @@
                     </li>
                     <li class="formula__element">
                       <div class="formula__type">
-                        <p class="formula__type__text">ПО ФОРМУЛЕ ХАРРИСА-БЕНЕДИКТА</p>
+                        <p class="formula__type__text bigtext">ПО ФОРМУЛЕ ХАРРИСА-БЕНЕДИКТА</p>
                       </div>
                       <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
                       <div class="formula__result">
@@ -491,7 +485,7 @@
                     </li>
                     <li class="formula__element">
                       <div class="formula__type">
-                        <p class="formula__type__text">ПО ФОРМУЛЕ МИФФЛИНА - САН ЖЕОРА</p>
+                        <p class="formula__type__text bigtext">ПО ФОРМУЛЕ МИФФЛИНА - САН ЖЕОРА</p>
                       </div>
                       <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
                       <div class="formula__result">
@@ -528,17 +522,17 @@
                   <ul class="we__are__list">
                       <li class="we__are__element">
                         <div class="text__wrapper">
-                          <p class="bigtext">ВЫБИРАЕТЕ ПРОГРАММУ ПОД ВАШИ ЦЕЛИ<br/>И ЗАДАЧИ</p>
+                          <p class="bigtext we__are__element__text">ВЫБИРАЕТЕ ПРОГРАММУ ПОД ВАШИ ЦЕЛИ<br/>И ЗАДАЧИ</p>
                         </div>
                       </li>
                       <li class="we__are__element">
                         <div class="text__wrapper">
-                          <p class="bigtext">ДЕЛЕАЕТЕ ЗАКАЗ ЧЕРЕЗ САЙТ ИЛИ ПО ТЕЛЕФОНУ</p>
+                          <p class="bigtext we__are__element__text">ДЕЛЕАЕТЕ ЗАКАЗ ЧЕРЕЗ САЙТ ИЛИ ПО ТЕЛЕФОНУ</p>
                         </div>
                       </li>
                       <li class="we__are__element">
                         <div class="text__wrapper">
-                          <p class="bigtext">ПРАВИЛЬНО ПИТАЕТЕСЬ В ТЕЧЕНИИ ВСЕГО ДНЯ</p>
+                          <p class="bigtext we__are__element__text">ПРАВИЛЬНО ПИТАЕТЕСЬ В ТЕЧЕНИИ <br class="display__hide"> ВСЕГО ДНЯ</p>
                         </div>
                       </li>
                   </ul>
@@ -552,17 +546,17 @@
                   <ul class="we__are__list">
                       <li class="we__are__element">
                         <div class="text__wrapper">
-                          <p class="bigtext">ОСУЩУСТВЛЯЕМ ПРИГОТОВЛЕНИЕ ЕДЫ</p>
+                          <p class="bigtext we__are__element__text">ОСУЩУСТВЛЯЕМ ПРИГОТОВЛЕНИЕ ЕДЫ</p>
                         </div>
                       </li>
                       <li class="we__are__element">
                         <div class="text__wrapper">
-                          <p class="bigtext">РАСКЛАДЫВАЕМ ЕЁ ПО ПОРЦИЯМ</p>
+                          <p class="bigtext we__are__element__text">РАСКЛАДЫВАЕМ ЕЁ ПО ПОРЦИЯМ</p>
                         </div>
                       </li>
                       <li class="we__are__element">
                         <div class="text__wrapper">
-                          <p class="bigtext">ОСУЩЕСТВЛЯЕМ ДОСТАВКУ В ЛЮБУЮ ТОЧКУ<br/>ГОРОДА</p>
+                          <p class="bigtext we__are__element__text">ОСУЩЕСТВЛЯЕМ ДОСТАВКУ В ЛЮБУЮ ТОЧКУ<br/>ГОРОДА</p>
                         </div>
                       </li>
                   </ul>
@@ -584,7 +578,7 @@
           </div>
           <div class="block__7__content">
             <div class="content__inner left__content">
-              <div class="message__form__icon">
+              <div class="message__form__icon mobile-hide">
                 <img src="img/message-icon.png" alt="" class="">
               </div>
               <div class="form__header">
@@ -600,7 +594,7 @@
                         ВАШЕ ИМЯ
                       </p>
                     </div>
-                    <div class="message__input__wrapper"><input type="text"></div>
+                    <div class="message__input__wrapper"><input type="text" name="name" placeholder="Ваше имя"</div>
                   </li>
                   <li class="massage__line">
                     <div class="message__parameter">
@@ -608,7 +602,7 @@
                         E-MAIL
                       </p>
                     </div>
-                    <div class="message__input__wrapper"><input type="text"></div>
+                    <div class="message__input__wrapper"><input type="text" name="email" placeholder="e-mail"></div>
                   </li>
                   <li class="massage__line message__line__textarea">
                     <div class="message__parameter">
@@ -616,7 +610,7 @@
                         СООБЩЕНИЕ
                       </p>
                     </div>
-                    <div class="message__input__wrapper textarea__wrapper"><textarea type="text"></textarea>
+                    <div class="message__input__wrapper textarea__wrapper"><textarea type="text" name="message" placeholder="сообщение"></textarea>
                   </li>
                 </ul>
                 <div class="button__submit__wrapper">
@@ -625,11 +619,11 @@
               </form>
 
             </div>
-            <div class="block__7__content__delimeter">
+            <div class="block__7__content__delimeter mobile-hide">
               <img src="img/dashes.png" alt="" class="">
             </div>
             <div class="content__inner right__content">
-              <div class="message__form__icon">
+              <div class="message__form__icon mobile-hide">
                 <img src="img/phone-icon.png" alt="" class="">
               </div>
               <div class="form__header">
@@ -645,7 +639,7 @@
                         ВАШЕ ИМЯ
                       </p>
                     </div>
-                    <div class="message__input__wrapper"><input type="text"></div>
+                    <div class="message__input__wrapper" ><input type="text" placeholder="Ваше имя"></div>
                   </li>
                   <li class="massage__line">
                     <div class="message__parameter">
@@ -653,11 +647,14 @@
                         ТЕЛЕФОН
                       </p>
                     </div>
-                    <div class="message__input__wrapper"><input type="text"></div>
+                    <div class="message__input__wrapper" ><input type="tel" placeholder="телефон"></div>
                   </li>
                 </ul>
-                <div class="button__submit__wrapper">
+                <div class="button__submit__wrapper button__order__wrapper">
                   <button class="button__red submit__button">ЗАКАЗАТЬ ЗВОНОК</button>
+                </div>
+                <div class="callback__wrapper bigtext">
+                  МЫ ВАМ ПЕРЕЗВОНИМ!
                 </div>
               </form>
 

@@ -13,7 +13,7 @@ function Slider(slider){
 
   var sliderChangeInterval = 8000;
 
-  var timerId = setInterval(sliderNextElement, sliderChangeInterval);
+  // var timerId = setInterval(sliderNextElement, sliderChangeInterval);
 
   var classPositionLeft = "slide__position__left";
   var classPositionCenter = "slide__position__center";
@@ -33,6 +33,15 @@ function Slider(slider){
   //маркеры
   var markers = document.getElementById("slider__markers__position");
   markers.addEventListener("click", sliderNextElement);
+
+  //выравниваме все блоки по по высоте по второму блоку
+  setSliderHeight(numberList);
+  onResize.push( setSliderHeight );
+
+  function setSliderHeight(){
+    sliderElements[numberList[0]].style.height = sliderElements[numberList[1]].getBoundingClientRect().height + "px";
+    slider.style.height = sliderElements[0].getBoundingClientRect().height + "px";
+  }
 
   function getSliderElements(){
     return slider.getElementsByClassName("block__1__slide__element");
@@ -78,6 +87,7 @@ function Slider(slider){
     // console.log(sliderElements);
 
     sliderElements.push(sliderElements.shift());
+    numberList.push(numberList.shift());
 
     // console.log(sliderElements);
   }

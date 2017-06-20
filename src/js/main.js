@@ -6,8 +6,6 @@
  * Dependencies
  */
 
-//= vendor/scrollToAnchor.js
-
 /*
  * Custom
  */
@@ -17,3 +15,4 @@
 //= partials/superslider.js
 //= partials/calculator.js
 //= partials/scrollontop.js
+//= partials/scrollToAnchor.js

@@ -114,7 +114,7 @@ function Calculator(){
     calcBodyFront.classList.add(classHide);
 
     calcForm.onsubmit = function (){
-      return false;   //сбросили функцию чтобы не лагало конда много рз жмёшь
+      return false;   //сбросили функцию чтобы не лагало когда много раз жмёшь
     };
 
     setTimeout( function(){
@@ -133,7 +133,7 @@ function Calculator(){
     calcBodyResult.classList.remove(classShow);
     calcBodyResult.classList.add(classHide);
 
-    buttonRecalc.onclick = function (){}; //сбросили функцию чтобы не лагало конда много рз жмёшь
+    buttonRecalc.onclick = function (){}; //сбросили функцию чтобы не лагало когда много раз жмёшь
 
     setTimeout( function(){
       calcBodyResult.classList.remove(classShowDisplay);
