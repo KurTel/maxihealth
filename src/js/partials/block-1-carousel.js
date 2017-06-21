@@ -13,7 +13,8 @@ function Slider(slider){
 
   var sliderChangeInterval = 4000;
 
-  var timerId = setInterval(sliderNextElement, sliderChangeInterval);
+  var timerId = setSliderInterval(sliderChangeInterval);
+  var sliderDownSpeedTimer = null;
 
   var classPositionLeft = "slide__position__left";
   var classPositionCenter = "slide__position__center";
@@ -33,6 +34,7 @@ function Slider(slider){
   //маркеры
   var markers = document.getElementById("slider__markers__position");
   markers.addEventListener("click", sliderNextElement);
+  markers.addEventListener("click", slowDownSlider);
 
   //выравниваме все блоки по по высоте по второму блоку
   setSliderHeight(numberList);
@@ -113,9 +115,70 @@ function Slider(slider){
     }
   }
 
-  // this.showSliderElements = function(){
-  //   console.log(sliderElements);
-  // }
+  function setSliderInterval(interval){
+    clearInterval(timerId);
+    return setInterval(sliderNextElement, interval);
+  }
+
+  function slowDownSlider(){
+    sliderChangeInterval = 8000;
+
+    timerId = setSliderInterval(sliderChangeInterval);
+
+    // clearTimeout(sliderDownSpeedTimer);
+
+    // sliderDownSpeedTimer = setTimeout( function(){
+    //   sliderChangeInterval = 4000;
+    //   setSliderInterval(sliderChangeInterval);
+    // }, 8000);
+  }
+
+  //детект жестов и перелистывание по жестам.
+
+  var touchstartX = 0;
+  var touchstartY = 0;
+  var touchendX = 0;
+  var touchendY = 0;
+
+  slider.addEventListener('touchstart', function(event) {
+      touchstartX = event.touches[0].screenX;
+      touchstartY = event.touches[0].screenY;
+  }, false);
+
+  slider.addEventListener('touchmove', function(event) {
+      touchendX = event.touches[0].screenX;
+      touchendY = event.touches[0].screenY;
+  }, false);
+
+  slider.addEventListener('touchend', function(event) {
+      handleGesure();
+  }, false); 
+
+  function handleGesure() {
+
+    var swipeThreshold = 100;
+
+    if ( touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold ) {
+      // alert(swiped + 'left!');
+      sliderNextElement();
+      slowDownSlider();
+    }
+    if ( touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold ) {
+      // alert(swiped + 'right!');
+      sliderNextElement();
+      slowDownSlider();
+    }
+    if (touchendY < touchstartY) {
+      // alert(swiped + 'down!');
+    }
+    if (touchendY > touchstartY) {
+      // alert(swiped + 'up!');
+    }
+    if (touchendY == touchstartY) {
+      // alert('tap!');
+    }
+  }
+
 }
 
 //'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd'
