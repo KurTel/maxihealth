@@ -48,7 +48,8 @@ function modalInit(){
     if( modalWindowHref != null ){
       modalWindow = document.getElementById(modalWindowHref);
     } else {
-      modalWindow = this;
+      if( target == this )
+        modalWindow = this;
     }
 
     if(modalWindow != null){
