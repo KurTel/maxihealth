@@ -104,11 +104,16 @@ button, input, optgroup, select, textarea{
 body{
   width: 100%;
   height: 100%;
+  overflow: visible;
 
   @include respond-to(wide-screens) {   min-width: 1180px; }
   @include respond-to(handhelds) {
     min-width: 100%;
   }
+}
+
+body[modal-window-active]{
+  overflow: hidden ;
 }
 
 h1{
@@ -142,7 +147,7 @@ a, a:visited, a:hover, a:active{
   @media (min-width:481px) and (max-width:640px)  { width: 1260px; }
   @media (min-width:641px) and (max-width:960px)  { width: 1260px; }
   @media (min-width:961px) and (max-width:1024px)  { width: 1260px; }
-  @media (min-width:1025px) and (max-width:1280px) { width: 1260px; }
+  @media (min-width:1025px) and (max-width:1280px) { width: 100%; }
   @media (min-width:1281px) and (min-width:1920px) { width: 100%; }
   @media (min-width:1921px) { width: 1920px; }
 }
@@ -2784,6 +2789,10 @@ header{
   top: -35px;
 }
 
+.modal__close{
+  cursor: pointer;
+}
+
 .modal__window{
   position: fixed;
   top: 0;
@@ -2792,19 +2801,47 @@ header{
   bottom: 0;
   background: rgba(black, 0.8);
   z-index: 1000;
-  display: none;
   pointer-events: none;
   width: 100%;
   height: 100%;
 }
 
-.modal__window:target{
-  display: block;
+.modal__window[modal-view="hide"]{
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  // transition: height 1ms ease 999ms;
+  // transition: opacity 1s;
+  pointer-events: none;
+  transition: height 1ms ease 999ms,
+              opacity 1s;
+}
+
+.modal__window[modal-view="show"]{
   pointer-events: auto;
-  animation-name: modal__show;
-  animation-duration: 0.4s;
-  animation-timing-function: ease;
-  animation-direction: forwards;
+  height: 100%;
+  overflow: hidden;
+  opacity: 1;
+  transition: height 1ms ease 0ms,
+              opacity 1s;
+}
+
+// .modal__window:target{
+
+//   pointer-events: auto;
+//   animation-name: modal__show;
+//   animation-duration: 0.4s;
+//   animation-timing-function: ease;
+//   animation-direction: forwards;
+// }
+
+@keyframes modal__hide {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
 }
 
 @keyframes modal__show {
@@ -2815,6 +2852,8 @@ header{
     opacity: 1;
   }
 }
+
+
 
 .modal__window__inner{
   margin: 0 auto;

@@ -14,5 +14,6 @@
 //= partials/block-1-carousel.js
 //= partials/superslider.js
 //= partials/calculator.js
+//= partials/modal-view.js
 //= partials/scrollontop.js
 //= partials/scrollToAnchor.js
