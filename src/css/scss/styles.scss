@@ -1289,7 +1289,12 @@ header{
     }
 
     .refinement{
-      padding-top: 0.2rem;
+      @include respond-to(wide-screens) {
+        padding-top: 10px;
+      }
+      @include respond-to(handhelds) {
+        padding-top: 0.2rem;
+      }
     }
 
     .star{
@@ -1316,7 +1321,8 @@ header{
 
     .refinement__text{
       @include respond-to(wide-screens) {
-        padding-top: 35px;
+        // padding-top: 35px;
+        margin-top: -45px;
       }
       @include respond-to(handhelds) {
         padding-top: 0;
