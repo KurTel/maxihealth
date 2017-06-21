@@ -40,7 +40,7 @@ function modalInit(){
     b.setAttribute("modal-window-active","");
 
     if (wrapper != null){
-      wrapper.setAttribute("data-blur", "");
+      wrapper.setAttribute("data-blur", "on");
     }
 
   }
@@ -65,7 +65,7 @@ function modalInit(){
       b.removeAttribute("modal-window-active");
 
       if (wrapper != null){
-        wrapper.removeAttribute("data-blur");
+        wrapper.setAttribute("data-blur","off");
       }
     }
   }
