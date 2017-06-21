@@ -69,7 +69,7 @@
                 <ul class="nav__menu">
                   <li class="nav__menu__item"><a href="#about_us" scrollable class="nav__link">О компании</a></li>
                   <!-- <li class="nav__menu__item"><a href="" class="nav__link">Наше меню</a></li> -->
-                  <li class="nav__menu__item"><a href="#modal__window" class="nav__link">Наше меню</a></li>
+                  <li class="nav__menu__item"><a href="#modal__window" modal-button-show class="nav__link">Наше меню</a></li>
                   <li class="nav__menu__item"><a href="#calculator" scrollable class="nav__link">Калькулятор КБЖУ</a></li>
                   <li class="nav__menu__item"><a href="#howitworks" scrollable class="nav__link">Как это работает</a></li>
                   <li class="nav__menu__item"><a href="#relations" scrollable class="nav__link">Обратная связь</a></li>
@@ -732,12 +732,12 @@
       <button class="button__red button__scrollontop button__scrollontop__hide"  onclick="scrollOnTop(1000);" id="on-top-button"></button>
     </div>
 
-  <div class="modal__window" id="modal__window">
+  <div class="modal__window" id="modal__window" modal-view="hide">
     <div class="modal__window__inner">
       <div class="img__wrapper">
-        <a href="#close" title="Закрыть" class="close">
+        <div class="modal__close" modal-button-hide="modal__window">
           <img src="/img/close-img.png" class="close-img" alt="close-img">
-        </a>
+        </div>
       </div>
       <div class="modal__body__wrapper">
         <div class="modal__body__left__panel">

@@ -2,6 +2,9 @@
 
 onloadInit.push( 
     function() {
+
+        
+        
     var bod = document.getElementsByTagName("body")[0];
     var FIREFOX = /Firefox/i.test(navigator.userAgent);
     if (FIREFOX) {
