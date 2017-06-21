@@ -150,6 +150,12 @@ a, a:visited, a:hover, a:active{
   @media (min-width:1025px) and (max-width:1280px) { width: 100%; }
   @media (min-width:1281px) and (min-width:1920px) { width: 100%; }
   @media (min-width:1921px) { width: 1920px; }
+  transition:200ms;
+}
+
+.wrapper[data-blur]{
+  filter: blur(10px);
+  transition: 1s;
 }
 
 ul{

@@ -4,8 +4,9 @@ onloadInit.push( modalInit );
 
 function modalInit(){
 
+  var b = document.getElementsByTagName( 'body' )[0];
+  var wrapper = null;
 
-  
   (function init(){
 
     var elems = document.getElementsByTagName( '*' );
@@ -23,11 +24,13 @@ function modalInit(){
       if ( elem.hasAttribute('modal-button-hide')) {
         elem.addEventListener("click", modalHide);
       }
+
+      if ( elem.hasAttribute('data-blur')) {
+        wrapper = elem;
+      }
     }
 
   }());
-
-  var b = document.getElementsByTagName( 'body' )[0];
 
   function modalShow(event ){
     var thehref = this.getAttribute('href').slice(1),
@@ -35,6 +38,11 @@ function modalInit(){
 
     modalWindow.setAttribute("modal-view","show");
     b.setAttribute("modal-window-active","");
+
+    if (wrapper != null){
+      wrapper.setAttribute("data-blur", "");
+    }
+
   }
 
   function modalHide(event){
@@ -55,6 +63,10 @@ function modalInit(){
     if(modalWindow != null){
       modalWindow.setAttribute("modal-view","hide");
       b.removeAttribute("modal-window-active");
+
+      if (wrapper != null){
+        wrapper.removeAttribute("data-blur");
+      }
     }
   }
 
