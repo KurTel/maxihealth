@@ -661,17 +661,32 @@ header{
 }
 
 .slide__position__left{
-  left: -100%;
-  transition: left 2s;
+  // left: -100%;
+  left: 0;
+  transform: translate3d(-100%,0,0);
+  // transition: left 2s;
+  transition: transform 2s;
+
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
 }
 
 .slide__position__center{
   left: 0px;
-  transition: left 2s;
+  // transition: left 2s;
+  transition: transform 2s;
+
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 2000;
 }
 
 .slide__position__right{
-  left: 100%;
+  // left: 100%;
+  left: 0;
+  transform: translate3d(100%,0,0);
+
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 2000;
 }
 
 /* -----BLOCK-1__SLIDE-1 ----- */
