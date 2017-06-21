@@ -101,10 +101,22 @@ button, input, optgroup, select, textarea{
 //     box-shadow:none;
 // }
 
+// *::-moz-selection {
+//   background-color: none;
+// }
+// *::selection  {
+//   background-color: none;
+// }
+// *::-webkit-selection {
+//   background-color: none;
+// }
+
 body{
   width: 100%;
   height: 100%;
   overflow: visible;
+
+  transition: 1s;
 
   @include respond-to(wide-screens) {   min-width: 1180px; }
   @include respond-to(handhelds) {
@@ -114,6 +126,7 @@ body{
 
 body[modal-window-active]{
   overflow: hidden ;
+  transition: 1s;
 }
 
 h1{
@@ -154,7 +167,7 @@ a, a:visited, a:hover, a:active{
 }
 
 .wrapper[data-blur="on"]{
-  filter: blur(10px);
+  filter: blur(0.5vw);
   transition: 1s;
 }
 
@@ -2825,6 +2838,9 @@ header{
   // transition: height 1ms ease 999ms;
   // transition: opacity 1s;
   pointer-events: none;
+
+
+
   transition: height 1ms ease 999ms,
               opacity 1s;
 }
@@ -2834,6 +2850,11 @@ header{
   height: 100%;
   overflow: hidden;
   opacity: 1;
+
+  // -webkit-box-shadow: inset 0px 0px 5vw 0.2vw rgba(0,0,0,0.7);
+  // -moz-box-shadow: inset 0px 0px 5vw 0.2vw rgba(0,0,0,0.7);
+  // box-shadow: inset 0px 0px 5vw 0.2vw rgba(0,0,0,0.7);
+
   transition: height 1ms ease 0ms,
               opacity 1s;
 }
