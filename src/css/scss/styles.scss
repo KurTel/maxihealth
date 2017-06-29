@@ -27,7 +27,7 @@ $xsmall: 400px;
 
 $RED_COLOR: #BD1318;
 $GREY_COLOR: #3d3c3c;
-$BLUE_COLOR: #132FBD;
+$BLUE_COLOR: #14669d;
 
 /* ----- FONTS ----- */
 
@@ -3168,37 +3168,10 @@ header{
 }
 .header__2__line *{
   font-size: 1.52rem;
+}
 
-  // &[data-days="1"]{
-  //   &:after{
-  //     content: "НА 1 ДЕНЬ";
-  //   }
-  // }
-  // &[data-days="2"]{
-  //   &:after{
-  //     content: "НА 2 ДНЯ";
-  //   }
-  // }
-  // &[data-days="5"]{
-  //   &:after{
-  //     content: "НА 5 ДНЕЙ";
-  //   }
-  // }
-  // &[data-days="7"]{
-  //   &:after{
-  //     content: "НА 7 ДНЕЙ";
-  //   }
-  // }
-  // &[data-days="14"]{
-  //   &:after{
-  //     content: "НА 14 ДНЕЙ";
-  //   }
-  // }
-  // &[data-days="30"]{
-  //   &:after{
-  //     content: "НА 30 ДНЕЙ";
-  //   }
-  // }
+.header__2__line{
+  max-height: 44px;
 }
 
 .modal__dots__wrapper{
@@ -3213,6 +3186,22 @@ header{
   display: none;
   position: absolute;
 }
+
+// .men-kcal-label{
+//   background: url("../img/sex-men-icon.png") right center no-repeat;
+// }
+
+// .women-kcal-label{
+//   background: url("../img/sex-women-icon.png") right center no-repeat;
+// }
+
+.sex-icon{
+  height: 20px;
+  width: auto;
+  transition: 1s;
+  filter: grayscale(100%);
+}
+
 /* Стили переключателей вкладок (табов) */
 .header__2__line>label {
   display: inline-block;
@@ -3243,24 +3232,30 @@ header{
   transition: 0.2s;
 }
 /* Стили для активной вкладки */
-.header__2__line>input.women-kcal:checked+label, .header__2__line>input.women-kcal:checked~.women-ref {
-  color: $BLUE_COLOR;
+.header__2__line>input.women-kcal:checked+label,.header__2__line>input.men-kcal:checked+label {
+
   background: #fff;
   text-decoration: none;
   transition: 0.5s;
   border-bottom: none;
   font-size: 1.62rem;
-  border-bottom: 1px dotted $BLUE_COLOR;
+  
+  .sex-icon{
+    height: 25px;
+    width: auto;
+    transition: 1s;
+    filter: none;
+  }
 }
 
-.header__2__line>input.men-kcal:checked+label, .header__2__line>input.men-kcal:checked~.men-ref {
+.header__2__line>input.women-kcal:checked+label{
   color: $RED_COLOR;
-  background: #fff;
-  text-decoration: none;
-  transition: 0.5s;
-  border-bottom: none;
-  font-size: 1.62rem;
-  border-bottom: 1px dotted $RED_COLOR;
+  border-bottom: 1px dotted $RED_COLOR ;
+}
+
+.header__2__line>input.men-kcal:checked+label {
+  color: $BLUE_COLOR;
+  border-bottom: 1px dotted $BLUE_COLOR;
 }
 
 
