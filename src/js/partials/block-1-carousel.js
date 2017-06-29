@@ -11,9 +11,19 @@ function Slider(slider){
   //находим элементы слайдера и превращаем их из коллекции в массив
   var sliderElements = [].slice.call(getSliderElements());
 
-  var sliderChangeInterval = 4000;
+  var sliderChangeInterval = 6000;
+  var timerId = null;
 
-  var timerId = setSliderInterval(sliderChangeInterval);
+  var scrollListener = function(){
+    if( window.scrollY > 100){
+      sliderNextElement();
+      timerId = setSliderInterval(sliderChangeInterval);
+      window.removeEventListener("scroll", scrollListener);
+    }
+  }
+
+  window.addEventListener("scroll", scrollListener);
+
   var sliderDownSpeedTimer = null;
 
   var classPositionLeft = "slide__position__left";

@@ -73,8 +73,18 @@ function Calculator(){
 
     var kkWayMarkResultLowerBound = document.getElementById("kkWayMarkResult-lowerBound");
     var kkWayMarkResultUpperBound = document.getElementById("kkWayMarkResult-upperBound");
-    var harrisBenedictWayMarkResult = document.getElementById("harrisBenedictWayMarkResult");
-    var mifflinStJeorWayMarkResult = document.getElementById("mifflinStJeorWayMarkResult");
+
+    var proteinsLowerBound = document.getElementById("proteins-lowerBound");
+    var proteinsUpperBound = document.getElementById("proteins-upperBound");
+
+    var fatsLowerBound = document.getElementById("fats-lowerBound");
+    var fatsUpperBound = document.getElementById("fats-upperBound");
+
+    var carbohydratesLowerBound = document.getElementById("carbohydrates-lowerBound");
+    var carbohydratesUpperBound = document.getElementById("carbohydrates-upperBound");
+
+    // var harrisBenedictWayMarkResult = document.getElementById("harrisBenedictWayMarkResult");
+    // var mifflinStJeorWayMarkResult = document.getElementById("mifflinStJeorWayMarkResult");
 
     kkPerDayResultLowerBound.innerHTML = result.day.kkPerDayResult.lowerBound;
     kkPerDayResultUpperBound.innerHTML = result.day.kkPerDayResult.upperBound;
@@ -83,8 +93,20 @@ function Calculator(){
 
     kkWayMarkResultLowerBound.innerHTML = result.wayMarks.kkWayMarkResult.lowerBound;
     kkWayMarkResultUpperBound.innerHTML = result.wayMarks.kkWayMarkResult.upperBound;
-    harrisBenedictWayMarkResult.innerHTML = result.wayMarks.harrisBenedictWayMarkResult;
-    mifflinStJeorWayMarkResult.innerHTML = result.wayMarks.mifflinStJeorWayMarkResult;
+
+    proteinsLowerBound.innerHTML = result.wayMarks.proteins.lowerBound;
+    proteinsUpperBound.innerHTML = result.wayMarks.proteins.upperBound;
+
+    fatsLowerBound.innerHTML = result.wayMarks.fats.lowerBound;
+    fatsUpperBound.innerHTML = result.wayMarks.fats.upperBound;
+
+    carbohydratesLowerBound.innerHTML = result.wayMarks.carbohydrates.lowerBound;
+    carbohydratesUpperBound.innerHTML = result.wayMarks.carbohydrates.upperBound;
+
+
+
+    // harrisBenedictWayMarkResult.innerHTML = result.wayMarks.harrisBenedictWayMarkResult;
+    // mifflinStJeorWayMarkResult.innerHTML = result.wayMarks.mifflinStJeorWayMarkResult;
 
     var landmarksHeader = document.getElementById("landmarks-header");
     var landmarksBackgroundClasses = {
@@ -159,23 +181,42 @@ function Calculator(){
   //   return BMRcoef[gender][0] + (BMRcoef[gender][1] * weight) + (BMRcoef[gender][2] * height) + (BMRcoef[gender][3] * age);
   // }
 
+  //В день человек должен потреблять пищу, содержащую по 40% белков и углеводов и 20% жиров. Формулы для вычисления следующие:
+
+  // Б: (2000 ккал * 0,4) /4;
+  // Ж: (2000 * 0,2) /9;
+  // У: (2000 * 0,4) /4 .
+
+  // 1 г Б = 4 ккал;
+  // 1 г Ж = 9;
+  // 1 г У = 4.
+
+
   function calculateAll(gender, weight, height, age, activity, target) {
         var harrisBenedictDayResult = 0;
         var mifflinStJeorDayResult = 0;
         var kkPerDayResult = {};
 
+        var proteins = {};
+        var fats = {};
+        var carbohydrates = {};
+
         //кк в день на килограмм веса в зависимости от активности
         var KKperDay = {
-          low  : [26,30],
-          norm : [31,37],
-          high : [38,40]
+          low     : [26,30],
+          light   : [31,37],
+          norm    : [38,40],
+          high    : [41,50],
+          extrem  : [50,55]
         }
 
         //коэффициент активности, используется в обоих формулах
         var AMR = {
-          low  : 1.2,
-          norm : 1.375,
-          high : 1.4625
+          low     : 1.2,
+          light   : 1.375,
+          norm    : 1.55,
+          high    : 1.725,
+          extrem  : 1.9
         }
 
         kkPerDayResult.lowerBound = KKperDay[activity][0] * weight;
@@ -227,6 +268,17 @@ function Calculator(){
         kkWayMarkResult.lowerBound = Math.round(kkWayMarkResult.lowerBound);
         kkWayMarkResult.upperBound = Math.round(kkWayMarkResult.upperBound);
 
+
+        //белки 30%, жиры 27%, углеводы 43%
+        proteins.lowerBound = Math.round(kkWayMarkResult.lowerBound * 0.3 / 4);
+        proteins.upperBound = Math.round(kkWayMarkResult.upperBound * 0.3 / 4);
+
+        fats.lowerBound = Math.round(kkWayMarkResult.lowerBound * 0.27 / 9);
+        fats.upperBound = Math.round(kkWayMarkResult.upperBound * 0.27 / 9);
+
+        carbohydrates.lowerBound = Math.round(kkWayMarkResult.lowerBound * 0.43 / 4);
+        carbohydrates.upperBound = Math.round(kkWayMarkResult.upperBound * 0.43 / 4);
+        
         //почему так, ниразу не возвращал объект
         var result = {
           day : {
@@ -236,8 +288,11 @@ function Calculator(){
           },
           wayMarks : {
             kkWayMarkResult : kkWayMarkResult,
-            harrisBenedictWayMarkResult : Math.round(harrisBenedictWayMarkResult),
-            mifflinStJeorWayMarkResult : Math.round(mifflinStJeorWayMarkResult)
+            // harrisBenedictWayMarkResult : Math.round(harrisBenedictWayMarkResult),
+            // mifflinStJeorWayMarkResult : Math.round(mifflinStJeorWayMarkResult)
+            proteins : proteins,
+            fats : fats,
+            carbohydrates : carbohydrates
           }
         }
 

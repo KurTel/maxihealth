@@ -4,6 +4,9 @@ onloadInit.push( modalInit );
 
 function modalInit(){
 
+  console.log("menuControl" + menuControl);
+  console.log("modalInit");
+
   var b = document.getElementsByTagName( 'body' )[0];
   var wrapper = null;
 
@@ -18,7 +21,11 @@ function modalInit(){
       }
 
       if ( elem.hasAttribute('modal-button-show') && elem.getAttribute('href').indexOf('#') === 0 ) {
+        elem.addEventListener("click", menuControl.setParametersAndUpdate);
         elem.addEventListener("click", modalShow);
+        // console.log("this = " + this);
+        // console.log(menuControl);
+        // console.log("setParametersAndUpdate = " + menuControl.setParametersAndUpdate);
       }
 
       if ( elem.hasAttribute('modal-button-hide')) {
@@ -69,6 +76,4 @@ function modalInit(){
       }
     }
   }
-
-
 }

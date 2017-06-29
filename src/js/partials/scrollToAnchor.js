@@ -18,44 +18,63 @@ onloadInit.push(
 //5321.111328125
 
     function scrollToAnchor(scrollDuration, distToTop, href) {
-    const   scrollHeight = window.scrollY,
-            scrollStep = Math.PI / ( scrollDuration / 15 );
-            // cosParameter = scrollHeight / 2;
+        const   fps = 60;
+        const   deltaTime = scrollDuration/fps;
 
-    const   windowHeight = document.documentElement.clientHeight;
+        const   scrollHeight = window.scrollY,
+                scrollStep = Math.PI / ( scrollDuration / deltaTime );
+                // cosParameter = scrollHeight / 2;
 
-    var     scrollCount = 0,
-            scrollMargin;
+        const   windowHeight = document.documentElement.clientHeight;
 
-    var body = document.body,
-        html = document.documentElement;
+        var     scrollCount = 0,
+                scrollMargin;
 
-    const documentHeight = Math.max(  body.scrollHeight, 
-                            body.offsetHeight, 
-                            html.clientHeight, 
-                            html.scrollHeight, 
-                            html.offsetHeight );
+        var body = document.body,
+            html = document.documentElement;
 
-    // console.log("documentHeight = " + documentHeight);
-    // console.log("distToTop = " + distToTop);
-    // console.log("windowHeight = " + windowHeight);
+        const documentHeight = Math.max(  body.scrollHeight, 
+                                body.offsetHeight, 
+                                html.clientHeight, 
+                                html.scrollHeight, 
+                                html.offsetHeight );
 
-    distToTop = (  (documentHeight - distToTop) < windowHeight ) ? documentHeight - windowHeight : distToTop;
-    const cosParameter = (distToTop - scrollHeight + 10)/2; 
+        // console.log("documentHeight = " + documentHeight);
+        // console.log("distToTop = " + distToTop);
+        // console.log("windowHeight = " + windowHeight);
 
-    // console.log("distToTop = " + distToTop);
+        distToTop = (  (documentHeight - distToTop) < windowHeight ) ? documentHeight - windowHeight : distToTop;
+        const cosParameter = (distToTop - scrollHeight + 10)/2; 
 
-    var     scrollInterval = setInterval( function() {
-                if ( +window.scrollY < +distToTop ) {
-                    scrollCount = scrollCount + 1;  
-                    scrollMargin = cosParameter - cosParameter * Math.cos( scrollCount * scrollStep );
-                    window.scrollTo( 0, ( scrollHeight + scrollMargin ) );
-                } 
-                else {
-                    clearInterval(scrollInterval);
-                    location = href;
-                }
-            }, 15);
+        // console.log("distToTop = " + distToTop);
+
+        // var     scrollInterval = setInterval( function() {
+        //             if ( +window.scrollY < +distToTop ) {
+        //                 scrollCount = scrollCount + 1;  
+        //                 scrollMargin = cosParameter - cosParameter * Math.cos( scrollCount * scrollStep );
+        //                 window.scrollTo( 0, ( scrollHeight + scrollMargin ) );
+        //             } 
+        //             else {
+        //                 clearInterval(scrollInterval);
+        //                 location = href;
+        //             }
+        //         }, 15);
+
+        var     requestId  = requestAnimationFrame( function deltaScroll() {
+                    if ( +window.scrollY < +distToTop ) {
+                        scrollCount = scrollCount + 1;  
+                        scrollMargin = cosParameter - cosParameter * Math.cos( scrollCount * scrollStep );
+                        window.scrollTo( 0, ( scrollHeight + scrollMargin ) );
+                        console.log("requestAnimationFrame!!!");
+                        requestId  = requestAnimationFrame(deltaScroll);
+                    } 
+                    else {
+                        cancelAnimationFrame(requestId);
+                        console.log("+window.scrollY = " + +window.scrollY );
+                        console.log("+distToTop = " + +distToTop);
+                        location = href;
+                    }
+                });
     }
     
     function boo(evt) {
