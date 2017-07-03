@@ -3,3 +3,7 @@ app1/
 dist/
 build/
 deploy/
+
+# idea files and folders
+*.iml
+.idea/
