@@ -7,17 +7,18 @@ function sendMail() {
     var xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.open('POST', 'php/send_mail.php');
     xmlHttpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xmlHttpRequest.setRequestHeader('Access-Control-Allow-Origin', '*');
     xmlHttpRequest.send('name=' + name.value + '&email=' + email.value + '&message=' + message.value);
-    console.log(xmlHttpRequest.status);
-    console.log(xmlHttpRequest.readyState);
-    if (xmlHttpRequest.status === 200) {
-        console.log('Все ок. Сообщение отправлено.');
-        alert('Все ок. Сообщение отправлено.');
-    } else {
-        console.log('Что-то пошло не так. Сообщение не отправлено.');
-        alert('Что-то пошло не так. Сообщение не отправлено.');
-    }
+    xmlHttpRequest.onreadystatechange = function () {
+        console.log(xmlHttpRequest.readyState);
+        console.log(xmlHttpRequest.status);
+        if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
+            console.log('Все ок. Сообщение отправлено.');
+            alert('Все ок. Сообщение отправлено.');
+        } else {
+            console.log('Что-то пошло не так. Сообщение не отправлено.');
+            alert('Что-то пошло не так. Сообщение не отправлено.');
+        }
+    };
 }
 
 document.addEventListener('DOMContentLoaded', function () {
