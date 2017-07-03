@@ -17,6 +17,8 @@
 //= partials/block-1-carousel.js
 //= partials/superslider.js
 //= partials/calculator.js
+//= partials/send-mail.js
+//= partials/back-call.js
 
 //= partials/modal-view.js
 //= partials/scrollontop.js

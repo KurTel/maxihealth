@@ -372,8 +372,8 @@
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
-                      <input required type="number" checked class="" name="weight" id="calc__height">
-                      <label class="lineend" for="calc__height calc__parameter__text">КГ</label>
+                      <input required type="number" checked class="" name="weight" id="calc__weight">
+                      <label class="lineend" for="calc__weight">КГ</label>
                     </div>
                   </div>
                 </li>
@@ -622,7 +622,7 @@
                   ОТПРАВЬТЕ СООБЩЕНИЕ
                 </p>
               </div>
-              <form action="" class="messageform">
+              <div class="messageform">
                 <ul class="message_list bigtext">
                   <li class="massage__line">
                     <div class="message__parameter">
@@ -630,7 +630,9 @@
                         ВАШЕ ИМЯ
                       </p>
                     </div>
-                    <div class="message__input__wrapper"><input type="text" name="name" placeholder="Ваше имя"></div>
+                    <div class="message__input__wrapper">
+                      <input id="send-message-name" name="name" placeholder="Ваше имя">
+                    </div>
                   </li>
                   <li class="massage__line">
                     <div class="message__parameter">
@@ -638,7 +640,9 @@
                         E-MAIL
                       </p>
                     </div>
-                    <div class="message__input__wrapper"><input type="text" name="email" placeholder="e-mail"></div>
+                    <div class="message__input__wrapper">
+                      <input id="send-message-email" name="email" placeholder="e-mail">
+                    </div>
                   </li>
                   <li class="massage__line message__line__textarea">
                     <div class="message__parameter">
@@ -646,13 +650,15 @@
                         СООБЩЕНИЕ
                       </p>
                     </div>
-                    <div class="message__input__wrapper textarea__wrapper"><textarea type="text" name="message" placeholder="сообщение"></textarea></div>
+                    <div class="message__input__wrapper textarea__wrapper">
+                      <textarea id="send-message-message" type="text" name="message" placeholder="сообщение"></textarea>
+                    </div>
                   </li>
                 </ul>
                 <div class="button__submit__wrapper">
-                  <button class="button__red submit__button">ОТПРАВИТЬ</button>
+                  <button id="send-message-button" class="button__red submit__button">ОТПРАВИТЬ</button>
                 </div>
-              </form>
+              </div>
 
             </div>
             <div class="block__7__content__delimeter mobile-hide">
@@ -667,7 +673,7 @@
                   ЗАКАЖИТЕ ОБРАТНЫЙ ЗВОНОК
                 </p>
               </div>
-              <form action="" class="messageform">
+              <div class="messageform">
                 <ul class="message_list bigtext">
                   <li class="massage__line">
                     <div class="message__parameter">
@@ -675,7 +681,9 @@
                         ВАШЕ ИМЯ
                       </p>
                     </div>
-                    <div class="message__input__wrapper" ><input type="text" placeholder="Ваше имя"></div>
+                    <div class="message__input__wrapper">
+                      <input id="back-call-name" placeholder="Ваше имя">
+                    </div>
                   </li>
                   <li class="massage__line">
                     <div class="message__parameter">
@@ -683,16 +691,18 @@
                         ТЕЛЕФОН
                       </p>
                     </div>
-                    <div class="message__input__wrapper" ><input type="tel" placeholder="телефон"></div>
+                    <div class="message__input__wrapper">
+                      <input id="back-call-phone" type="tel" placeholder="телефон">
+                    </div>
                   </li>
                 </ul>
                 <div class="button__submit__wrapper button__order__wrapper">
-                  <button class="button__red submit__button">ЗАКАЗАТЬ ЗВОНОК</button>
+                  <button id="back-call-button" class="button__red submit__button">ЗАКАЗАТЬ ЗВОНОК</button>
                 </div>
                 <div class="callback__wrapper bigtext">
                   МЫ ВАМ ПЕРЕЗВОНИМ!
                 </div>
-              </form>
+              </div>
 
             </div>
           </div>
