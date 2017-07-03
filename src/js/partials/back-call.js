@@ -5,6 +5,8 @@ function backCall() {
 
     var xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.open('POST', 'php/back_call.php');
+    xmlHttpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xmlHttpRequest.setRequestHeader('Access-Control-Allow-Origin', '*');
     xmlHttpRequest.send('name=' + name + '&phone=' + phone);
     if (xmlHttpRequest.status === 200) {
         console.log('Все ок. Сообщение отправлено.');
