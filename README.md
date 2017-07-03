@@ -14,9 +14,9 @@ NPM идёт с NodeJS.
 6. Теперь можно пользоваться командами Gulp, которые написаны в gulpfile.js.(команды = названия тасков)
 
 Команды:
-'gulp' = clean + build + webserver + watch
-'gulp build' = build
-'gulp deploy' = build to deploy
+- 'gulp' = clean + build + webserver + watch
+- 'gulp build' = build
+- 'gulp deploy' = build to deploy
 
 Другие команды смотреть в самом gulpfile.js
 
@@ -27,4 +27,3 @@ Gulp нужен не обязательно, но тогда нужен отде
 Вендорские стили лежат в папке css/vendor
 
 В данный момент дизайн не адаптивный, только под 1160px+
-
