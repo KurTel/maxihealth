@@ -5,17 +5,17 @@
 const def_mail = 'vzbdonchik2@mail.ru';
 
 $name = $_POST["name"];
-$message = $_POST["message"];
+$phone = $_POST["phone"];
 $email = def_mail;
 
 $title = "Обратный звонок для $name";
 $headers = "From: $email";
 
-$mail = mail(def_mail, $title, $message, $headers);
+$mail = mail(def_mail, $title, $phone, $headers);
 if ($mail) {
     http_response_code(200);
 } else {
     // пишем в лог
-    $log_message = "Name: $name\nEmail: $email\nMessage: $message";
+    $log_message = "Name: $name\nEmail: $email\nMessage: $phone";
     http_response_code(400);
 }

@@ -7,7 +7,10 @@ function sendMail() {
     var xmlHttpRequest = new XMLHttpRequest();
     xmlHttpRequest.open('POST', 'php/send_mail.php');
     xmlHttpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xmlHttpRequest.send('name=' + name + '&email=' + email + '&message=' + message);
+    xmlHttpRequest.send('name=' + name.value + '&email=' + email.value + '&message=' + message.value);
+    console.log(xmlHttpRequest.status);
+    console.log(xmlHttpRequest.statusText);
+    console.log(xmlHttpRequest.responseText);
     if (xmlHttpRequest.status === 200) {
         console.log('Все ок. Сообщение отправлено.');
         alert('Все ок. Сообщение отправлено.');

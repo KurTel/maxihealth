@@ -4,7 +4,7 @@ function backCall() {
     var phone = document.getElementById('back-call-phone');
 
     var xmlHttpRequest = new XMLHttpRequest();
-    xmlHttpRequest.open('POST', 'php/send_mail.php');
+    xmlHttpRequest.open('POST', 'php/back_call.php');
     xmlHttpRequest.send('name=' + name + '&phone=' + phone);
     if (xmlHttpRequest.status === 200) {
         console.log('Все ок. Сообщение отправлено.');
