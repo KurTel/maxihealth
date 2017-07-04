@@ -3152,6 +3152,7 @@ header{
   @include respond-to(handhelds) {
     width: 80%;
     height: auto;
+    margin-bottom: 50px;
   }
 
   @include respond-to(xsmall) {
