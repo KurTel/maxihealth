@@ -20,10 +20,11 @@ function MenuControl(){
   var menuWomenKcal   =   document.getElementById("menu__women__kcal");
   var menuMenKcal     =   document.getElementById("menu__men__kcal");
   var menuSex         =   document.querySelector('input[name="sex"]:checked');
-  var menuPrice       =   document.getElementById("menu__price");
+  var menuPrice       =   document.getElementById("menu_price_mobile");
 
   var typeOfPayment   =   document.querySelector('select[name="type-of-payment"]');
-  var buttonOrder     =   document.getElementById("button_order");
+  var buttonOrderDes  =   document.getElementById("button_order_desktop");
+  var buttonOrderMob  =   document.getElementById("button_order_mobile");
 
   var sex           = {
                         men:    "men",
@@ -184,7 +185,7 @@ function MenuControl(){
           lastProgram = currentProgram;
           currentProgram = this.getAttribute("data-program-target");
         } else {
-          console.log("nothingNappend");
+          // console.log("nothingNappend");
         }
 
       } else {
@@ -227,10 +228,10 @@ function MenuControl(){
   }
 
   var sexInputs = document.getElementsByName("sex");
-  console.log();
+  // console.log();
   for( let i = 0, input; input = sexInputs[ i++ ]; ) {
     input.addEventListener("change", setInputsAndUpdate);
-    console.log();
+    // console.log();
   }
 
   var daysButtons = modalView.getElementsByClassName('data__days__element');
@@ -304,8 +305,8 @@ function MenuControl(){
   }
 
   function dishToText(dish){
-    console.log("currentSex = " + currentSex);
-    console.log("currentProgram = " + currentProgram);
+    // console.log("currentSex = " + currentSex);
+    // console.log("currentProgram = " + currentProgram);
     return {
       dishName: dish.fullName,
       dishInfo: "(БЖУ " + 

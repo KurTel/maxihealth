@@ -190,7 +190,7 @@
     <div class="block__3">
       <div class="container">
         <div class="logo">
-          <img src="img/maxihealth-logo-white.png" alt="" class="logo_pic">
+          <img src="img/maxihealth-logo-white-hd-pseudo.png" alt="" class="logo_pic">
         </div>
 <!--         <div class="howitworks">
           <p class="howitworks__text h2header__big">КАК ЭТО РАБОТАЕТ</p>
@@ -282,16 +282,17 @@
         </div>
       </div>
       <div class="block__1__slide-2 block__1__slide__element slide__show slide__position__center display-hide">
-          <div class="container">
-            <div class="typebuttons">
-              <div class="typebuttons__item"><button class="button__red__img typebutton">НА МАССУ</button></div>
-              <div class="spacingdiv"></div>
-              <div class="typebuttons__item"><button class="button__red__img typebutton">НА ПОДДЕРЖАНИЕ</button></div>
-              <div class="spacingdiv"></div>
-              <div class="typebuttons__item"><button class="button__red__img typebutton">НА СНИЖЕНИЕ</button></div>
-            </div>
+        <div class="container">
+          <div class="typebuttons">
+            <div class="typebuttons__item">
+            <a href="#modal__window" modal-button-show data-program-target="gain"><button class="button__red__img typebutton">НА МАССУ</button></a></div>
+            <div class="spacingdiv"></div>
+            <div class="typebuttons__item"><a href="#modal__window" modal-button-show data-program-target="main"><button class="button__red__img typebutton">НА ПОДДЕРЖАНИЕ</button></a></div>
+            <div class="spacingdiv"></div>
+            <div class="typebuttons__item"><a href="#modal__window" modal-button-show data-program-target="lose"><button class="button__red__img typebutton">НА СНИЖЕНИЕ</button></a></div>
           </div>
         </div>
+      </div>
     </div>
 
     <div class="block__5"  id="calculator">
@@ -387,11 +388,13 @@
                     <div class="calc__input__wrapper">
                       <div class="activity__wrapper">
                         <select required name="activity" class="select__activity" id="calc__activity">
-                          <option class="calc__parameter__text" value="low">СИДЯЧИЙ, МАЛОПОДВИЖНЫЙ</option>
+                          <option class="calc__parameter__text mobile-hide" value="low">СИДЯЧИЙ, МАЛОПОДВИЖНЫЙ</option>
+                          <option class="calc__parameter__text display-hide" value="low">МАЛОПОДВИЖНЫЙ</option>
                           <option class="calc__parameter__text" value="light">ЛЕГКАЯ АКТИВНОСТЬ</option>
-                          <option class="calc__parameter__text" value="norm">СРЕДНЯЯ АКТИВНОСТЬ</option>
+                          <option class="calc__parameter__text" selected value="norm">СРЕДНЯЯ АКТИВНОСТЬ</option>
                           <option class="calc__parameter__text" value="high">ВЫСОКАЯ АКТИВНОСТЬ</option>
-                          <option class="calc__parameter__text" value="extrem">ЭКСТРИМАЛЬНАЯ АКТИВНОСТЬ</option>
+                          <option class="calc__parameter__text mobile-hide" value="extrem">ЭКСТРЕМАЛЬНАЯ АКТИВНОСТЬ</option>
+                          <option class="calc__parameter__text display-hide" value="extrem">ЭКСТРЕМАЛЬНЫЙ</option>
                         </select>
                       </div>
                     </div>
@@ -831,41 +834,34 @@
                 <div class="header__1__line" id="menu__header">ПИТАНИЕ НА СНИЖЕНИЕ ВЕСА</div>
                 <div class="header__2__line">
 
-                 <!--  <input id="tab1" class="tab1" type="radio" name="tabs" checked>
-                  <label for="tab1" title="ПН">ПН</label>
-               
-                  <input id="tab2" class="tab2" type="radio" name="tabs">
-                  <label for="tab2" title="ВТ">ВТ</label> -->
-  
-
-
                   <span class="header__2__line__inner" id="menu__days">НА 30 ДНЕЙ</span>
-                  <img src="img/modal-dots.png" alt="dots" class="modal__dots">
-                  <!-- <span class="terget__kcal modal__text__women modal__text__cheked" id="menu__women__kcal">1200 ККАЛ</span> -->
+                  <img src="img/modal-dots.png" alt="dots" class="modal__dots mobile-hide">
                   
                   <input id="women-kcal" class="women-kcal" type="radio" name="sex" value="women" data-sex>
-                  <label for="women-kcal">
+                  <label for="women-kcal" class="women-kcal-label">
                     <span id="menu__women__kcal">1200</span> 
-                    ККАЛ (Ж)
+                    ККАЛ
+                    <img src="/img/sex-women-icon.png" class="sex-icon" alt="sex-men-icon.png">
                   </label>
 
                   <img src="img/modal-slash.png" alt="slash" class="modal__slash">
 
                   <input id="men-kcal" class="men-kcal" type="radio" name="sex" checked value="men" data-sex>
-                  <label for="men-kcal">
+                  <label for="men-kcal" class="men-kcal-label">
                     <span id="menu__men__kcal">1500</span> 
-                    ККАЛ (М)
+                    ККАЛ
+                    <img src="/img/sex-men-icon.png" class="sex-icon" alt="sex-men-icon.png">
                   </label>
-                  <!-- <span class="terget__kcal2 modal__text__men" id="menu__men__kcal">1500 ККАЛ</span> -->
+
                 </div>
               </div>
-              <div class="body__center__left__description ">
+              <div class="body__center__left__description mobile-hide">
                 <div class="description__wrapper">
                   <p class="paragraph-text" id="menu__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti maiores, beatae ab. Suscipit exercitationem ipsum quo, accusantium quae sapiente harum est, rerum, perspiciatis sint eveniet delectus quia similique aliquam sit!
                   </p>
                 </div>
               </div>
-              <div class="body__center__left__facts">
+              <div class="body__center__left__facts mobile-hide">
                 <div class="modal__nutrition">
                   <img src="/img/modal-nutrition.png" alt="nutrition" class="nutririon-img">
                   <span class="modal__nutrition__text">5 - РАЗОВОЕ ПИТАНИЕ</span>
@@ -875,10 +871,10 @@
                   <span class="modal__delivery__text">ДОСТАВКА НА ДОМ</span>
                 </div>
               </div>
-              <div class="body__center__left__delimiter__wrapper-1">
+              <div class="body__center__left__delimiter__wrapper-1 mobile-hide">
                 <div class="body__center__left__delimiter"></div>
               </div>
-              <div class="form__order__wrapper">
+              <div class="form__order__wrapper mobile-hide">
                 <form action="" onsubmit="return false;" class="form__order">
                   <div class="list__wrapper">
                     <ul class="form__list">
@@ -889,11 +885,11 @@
                   </div>
                 </form>
               </div>
-              <div class="body__center__left__delimiter__wrapper-2">
+              <div class="body__center__left__delimiter__wrapper-2 mobile-hide">
                 <div class="body__center__left__delimiter"></div>
               </div>
-              <div class="body__center__left__priceandpaymant">
-                <span class="priceandpaymant__price" id="menu__price">3000</span>
+              <div class="body__center__left__priceandpaymant mobile-hide">
+                <span class="priceandpaymant__price" id="menu_price_desktop">3000</span>
                 <span class="priceandpaymant__rouble">Л</span>
                 <div data-width="180px" class="typeofpayment__wrapper">
                   <select required name="type-of-payment" class="typeofpayment__select" id="type-of-payment">
@@ -902,10 +898,10 @@
                   </select>
                 </div>
                 <div class="typeofpayment__button__wrapper">
-                  <button id="button_order" class="button__red button__modal">ПЕРЕЙТИ К ОПЛАТЕ КАРТОЙ</button>
+                  <button id="button_order_desktop" class="button__red button__modal">ПЕРЕЙТИ К ОПЛАТЕ КАРТОЙ</button>
                 </div>
               </div>
-              <div class="comment__wrapper">
+              <div class="comment__wrapper mobile-hide">
                 <div class="comment paragraph-text comment-text">
                   Введите своё имя и номер телефона. Наш менеджер свяжется с вами для уточнения заказа и ответит на все ваши вопросы.
                 </div>
@@ -1202,8 +1198,61 @@
               </div>
             </div>
           </div>
+          <div class="body__center__left display-hide">
+            <div class="body__left__center__inner">
+              <div class="body__center__left__facts display-hide">
+                <div class="modal__nutrition">
+                  <img src="/img/modal-nutrition.png" alt="nutrition" class="nutririon-img">
+                  <span class="modal__nutrition__text">5 - РАЗОВОЕ ПИТАНИЕ</span>
+                </div>
+                <div class="modal__delivery">
+                  <img src="/img/modal-delivery.png" alt="delivery" class="delivery-img">
+                  <span class="modal__delivery__text">ДОСТАВКА НА ДОМ</span>
+                </div>
+              </div>
+              <div class="body__center__left__delimiter__wrapper-2 display-hide">
+                <div class="body__center__left__delimiter"></div>
+              </div>
+              <div class="body__center__left__priceandpaymant display-hide">
+                <div class="price__wrapper">
+                  <span class="priceandpaymant__price" id="menu_price_mobile">3000</span>
+                  <span class="priceandpaymant__rouble">Л</span>
+                </div>
+                <div data-width="180px" class="typeofpayment__wrapper">
+                  <select required name="type-of-payment" class="typeofpayment__select" id="type-of-payment">
+                    <option data-width="180px" data-width-xsmall="160px" checked value="online">ОПЛАТА ОНЛАЙН</option>
+                    <option data-width="250px" data-width-xsmall="200px" value="cash">ОПЛАТА ПРИ ПОЛУЧЕНИИ</option>
+                  </select>
+                </div>
+              </div>
+              <div class="body__center__left__delimiter__wrapper-1 display-hide">
+                <div class="body__center__left__delimiter"></div>
+              </div>
+              <div class="comment__wrapper display-hide">
+                <div class="comment paragraph-text comment-text">
+                  Введите своё имя и номер телефона. Наш менеджер свяжется с вами для уточнения заказа и ответит на все ваши вопросы.
+                </div>
+              </div>
+              <div class="form__order__wrapper display-hide">
+                <form action="" onsubmit="return false;" class="form__order">
+                  <div class="list__wrapper">
+                    <ul class="form__list">
+                      <li class="list__element"><input type="text" class="form__order__input form__order__input__name" placeholder="ВВЕДИТЕ ВАШЕ ИМЯ"></li>
+                      <li class="list__element"><input type="tel" class="form__order__input form__order__input__phone" placeholder="ВАШЕ ТЕЛЕФОН"></li>
+                    </ul>
+                  </div>
+                  <div class="typeofpayment__button__wrapper">
+                    <button id="button_order_mobile" class="button__red button__modal">ПЕРЕЙТИ К ОПЛАТЕ КАРТОЙ</button>
+                  </div>
+                </form>
+              </div>
+
+              
+            </div>
+          </div>
+
         </div>
-        <div class="modal__body__right__panel">
+        <div hidden class="modal__body__right__panel">
           <ul class="days__list">
             <li class="days__list__element">
               <div class="element__inner data__days__element" data-program-target="action" data-days-target="1">

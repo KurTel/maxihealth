@@ -28,6 +28,8 @@ function Calculator(){
 
   var animationDuration = 1000; // 1s
 
+  var calculator = document.getElementById("calculator");
+
   var calcBodyFront = document.getElementById("calc__body__front");
   var calcBodyResult = document.getElementById("calc__body__result");
 
@@ -139,6 +141,10 @@ function Calculator(){
       return false;   //сбросили функцию чтобы не лагало когда много раз жмёшь
     };
 
+    if(document.documentElement.clientWidth <= 480){
+      window.scrollTo( 0, calculator.offsetTop );
+    }
+    
     setTimeout( function(){
       calcBodyFront.classList.remove(classShowDisplay);
       calcBodyFront.classList.add(classHideDisplay);
