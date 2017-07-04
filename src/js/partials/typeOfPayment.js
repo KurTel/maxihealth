@@ -1,12 +1,16 @@
 "use strict"
 
 window.addEventListener('DOMContentLoaded', function(){
-  document.querySelector('select[name="type-of-payment"]').onchange = changeEventHandler;
+  var typesOfPayment = document.querySelectorAll('select[name="type-of-payment"]');
+  for (var i = 0; i < typesOfPayment.length; i++) {
+    typesOfPayment[i].addEventListener('change', changeEventHandler);
+  }
 });
 
 function changeEventHandler(event){
   var typOfPaymentWrapper = this.parentNode;
-  var buttonOrder = document.getElementById("button_order");
+  var buttonOrderDes = document.getElementById("button_order_desktop");
+  var buttonOrderMob = document.getElementById("button_order_mobile");
 
   var button = {
     online: {
@@ -23,12 +27,38 @@ function changeEventHandler(event){
   // console.log(event.target.value);
   // console.log(this.options[this.selectedIndex]);
 
-  this.style.width = this.options[this.selectedIndex].getAttribute("data-width");
-  typOfPaymentWrapper.style.width = this.options[this.selectedIndex].getAttribute("data-width");
-  menuControl.updateTypeOfPayment();
+  console.log(this);
+  console.log(document.documentElement.clientWidth);
 
-  buttonOrder.textContent = button[this.value].text;
-  buttonOrder.style.width = button[this.value].width;
+
+
+  if(document.documentElement.clientWidth <= 400){
+
+    this.style.width = this.options[this.selectedIndex].getAttribute("data-width-xsmall");
+    typOfPaymentWrapper.style.width = this.options[this.selectedIndex].getAttribute("data-width-xsmall");
+    menuControl.updateTypeOfPayment();
+
+    buttonOrderMob.textContent = button[this.value].text;
+
+  } else if(document.documentElement.clientWidth <= 480){
+
+    this.style.width = this.options[this.selectedIndex].getAttribute("data-width");
+    typOfPaymentWrapper.style.width = this.options[this.selectedIndex].getAttribute("data-width");
+    menuControl.updateTypeOfPayment();
+
+    buttonOrderMob.textContent = button[this.value].text;
+
+  } else {
+
+    this.style.width = this.options[this.selectedIndex].getAttribute("data-width");
+    typOfPaymentWrapper.style.width = this.options[this.selectedIndex].getAttribute("data-width");
+    menuControl.updateTypeOfPayment();
+
+    buttonOrderDes.textContent = button[this.value].text;
+    buttonOrderDes.style.width = button[this.value].width;
+
+  }
+
   // console.log(this);
   // if(!event.target.value) 
   //   alert('Please Select One');

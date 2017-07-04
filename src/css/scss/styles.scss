@@ -2956,8 +2956,14 @@ header{
 .img__wrapper{
   position: absolute;
   display: block;
-  right: 35px;
-  top: -35px;
+  @include respond-to(wide-screens) { 
+    right: 35px;
+    top: -35px;
+  }
+  @include respond-to(handhelds) {
+    right: 15px;
+    top: -55px;
+  }
 }
 
 .modal__close{
@@ -2976,6 +2982,7 @@ header{
 
 .modal__window{
   position: fixed;
+  // position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -2985,17 +2992,18 @@ header{
   pointer-events: none;
   width: 100%;
   height: 100%;
+  @include respond-to(wide-screens) { 
+    overflow: hidden;
+  }
 }
 
 .modal__window[modal-view="hide"]{
   height: 0;
-  overflow: hidden;
+  overflow: scroll;
   opacity: 0;
   transition: height 1ms ease 999ms;
   transition: opacity 1s;
   pointer-events: none;
-
-
 
   transition: height 1ms ease 999ms,
               opacity 0.3s;
@@ -3004,8 +3012,11 @@ header{
 .modal__window[modal-view="show"]{
   pointer-events: auto;
   height: 100%;
-  overflow: hidden;
+  
   opacity: 1;
+  @include respond-to(handhelds) {
+    overflow: scroll;
+  }
 
   // -webkit-box-shadow: inset 0px 0px 5vw 0.2vw rgba(0,0,0,0.7);
   // -moz-box-shadow: inset 0px 0px 5vw 0.2vw rgba(0,0,0,0.7); 
@@ -3049,20 +3060,35 @@ header{
 .modal__window__inner{
   margin: 0 auto;
   font-size: 2rem;
-  width: 1180px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin-left: 20px;
+
+  @include respond-to(wide-screens) { 
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin-left: 20px;
+    width: 1180px;
+  }
+  @include respond-to(handhelds) {
+    top: 15%;
+    width: auto;
+    margin-left: -25px;
+  }
+  
 }
 
 .modal__body__left__panel{
   float: left;
-  margin-left: -30px;
-  padding-top: 85px;
+
   color: white;
+  @include respond-to(wide-screens) { 
+    margin-left: -30px;
+    padding-top: 85px;
+  }
+  @include respond-to(handhelds) {
+    
+  }
 }
 
 .days__list__element{
@@ -3082,7 +3108,7 @@ header{
     cursor: pointer;
 
     transition: color 1s;
-                // border-radius 0.5s;
+    //border-radius 0.5s;
 
     &:hover{
       color: black;
@@ -3099,41 +3125,79 @@ header{
   }
 
   .element__inner__text{
-    font-size: 1.23rem;
-    padding: 10px;
+    
     display: inline-block;
     transition: padding 0.5s;
+    @include respond-to(wide-screens) { 
+      font-size: 1.23rem;
+      padding: 10px;
+    }
+    @include respond-to(handhelds) {
+      font-size: 1rem;
+      vertical-align: middle;
+    }
   }
 }
 
 .modal__body__center{
   position: relative;
-  width: 1060px;
-  height: 600px;
+
   float: left;
   margin-left: -33px;
   text-align: left;
+  @include respond-to(wide-screens) { 
+    width: 1060px;
+    height: 600px;
+  }
+  @include respond-to(handhelds) {
+    width: 80%;
+    height: auto;
+  }
+
+  @include respond-to(xsmall) {
+    width: 75%;
+  }
 }
 
 .body__center__left{
   background: white;
-  width: 60%;
-  height: 100%;
-  float: left;
+  
   color: $GREY_COLOR;
+  @include respond-to(wide-screens) { 
+    width: 60%;
+    height: 100%;
+    float: left;
+  }
+  @include respond-to(handhelds) {
+    width: auto;
+    height: auto;
+  }
 }
 
 .body__left__center__inner{
-  padding-left: 38px;
+  @include respond-to(wide-screens) { 
+    padding-left: 38px;
+  }
+  @include respond-to(handhelds) {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
 }
 
 .body__center__left__header{
   display: inline-block;
-  margin-top: 35px;
-  padding-right: 79px;
+
+
+  @include respond-to(wide-screens) { 
+    margin-top: 35px;
+    padding-right: 79px;
+  }
+  @include respond-to(handhelds) {
+    background: none !important;
+  }
 
   &[data-program="lose"]{
-    background: url("../img/icon-weight-loss-red.png") no-repeat right top;
+    background: url("../img/icon-weight-loss-red.png") no-repeat right 1vw top 1vw;
   }
   &[data-program="main"]{
     background: url("../img/icon-weight-maintenance-red.png") no-repeat right top;
@@ -3148,10 +3212,15 @@ header{
 }
 
 .header__1__line{
-  padding-top: 15px;
-  font-size: 2.53rem; //2.23 ДЛЯ ПОДДЕРЖАНИЯ ВЕСА
 
-  //2.33rem
+  @include respond-to(wide-screens) { 
+    padding-top: 15px;
+    font-size: 2.53rem; //2.23 ДЛЯ ПОДДЕРЖАНИЯ ВЕСА
+  }
+  @include respond-to(handhelds) {
+    padding-top: 5vw;
+    font-size: 1.33rem !important;
+  }
 
   &[data-program="main"]{
     font-size: 1.95rem;
@@ -3167,11 +3236,29 @@ header{
 
 }
 .header__2__line *{
-  font-size: 1.52rem;
+  @include respond-to(wide-screens) { 
+    font-size: 1.52rem;
+  }
+  @include respond-to(handhelds) {
+    font-size: 1.1rem;
+  }
 }
 
 .header__2__line{
-  min-height: 38px;
+  
+  @include respond-to(wide-screens) { 
+    min-height: 38px;
+  }
+  @include respond-to(handhelds) {
+    padding-bottom: 2vw;
+  }
+}
+
+.header__2__line__inner{
+  @include respond-to(handhelds) {
+    display: block;
+    padding-top: 2vw;
+  }
 }
 
 .modal__dots__wrapper{
@@ -3187,14 +3274,6 @@ header{
   position: absolute;
 }
 
-// .men-kcal-label{
-//   background: url("../img/sex-men-icon.png") right center no-repeat;
-// }
-
-// .women-kcal-label{
-//   background: url("../img/sex-women-icon.png") right center no-repeat;
-// }
-
 .sex-icon{
   height: 20px;
   width: auto;
@@ -3203,25 +3282,27 @@ header{
 }
 
 /* Стили переключателей вкладок (табов) */
-.header__2__line>label {
+.header__2__line>label{
   display: inline-block;
-  // margin: 0 10px 0 0px;
-  // width: 35px;
-  // height: 35px;
-  // padding-top: 8px;
+
   text-align: center;
   vertical-align: middle;
-  // padding: 15px 25px;
-  // font-weight: 500;
-  font-size: 1.52rem;
+
+  
   text-align: center;
   color: $GREY_COLOR;
   border: 0px solid #ddd;
-  // border-radius: 20px;
-  // text-decoration-line: underline;
-  // text-decoration-style: dotted;
-  // border-bottom: 1px dotted black;
+
   transition: 1s;
+  @include respond-to(wide-screens) { 
+    font-size: 1.52rem;
+  }
+  @include respond-to(handhelds) {
+    font-size: 0.9rem !important;
+    #menu__men__kcal, #menu__women__kcal{
+      font-size: 0.9rem !important;
+    }
+  }
 }
 
 /* Изменения стиля переключателей вкладок при наведении */     
@@ -3238,10 +3319,18 @@ header{
   text-decoration: none;
   transition: 0.5s;
   border-bottom: none;
-  font-size: 1.62rem;
-  
+
+  @include respond-to(wide-screens) { 
+    font-size: 1.62rem;
+  }
+  @include respond-to(handhelds) {
+    #menu__men__kcal, #menu__women__kcal{
+      font-size: 1.1rem !important;
+    }
+    font-size: 1.1rem !important;
+  }
   .sex-icon{
-    height: 25px;
+    height: 23px;
     width: auto;
     transition: 1s;
     filter: none;
@@ -3290,13 +3379,29 @@ header{
 }
 
 .modal__nutrition__text, .modal__delivery__text{
-  font-size: 1.14rem;
   vertical-align: middle;
-
+  @include respond-to(wide-screens) { 
+    font-size: 1.14rem;;
+  }
+  @include respond-to(handhelds) {
+    font-size: 0.9rem;
+  }
 }
 
 .body__center__left__delimiter__wrapper-1{
+    
+  @include respond-to(wide-screens) { 
     padding-top: 35px;
+  }
+  @include respond-to(handhelds) {
+    padding-top: 3vw;
+  }
+}
+
+.body__center__left__delimiter__wrapper-2{
+  @include respond-to(handhelds) {
+    padding-top: 3vw;
+  }
 }
 
 .body__center__left__delimiter{
@@ -3307,9 +3412,25 @@ header{
 
 .body__center__left__priceandpaymant{
   padding-top: 15px;
-  line-height: 55px;
+  
   >*{
-    font-size: 2.78rem;
+    
+    @include respond-to(wide-screens) { 
+      font-size: 2.78rem;
+      line-height: 55px;
+    }
+    @include respond-to(handhelds) {
+      font-size: 1.99rem;
+      line-height: 55px;
+    }
+  }
+}
+
+.price__wrapper{
+  width: 100%;
+  @include respond-to(handhelds) {
+    font-size: 1.99rem;
+    line-height: 35px;
   }
 }
 
@@ -3317,8 +3438,15 @@ header{
   font-family: 'PTRoubleSans', sans-serif;
   display: inline-block;
   vertical-align: top;
-  margin-top: -5px;
-  font-size: 2.34rem;
+  
+  @include respond-to(wide-screens) { 
+    margin-top: -5px;
+    font-size: 2.34rem;
+  }
+  @include respond-to(handhelds) {
+    margin-top: -5px;
+    font-size: 1.88rem;
+  }
 }
 
 .typeofpayment__wrapper, .typeofpayment__wrapper:hover, .typeofpayment__wrapper:active{
@@ -3327,7 +3455,7 @@ header{
   cursor: pointer;
   outline: none;
 
-  height: 40px;
+
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
@@ -3335,6 +3463,14 @@ header{
   // width: auto;
   background: url("../img/activity-arrow-red.png") no-repeat scroll 93% 35% white !important;
   transition: 0.8s;
+
+  @include respond-to(wide-screens) {
+    height: 40px;
+  }
+  @include respond-to(handhelds) {
+    height: 30px;
+    line-height: 55px;
+  }
 }
 
 .typeofpayment__select,
@@ -3345,22 +3481,22 @@ header{
   color: rgba($GREY_COLOR,0);
   text-shadow: 0 0 0 $GREY_COLOR;
 
-  height: 40px;
+
   margin-top: -30px;
 
   cursor: pointer;
-  padding-left: 15px;
+
   padding-top: 2px;
   background: transparent none repeat scroll 0 0;
 
   border: 0px solid #cccccc; //цвет рамки
   border-radius: 0;
   text-align: left;
-  width: 180px;
+  
   // width: auto;
   vertical-align: middle;
   //color: #6c6c6c;
-  font-size: 1.14rem;
+  
 
   transition: 1s;
 
@@ -3370,24 +3506,46 @@ header{
     -webkit-appearance: none;
   -webkit-border-radius: 0px;
   outline: none;
+
+  @include respond-to(wide-screens) {
+    padding-left: 15px;
+    font-size: 1.14rem;
+    height: 40px;
+    width: 180px;
+  }
+  @include respond-to(handhelds) {
+    font-size: 0.85rem;
+    width: 180px;
+  }
+  @include respond-to(xsmall) {
+    width: 160px;
+  }
 }
 
 .typeofpayment__select option{
   border: 0px solid #cccccc; //цвет рамки
   background: #ffffff !important; // желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым
   outline: none; // удаляет обводку в браузерах хром(желтая) и сафари(синяя)
-  height: 40px; // высота на свое усмотрение
+  
   // width: 250px; // ширина на свое усмотрение
   color: #6c6c6c; //цвет шрифта в обычном состоянии
   padding-left: 18px;
   text-align: left;
-  font-size: 1.14rem;
+
   vertical-align: middle;
   line-height:85px;
   // width: 230px;
   // box-shadow: inset 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 
-  padding-top: 10px;
+
+  @include respond-to(wide-screens) {
+    padding-top: 10px;
+    font-size: 1.14rem;
+    height: 40px; // высота на свое усмотрение
+  }
+  @include respond-to(handhelds) {
+    font-size: 0.85rem;
+  }
 }
 
 .form__order__wrapper{
@@ -3396,15 +3554,30 @@ header{
 
 .typeofpayment__button__wrapper{
   display: inline-block;
-  padding-left: 10px;
+  @include respond-to(wide-screens) {
+    padding-left: 10px;
+  }
+  @include respond-to(handhelds) {
+    margin: 0 auto;
+    width: auto;
+    padding-top: 2vw;
+  }
 }
 
 .button__modal, .button__modal:hover, .button__modal:active{
   padding: 0 20px;
-  font-size: 1.01rem;
   height: 42px;
   transition: 0.5s;
-  width: 220px;
+
+  @include respond-to(wide-screens) {
+    font-size: 1.01rem;
+    width: 220px;
+  }
+  @include respond-to(handhelds) {
+    font-size: 0.8rem;
+    width: auto;
+
+  }
 
   &:hover{
     color: black;
@@ -3427,19 +3600,45 @@ header{
     text-align: left;
     padding-left: 20px;
   }
+  @include respond-to(handhelds) { 
+    text-align: center; 
+  }
 }
 
 .list__element{
   display: inline-block;
-  padding-right: 10px;
+  
+  @include respond-to(wide-screens) { 
+    padding-right: 10px;
+  }
+  @include respond-to(handhelds) { 
+    width: 100%; 
+    padding: 5px 3vw; 
+  }
+  @include respond-to(xsmall) { 
+    padding: 10px 3vw; 
+  }
+
 }
 
 .form__order__input__name{
-  width: 212px;
+  
+  @include respond-to(wide-screens) { 
+    width: 212px;  
+  }
+  @include respond-to(handhelds) { 
+    width: 100%;  
+  }  
 }
 
 .form__order__input__phone{
-  width: 176px;
+  
+  @include respond-to(wide-screens) { 
+    width: 176px; 
+  }
+  @include respond-to(handhelds) { 
+    width: 100%;  
+  }  
 }
 
 .form__order__button, .form__order__button:hover{
@@ -3449,7 +3648,11 @@ header{
 
 .comment__wrapper{
   padding-top: 25px;
-  width: 550px;
+
+  @include respond-to(wide-screens) { 
+    width: 550px;  
+  }
+
 }
 
 .comment-text{
@@ -3459,25 +3662,53 @@ header{
 
 .body__center__right{
   background: #ebebeb;
-  width: 40%;
-  height: 100%;
-  float: left;
+
+
+  @include respond-to(wide-screens) { 
+    width: 40%;
+    height: 100%;
+    float: left;    
+  }
+  @include respond-to(handhelds) {
+    height: auto;
+  }
 
   .menu__wrapper{
-    padding-left: 38px;
-    padding-top: 50px;
+
+
+    @include respond-to(wide-screens) { 
+      padding-left: 38px;
+      padding-top: 50px;
+    }
+    @include respond-to(handhelds) {
+      padding-left: 5vw;
+      padding-top: 5vw;
+      padding-right: 5vw;
+    }
 
     .menu__header{
-      font-size: 2.66rem;
+      
+      @include respond-to(wide-screens) { 
+        font-size: 2.66rem;
+      }
+      @include respond-to(handhelds) {
+        font-size: 1.33rem;
+      }
     }
 
     /* Базовый контейнер табов */
     .menu__days__tabs {
-      min-width: 320px;
-      max-width: 600px;
-      padding: 0px;
-      padding-top: 50px;
+
       margin: 0 auto;
+      @include respond-to(wide-screens) { 
+        min-width: 320px;
+        max-width: 600px;
+        padding: 0px;
+        padding-top: 50px    
+      }
+      @include respond-to(handhelds) {
+        
+      }
     }
     /* Стили секций с содержанием */
     .menu__days__tabs section {
@@ -3501,7 +3732,7 @@ header{
 
     .menu__days__tabs section{
       position: relative;
-      height: 390px;
+
       /* прикрутим анимацию */
       -webkit-animation-duration: 1s;
       animation-duration: 1s;
@@ -3510,6 +3741,11 @@ header{
       -webkit-animation-name: fadeIn;
       animation-name: fadeIn;
       transition: 1s;
+      @include respond-to(wide-screens) { 
+        height: 390px;
+      }
+      @include respond-to(handhelds) {    
+      }
     }
     /* Описываем анимацию свойства opacity */
      
@@ -3537,15 +3773,14 @@ header{
     /* Стили переключателей вкладок (табов) */
     .menu__days__tabs>label {
       display: inline-block;
-      margin: 0 10px 0 0px;
-      width: 35px;
-      height: 35px;
-      padding-top: 8px;
+      
+ 
+
       text-align: center;
       vertical-align: middle;
       // padding: 15px 25px;
       // font-weight: 500;
-      font-size: 1.14rem;
+      
       text-align: center;
       color: $GREY_COLOR;
       border: 0px solid #ddd;
@@ -3553,6 +3788,26 @@ header{
       text-decoration-line: underline;
       text-decoration-style: dotted;
       transition: 1s;
+
+      @include respond-to(wide-screens) { 
+        font-size: 1.14rem;  
+        width: 35px;
+        height: 35px;
+        padding-top: 8px;
+        margin: 0 10px 0 0px;
+      }
+      @include respond-to(handhelds) {
+        font-size: 0.7rem;
+        width: 35px;
+        height: 35px;
+        padding-top: 10px;
+      }
+      @include respond-to(xsmall) {
+        font-size: 0.7rem;
+        width: 27px;
+        height: 27px;
+        padding-top: 10px;
+      }
     }
 
     /* Изменения стиля переключателей вкладок при наведении */     
@@ -3587,10 +3842,19 @@ header{
 
     .dish__name{
       font-weight: bold;
+      @include respond-to(handhelds) {
+        font-size: 0.8rem;
+      }
     }
 
     .dish__info{
-      font-size: 0.95rem;
+      
+      @include respond-to(wide-screens) { 
+        font-size: 0.95rem;
+      }
+      @include respond-to(handhelds) {
+        font-size: 0.7rem;
+      }
     }
 
     .day__result{
