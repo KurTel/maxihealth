@@ -79,6 +79,12 @@ var config = {
     }
 };
 
+gulp.task('data', function (cb) {
+  gulp.src('src/data/dishes.json')
+    .pipe(gulp.dest('build/data/'))
+    .pipe(reload({stream: true}));
+  cb();
+});
 
 /* ---------- DEFAULT ---------- */
 
@@ -218,7 +224,8 @@ gulp.task('build', [
     'js:build',
     'css:build',
     'fonts:build',
-    'image:build'
+    'image:build',
+    'data'
 ]);
 
 gulp.task('deploy', [
@@ -226,7 +233,8 @@ gulp.task('deploy', [
     'js:deploy',
     'css:deploy',
     'fonts:deploy',
-    'image:deploy'
+    'image:deploy',
+    'data'
 ]);
 
 gulp.task('clean:deploy', function (cb) {

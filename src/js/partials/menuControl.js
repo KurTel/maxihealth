@@ -251,6 +251,13 @@ function MenuControl(){
     }
   }
 
+  const request = new XMLHttpRequest();
+  request.open('GET', '/data/dishes.json', false);  // `false` makes the request synchronous
+  request.send(null);
+
+  // TODO сделать логику, если придет плохой ответ
+
+  const dishes = JSON.parse(request.responseText);
 
   var menu = {
     monday:{
