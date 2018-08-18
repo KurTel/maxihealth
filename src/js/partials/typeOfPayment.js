@@ -1,9 +1,9 @@
 "use strict"
 
 window.addEventListener('DOMContentLoaded', function(){
-  var typesOfPayment = document.querySelectorAll('select[name="type-of-payment"]');
+  // var typesOfPayment = document.querySelectorAll('select[name="type-of-payment"]');
   for (var i = 0; i < typesOfPayment.length; i++) {
-    typesOfPayment[i].addEventListener('change', changeEventHandler);
+    // typesOfPayment[i].addEventListener('change', changeEventHandler);
   }
 });
 
