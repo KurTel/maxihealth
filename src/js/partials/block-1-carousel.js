@@ -11,9 +11,20 @@ function Slider(slider){
   //находим элементы слайдера и превращаем их из коллекции в массив
   var sliderElements = [].slice.call(getSliderElements());
 
-  var sliderChangeInterval = 8000;
+  var sliderChangeInterval = 6000;
+  var timerId = null;
 
-  var timerId = setInterval(sliderNextElement, sliderChangeInterval);
+  var scrollListener = function(){
+    if( window.scrollY > 100){
+      sliderNextElement();
+      timerId = setSliderInterval(sliderChangeInterval);
+      window.removeEventListener("scroll", scrollListener);
+    }
+  }
+
+  window.addEventListener("scroll", scrollListener);
+
+  var sliderDownSpeedTimer = null;
 
   var classPositionLeft = "slide__position__left";
   var classPositionCenter = "slide__position__center";
@@ -33,6 +44,16 @@ function Slider(slider){
   //маркеры
   var markers = document.getElementById("slider__markers__position");
   markers.addEventListener("click", sliderNextElement);
+  markers.addEventListener("click", slowDownSlider);
+
+  //выравниваме все блоки по по высоте по второму блоку
+  setSliderHeight(numberList);
+  onResize.push( setSliderHeight );
+
+  function setSliderHeight(){
+    sliderElements[numberList[0]].style.height = sliderElements[numberList[1]].getBoundingClientRect().height + "px";
+    slider.style.height = sliderElements[0].getBoundingClientRect().height + "px";
+  }
 
   function getSliderElements(){
     return slider.getElementsByClassName("block__1__slide__element");
@@ -78,6 +99,7 @@ function Slider(slider){
     // console.log(sliderElements);
 
     sliderElements.push(sliderElements.shift());
+    numberList.push(numberList.shift());
 
     // console.log(sliderElements);
   }
@@ -103,9 +125,70 @@ function Slider(slider){
     }
   }
 
-  // this.showSliderElements = function(){
-  //   console.log(sliderElements);
-  // }
+  function setSliderInterval(interval){
+    clearInterval(timerId);
+    return setInterval(sliderNextElement, interval);
+  }
+
+  function slowDownSlider(){
+    sliderChangeInterval = 8000;
+
+    timerId = setSliderInterval(sliderChangeInterval);
+
+    // clearTimeout(sliderDownSpeedTimer);
+
+    // sliderDownSpeedTimer = setTimeout( function(){
+    //   sliderChangeInterval = 4000;
+    //   setSliderInterval(sliderChangeInterval);
+    // }, 8000);
+  }
+
+  //детект жестов и перелистывание по жестам.
+
+  var touchstartX = 0;
+  var touchstartY = 0;
+  var touchendX = 0;
+  var touchendY = 0;
+
+  slider.addEventListener('touchstart', function(event) {
+      touchstartX = event.touches[0].screenX;
+      touchstartY = event.touches[0].screenY;
+  }, false);
+
+  slider.addEventListener('touchmove', function(event) {
+      touchendX = event.touches[0].screenX;
+      touchendY = event.touches[0].screenY;
+  }, false);
+
+  slider.addEventListener('touchend', function(event) {
+      handleGesure();
+  }, false); 
+
+  function handleGesure() {
+
+    var swipeThreshold = 100;
+
+    if ( touchendX < touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold ) {
+      // alert(swiped + 'left!');
+      sliderNextElement();
+      slowDownSlider();
+    }
+    if ( touchendX > touchstartX && Math.abs(touchendX - touchstartX) > swipeThreshold ) {
+      // alert(swiped + 'right!');
+      sliderNextElement();
+      slowDownSlider();
+    }
+    if (touchendY < touchstartY) {
+      // alert(swiped + 'down!');
+    }
+    if (touchendY > touchstartY) {
+      // alert(swiped + 'up!');
+    }
+    if (touchendY == touchstartY) {
+      // alert('tap!');
+    }
+  }
+
 }
 
 //'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd'

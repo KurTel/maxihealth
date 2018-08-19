@@ -1,21 +1,27 @@
+<!-- //TODO перевести js onload на domcontentloader -->
+<!-- //window.addEventListener('DOMContentLoaded', function() -->
+<!-- //анимацию в requestanimationframe -->
+
+
 <!DOCTYPE html>
 <html lang="ru-en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Type" content="text/html">
+  <!-- <meta http-equiv="Content-Type" content="text/html"> -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>Maxihealth kitchen</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=0">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" type="text/css" href="css/main.css">
 
   <script src="js/main.js"></script>
 
-  </head>
-  <body>
-  <div class="wrapper">
+</head>
+<body>
+  <div class="wrapper" data-blur="off">
     <header class="header">
       <div class="container">
         <div class="header__top">
@@ -23,7 +29,6 @@
             <div class="header__logo">
               <a href="#" class="logo">
                 <img src="img/logo.png" alt="" class="logo_pic logo_main">
-                <!-- <img src="img/logo-text.png" alt="" class="logo_pic logo_text"> -->
               </a>
             </div>
           </div>
@@ -37,31 +42,43 @@
                     </a>
                   </li>
                   <li class="social__item">
-                    <a href="" class="social_link">
+                    <a href="" class="social__link">
                       <img src="img/logo_facebook.png" alt="" class="social_pic">
                     </a>
                   </li>
                   <li class="social__item">
-                    <a href="" class="social_link">
+                    <a href="" class="social__link">
                       <img src="img/logo_vk.png" alt="" class="social_pic">
+                    </a>
+                  </li>
+                  <li class="social__item display-hide">
+                    <a href="" class="social__link">
+                      <img src="img/telephone-icon.png" alt="" class="social_pic">
                     </a>
                   </li>
                 </ul>
               </div>
-              <div class="header__phone">
+              <div class="header__phone mobile-hide">
                 +7 913 894-00-28
               </div>
-
+              <div class="mobile__menu__button__wrapper display-hide">
+                <a href="#header-menu"><img src="img/menu-icon.png" alt="" class="mobile__menu__icon"></a>
+              </div>
+        
             </div>
-            <div class="header__menu">
+            <div class="header__menu" id="header-menu">
+              <div class="close__button__wrapper display-hide">
+                <a href="#close"><img src="img/close-img.png" alt="" class="close__button"></a>
+              </div>
               <nav class="nav">
                 <ul class="nav__menu">
-                  <li class="nav__menu__item"><a href="#about_us" class="nav__link">О компании</a></li>
-                  <li class="nav__menu__item"><a href="" class="nav__link">Наше меню</a></li>
-                  <li class="nav__menu__item"><a href="#calculator" class="nav__link">Калькулятор КБЖУ</a></li>
-                  <li class="nav__menu__item"><a href="#howitworks" class="nav__link">Как это работает</a></li>
-                  <li class="nav__menu__item"><a href="#relations" class="nav__link">Обратная связь</a></li>
-                  <li class="nav__menu__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+                  <li class="nav__menu__item"><a href="#about_us" scrollable class="nav__link">О компании</a></li>
+                  <!-- <li class="nav__menu__item"><a href="" class="nav__link">Наше меню</a></li> -->
+                  <li class="nav__menu__item"><a href="#programs" scrollable class="nav__link">Наше меню</a></li>
+                  <li class="nav__menu__item"><a href="#calculator" scrollable class="nav__link">Калькулятор КБЖУ</a></li>
+                  <li class="nav__menu__item"><a href="#howitworks" scrollable class="nav__link">Как это работает</a></li>
+                  <li class="nav__menu__item"><a href="#relations" scrollable class="nav__link">Обратная связь</a></li>
+                  <li class="nav__menu__item"><a href="#footer" scrollable class="nav__link">Контакты</a></li>
                 </ul>
               </nav>
             </div>
@@ -83,37 +100,39 @@
               <div class="block__1__description">
                 <ul class="des__menu bigtext">
                   <li class="des__menu__item">
-                    &ndash; ДРОБНОЕ 5-РАЗОВОЕ ПИТАНИЕ НА КАЖДЫЙ ДЕНЬ
+                    <span class="li__inner__dash">&ndash;</span>  <span class="li__inner__text">ДРОБНОЕ 5-РАЗОВОЕ ПИТАНИЕ НА КАЖДЫЙ ДЕНЬ</span>
                   </li>
                   <li class="des__menu__item">
-                    &ndash; ВСЕ ПРИЁМЫ СБАЛАНСИРОВАНЫ ПО КБЖУ
+                    <span class="li__inner__dash">&ndash;</span>  <span class="li__inner__text">ВСЕ ПРИЁМЫ СБАЛАНСИРОВАНЫ ПО КБЖУ</span>
                   </li>
                   <li class="des__menu__item">
-                    &ndash; НЕ НУЖНО СТОЯТЬ У ПЛИТЫ И ХОДИТЬ В МАГАЗИН
+                    <span class="li__inner__dash">&ndash;</span>  <span class="li__inner__text">НЕ НУЖНО СТОЯТЬ У ПЛИТЫ И ХОДИТЬ В МАГАЗИН</span>
                   </li>
                   <li class="des__menu__item">
-                    &ndash; ЦЕНА ЗА ПОРЦИЮ...
+                    <span class="li__inner__dash">&ndash;</span>  <span class="li__inner__text">ЦЕНА ЗА ПОРЦИЮ...</span>
                   </li>
                 </ul>
               </div>
               <div class="order__button">
-                <button class="button__red__img btn__order">ОФОРМИТЬ ЗАКАЗ</button>
+                <a href="#programs" scrollable><button class="button__red__img btn__order">ОФОРМИТЬ ЗАКАЗ</button></a>
               </div>
             </div>
-            <div class="block__1__prouct">
-              <img src="img/maxihealth_product.png " alt="" class="maxihealth_product">
+            <div class="block__1__prouct mobile-hide">
+              <img src="img/maxihealth_product.png " alt="maxihealth-product" class="maxihealth_product">
             </div>
           </div>
         </div>
  
+        <!-- либо superslider либо programs -->
+
         <div hidden class="block__1__slide-2 block__1__slide__element slide__show slide__position__right">
           <div class="container">
             <div class="typebuttons">
-              <div class="typebuttons__item"><button class="button__red__img typebutton">НА МАССУ</button></div>
+              <div class="typebuttons__item"><a href="#programs" scrollable><button class="button__red__img typebutton">НА МАССУ</button></a></div>
               <div class="spacingdiv"></div>
-              <div class="typebuttons__item"><button class="button__red__img typebutton">НА ПОДДЕРЖАНИЕ</button></div>
+              <div class="typebuttons__item"><a href="#programs" scrollable><button class="button__red__img typebutton">НА ПОДДЕРЖАНИЕ</button></a></div>
               <div class="spacingdiv"></div>
-              <div class="typebuttons__item"><button class="button__red__img typebutton">НА СНИЖЕНИЕ</button></div>
+              <div class="typebuttons__item"><a href="#programs" scrollable><button class="button__red__img typebutton">НА СНИЖЕНИЕ</button></a></div>
             </div>
           </div>
         </div>
@@ -134,10 +153,13 @@
               <p class="maxihealth h2header__big">MAXI HEALTH KITCHEN?</p>
             </div>
             <div class="panel__text">
-              <p class="text">
-                Мышь кошельковая — довольно популярный сувенир. Но следует знать, что он имеет свою историю и магическое значение. Еще одна версия происхождения денежного талисмана под названием «кошельковая мышка» связывает его с городом Мышкин. Он был построен в 13-м веке на том месте, где мышь спасла от нападения змеи русского князя, и, если верить легенде, первая денежная кошельковая мышь появилась именно там. <br/> <br/>
+              <p class="paragraph-text">
+                <!-- Мышь кошельковая — довольно популярный сувенир. Но следует знать, что он имеет свою историю и магическое значение. Еще одна версия происхождения денежного талисмана под названием «кошельковая мышка» связывает его с городом Мышкин. Он был построен в 13-м веке на том месте, где мышь спасла от нападения змеи русского князя, и, если верить легенде, первая денежная кошельковая мышь появилась именно там. <br/> <br/>
 
-                Мышь кошельковая представляет собой небольшую, около сантиметра, фигурку мыши из натурального камня или металла. Как правило, она не мешает пользоваться кошельком благодаря минимальным габаритам. Мышка кошельковая не только притягивает деньги и помогает повысить доходы. Она еще и служит оберегом для вашего кошелька, защищая ваши денежные средства от ненужных трат, воровства и сглаза. 
+                Мышь кошельковая представляет собой небольшую, около сантиметра, фигурку мыши из натурального камня или металла. Как правило, она не мешает пользоваться кошельком благодаря минимальным габаритам. Мышка кошельковая не только притягивает деньги и помогает повысить доходы. Она еще и служит оберегом для вашего кошелька, защищая ваши денежные средства от ненужных трат, воровства и сглаза. --> 
+                MAXI HEALTH KITCHEN — это доставка здорового питания в городе Новосибирске. Еда для тех, кто хочет поддерживать себя в стройной и подтянутой форме, а также стремится к высокому качеству мышц. Для вашего удобства мы подсчитали КБЖУ каждого блюда. Наше питание как полезное, так и вкусное. Не нужно ходить в магазин или стоять у плиты. <br/> <br/>
+                Цель нашего проекта внедрить правильное питание в образ жизни нашего города. 
+                Наша команда проводник в мир здоровой пищи и помогает профессионалам и активным людям всегда оставаться в прекрасной форме и добиваться высоких результатов.
               </p>
             </div>
           </div>
@@ -168,21 +190,21 @@
     <div class="block__3">
       <div class="container">
         <div class="logo">
-          <img src="img/maxihealth-logo-white.png" alt="" class="logo_pic">
+          <img src="img/maxihealth-logo-white-hd-pseudo.png" alt="" class="logo_pic">
         </div>
-        <div class="howitworks">
+<!--         <div class="howitworks">
           <p class="howitworks__text h2header__big">КАК ЭТО РАБОТАЕТ</p>
         </div>
         <div class="playbuttonicon">
           <img src="img/icon-play.png" alt="" class="playicon">
         </div>
-        <div class="playbuttonwrapper">
+        <div  class="playbuttonwrapper">
           <button class="playbutton">СМОТРЕТЬ ВИДЕО</button>
-        </div>
+        </div> -->
       </div>
     </div>
 
-    <div class="block__4">
+    <div class="block__4" id="programs">
       <div class="block__4__header"> 
         <div class="container">
           <div class="logo">
@@ -191,46 +213,28 @@
           </div>
           <div class="header">
             <h2 class="firstline">УСПЕХ ДЛЯ КАЖДОГО</h2>
-            <h2 class="secondline">ВЫБЕРИ ПРОГРАММУ ДЛЯ СЕБЯ</h2>
+            <h2 class="secondline">ВЫБЕРИ ПРОГРАММУ ДЛЯ СЕБЯ!</h2>
           </div>
         </div>
       </div>
       <div class="divspacing"></div>
-      <!-- <div class="block__4__type">
-        <div class="container">
-          <div class="block__4__type__wrapper">
-            <div class="typeicons">
-              <div class="typeicons__item typeicons__item___1"><img src="img/icon-weight-gain.png" alt="" class="typeicon"></div>
-              <div class="typeicons__item typeicons__item___2"><img src="img/icon-weight-maintenance.png" alt="" class="typeicon"></div>
-              <div class="typeicons__item typeicons__item___3"><img src="img/icon-weight-loss.png" alt="" class="typeicon"></div>
-            </div>
-            <div class="typebuttons">
-              <div class="typebuttons__item"><button class="button__red__img typebutton">НА МАССУ</button></div>
-              <div class="spacingdiv"></div>
-              <div class="typebuttons__item"><button class="button__red__img typebutton">НА ПОДДЕРЖАНИЕ</button></div>
-              <div class="spacingdiv"></div>
-              <div class="typebuttons__item"><button class="button__red__img typebutton">НА СНИЖЕНИЕ</button></div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <div class="block__slider" id="superslider">
+      <div class="block__slider mobile-hide" id="superslider">
         <div class="slide slide__1">
           <div class="container">
             <div class="slide__inner">
               <div class="slide__inner__text slide__1__inner__text">
                 <div class="slide__inner__text__header slide__1__inner__text__header">
                   <div class="slide__inner__text__header__inner">
-                    <p class="header__1">ДЛЯ НАБОРА МАССЫ ТЕЛА</p>
+                    <p class="header__1">ДЛЯ НАБОРА МЫШЕЧНОЙ МАССЫ ТЕЛА</p>
                     <p class="header__2">ПРИ ИНТЕНСИВНЫХ ФИЗИЧЕСКИХ НАГРУЗКАХ</p>
                   </div>
                 </div>
                 <div class="slide__inner__text__comment">
-                  <p class="text__comment">Эта программа отлично подойдёт для людей которые занимаются активной физической нагрузкой и хотят увеличить свою массу тела без вреда для здоровья</p>
+                  <p class="text__comment">Эта программа отлично подойдёт для людей которые занимаются активной физической нагрузкой и хотят правильно увеличить мышечную массу тела</p>
                 </div>
               </div>
               <div class="button__wrapper">
-                <button class="button__red__img">НА МАССУ</button>
+                <a href="#modal__window" modal-button-show data-program-target="gain" class="nav__link"><button class="button__red__img">НА МАССУ</button></a>
               </div>
             </div>
           </div>
@@ -242,15 +246,15 @@
                 <div class="slide__inner__text__header slide__2__inner__text__header">
                   <div class="slide__inner__text__header__inner">
                     <p class="header__1">ДЛЯ ПОДДЕРЖАНИЯ ВЕСА</p>
-                    <p class="header__2">ПРИ ИНТЕНСИВНЫХ ФИЗИЧЕСКИХ НАГРУЗКАХ</p>
+                    <p class="header__2">ДЛЯ СОХРАНЕНИЯ ПОСТОЯННОЙ МАССЫ</p>
                   </div>
                 </div>
                 <div class="slide__inner__text__comment">
-                  <p class="text__comment">Эта программа отлично подойдёт для людей которые занимаются активной физической нагрузкой и хотят увеличить свою массу тела без вреда для здоровья</p>
+                  <p class="text__comment">Программа на поддержку отлично подойдёт для тех людей кто уже добился желаемого результат и хочет закрепить его</p>
                 </div>
               </div>
               <div class="button__wrapper">
-                <button class="button__red__img">НА ПОДДЕРЖАНИЕ</button>
+                <a href="#modal__window" modal-button-show data-program-target="main" class="nav__link"><button class="button__red__img">НА ПОДДЕРЖАНИЕ</button></a>
               </div>
             </div>
           </div>
@@ -263,17 +267,29 @@
                 <div class="slide__inner__text__header slide__3__inner__text__header">
                   <div class="slide__inner__text__header__inner">
                     <p class="header__1">ДЛЯ СНИЖЕНИЯ ВЕСА</p>
-                    <p class="header__2">ПРИ ИНТЕНСИВНЫХ НАГРУЗКАХ</p>
+                    <p class="header__2">ПРАВИЛЬНАЯ ДИЕТА ДЛЯ ВАШЕГО ОРГАНИЗМА</p>
                   </div>
                 </div>
                 <div class="slide__inner__text__comment">
-                  <p class="text__comment">Эта программа отлично подойдёт для людей которые занимаются активной физической нагрузкой и хотят увеличить свою массу тела без вреда для здоровья</p>
+                  <p class="text__comment">Если ваша цель избавиться от лишних кг без вреда для здоровья, выбирайте правильное питание для похудения и соблюдайте эту программу постоянно</p>
                 </div>
               </div>
               <div class="button__wrapper">
-                <button class="button__red__img">НА СНИЖЕНИЕ</button>
+                <a href="#modal__window" modal-button-show data-program-target="lose" class="nav__link"><button class="button__red__img">НА СНИЖЕНИЕ</button></a>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="block__1__slide-2 block__1__slide__element slide__show slide__position__center display-hide">
+        <div class="container">
+          <div class="typebuttons">
+            <div class="typebuttons__item">
+            <a href="#modal__window" modal-button-show data-program-target="gain"><button class="button__red__img typebutton">НА МАССУ</button></a></div>
+            <div class="spacingdiv"></div>
+            <div class="typebuttons__item"><a href="#modal__window" modal-button-show data-program-target="main"><button class="button__red__img typebutton">НА ПОДДЕРЖАНИЕ</button></a></div>
+            <div class="spacingdiv"></div>
+            <div class="typebuttons__item"><a href="#modal__window" modal-button-show data-program-target="lose"><button class="button__red__img typebutton">НА СНИЖЕНИЕ</button></a></div>
           </div>
         </div>
       </div>
@@ -299,25 +315,25 @@
               </div>
             </div>
           </div>
-          <div class="calc__body calc__body__front bigtext calc__show__display" id="calc__body__front">
+          <div class="calc__body calc__body__front calc__parameter__text calc__show__display" id="calc__body__front">
             <form class="calcform" name="calculator" onsubmit="calculator.logFunction">
               <ul class="calc__list__parameters">
                 <li class="calc__list__line gender__line">
                   <div class="calc__line">
                     <div class="calc__parameter">
-                      <p class="parameter__text">ВАШ ПОЛ</p>
+                      <p class="parameter__text calc__parameter__text">ВАШ ПОЛ</p>
                     </div>
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper gender__wrapper">
                       <div class="calc__radio__1">
                         <input required type="radio" checked class="calc__radio" name="gender" id="gender_male" value="male">
-                        <label for="gender_male"">МУЖСКОЙ</label>
+                        <label class="calc__parameter__text" for="gender_male">МУЖСКОЙ</label>
                         <div class="check"></div>
                       </div>
                       <div class="calc__radio__2">
                         <input required type="radio" class="calc__radio" name="gender" id="gender_female" value="female">
-                        <label for="gender_female">ЖЕНСКИЙ</label>
+                        <label class="calc__parameter__text" for="gender_female">ЖЕНСКИЙ</label>
                         <div class="check"></div>
                       </div>
                     </div>
@@ -326,55 +342,59 @@
                 <li class="calc__list__line age__line">
                   <div class="calc__line">
                     <div class="calc__parameter">
-                      <p class="parameter__text">ВАШ ВОЗРАСТ</p>
+                      <p class="parameter__text calc__parameter__text" >ВАШ ВОЗРАСТ</p>
                     </div>
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
                       <input required type="number" checked class="" name="age" id="calc__age">
-                      <label class="lineend" for="calc__age">ЛЕТ</label>
+                      <label class="lineend calc__parameter__text" for="calc__age" >ЛЕТ</label>
                     </div>
                   </div>
                 </li>
                 <li class="calc__list__line height__line">
                   <div class="calc__line">
                     <div class="calc__parameter">
-                      <p class="parameter__text">ВАШ РОСТ</p>
+                      <p class="parameter__text calc__parameter__text">ВАШ РОСТ</p>
                     </div>
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
                       <input required type="number" checked class="" name="height" id="calc__height">
-                      <label class="lineend" for="calc__height">СМ</label>
+                      <label class="lineend calc__parameter__text" for="calc__height">СМ</label>
                     </div>
                   </div>
                 </li>
                 <li class="calc__list__line weight__line">
                   <div class="calc__line">
                     <div class="calc__parameter">
-                      <p class="parameter__text">ВАШ ВЕС</p>
+                      <p class="parameter__text calc__parameter__text">ВАШ ВЕС</p>
                     </div>
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
-                      <input required type="number" checked class="" name="weight" id="calc__height">
-                      <label class="lineend" for="calc__height">КГ</label>
+                      <input required type="number" checked class="" name="weight" id="calc__weight">
+                      <label class="lineend" for="calc__weight">КГ</label>
                     </div>
                   </div>
                 </li>
                 <li class="calc__list__line activity__line">
                   <div class="calc__line">
                     <div class="calc__parameter">
-                      <p class="parameter__text">ОБРАЗ ЖИЗНИ</p>
+                      <p class="parameter__text calc__parameter__text">ОБРАЗ ЖИЗНИ</p>
                     </div>
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
                       <div class="activity__wrapper">
                         <select required name="activity" class="select__activity" id="calc__activity">
-                          <option checked value="low">НИЗКАЯ АКТИВНОСТЬ</option>
-                          <option value="norm">СРЕДНЯЯ АКТИВНОСТЬ</option>
-                          <option value="high">ВЫСОКАЯ АКТИВНОСТЬ</option>
+                          <option class="calc__parameter__text mobile-hide" value="low">СИДЯЧИЙ, МАЛОПОДВИЖНЫЙ</option>
+                          <option class="calc__parameter__text display-hide" value="low">МАЛОПОДВИЖНЫЙ</option>
+                          <option class="calc__parameter__text" value="light">ЛЕГКАЯ АКТИВНОСТЬ</option>
+                          <option class="calc__parameter__text" selected value="norm">СРЕДНЯЯ АКТИВНОСТЬ</option>
+                          <option class="calc__parameter__text" value="high">ВЫСОКАЯ АКТИВНОСТЬ</option>
+                          <option class="calc__parameter__text mobile-hide" value="extrem">ЭКСТРЕМАЛЬНАЯ АКТИВНОСТЬ</option>
+                          <option class="calc__parameter__text display-hide" value="extrem">ЭКСТРЕМАЛЬНЫЙ</option>
                         </select>
                       </div>
                     </div>
@@ -382,27 +402,27 @@
                 </li>
                 <li class="calc__list__line calc__list__line__target">
                   <div class="calc__line">
-                    <div class="calc__parameter">
-                      <p class="parameter__text">ВАША ЦЕЛЬ</p>
+                    <div class="calc__parameter calc__parameter__target">
+                      <p class="parameter__text calc__parameter__text">ВАША ЦЕЛЬ</p>
                     </div>
                     <div class="calc__delimeter"><img src="img/calc-delimeter.png" alt="" class="delimeter__image">
                     </div>
                     <div class="calc__input__wrapper">
                       <div class="calc__target__radio__loss">
                         <input required type="radio" checked class="calc__radio" name="target" id="target_loss_weight" value="lose">
-                        <label for="target_loss_weight"">СБРОСИТЬ ВЕС</label>
+                        <label  class="calc__parameter__text" for="target_loss_weight">СБРОСИТЬ ВЕС</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__loss"></div>
                       </div>
                       <div class="calc__target__radio__gain">
                         <input required type="radio" class="calc__radio" name="target" id="target_gain_weight"  value="gain">
-                        <label for="target_gain_weight">НАБРАТЬ МАССУ</label>
+                        <label class="calc__parameter__text" for="target_gain_weight">НАБРАТЬ МАССУ</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__gain"></div>
                       </div>
                       <div class="calc__target__radio__main">
                         <input required type="radio" class="calc__radio" name="target" id="target_maintenance_weight"  value="main">
-                        <label for="target_maintenance_weight">ПОДДЕРЖАТЬ ВЕC</label>
+                        <label class="calc__parameter__text" for="target_maintenance_weight">ПОДДЕРЖАТЬ ВЕC</label>
                         <div class="check"></div>
                         <div class="target__icon target__icon__main"></div>
                       </div>
@@ -418,14 +438,14 @@
           <div class="calc__body calc__body__result bigtext calc__hide__display" id="calc__body__result">
             <div class="calc__result">
               <div class="calc__result__inner daily__allowance">
-                <div class="inner__header">
+                <div class="inner__header inner__header__daily">
                   <p class="inner__header__text">СУТОЧНАЯ НОРМА КАЛОРИЙ</p>
                 </div>
                 <div class="inner__body">
                   <ul class="formulas__list">
                     <li class="formula__element">
                       <div class="formula__type">
-                        <p class="formula__type__text">ПО СРЕДНЕМУ РАСХОДУ НА КИЛОГРАММ</p>
+                        <p class="formula__type__text bigtext bigtext">ПО СРЕДНЕМУ РАСХОДУ НА КИЛОГРАММ</p>
                       </div>
                       <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
                       <div class="formula__result">
@@ -434,7 +454,7 @@
                     </li>
                     <li class="formula__element">
                       <div class="formula__type">
-                        <p class="formula__type__text">ПО ФОРМУЛЕ ХАРРИСА-БЕНЕДИКТА</p>
+                        <p class="formula__type__text bigtext">ПО ФОРМУЛЕ ХАРРИСА-БЕНЕДИКТА</p>
                       </div>
                       <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
                       <div class="formula__result">
@@ -443,7 +463,7 @@
                     </li>
                     <li class="formula__element">
                       <div class="formula__type">
-                        <p class="formula__type__text">ПО ФОРМУЛЕ МИФФЛИНА - САН ЖЕОРА</p>
+                        <p class="formula__type__text bigtext">ПО ФОРМУЛЕ МИФФЛИНА - САН ЖЕОРА</p>
                       </div>
                       <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
                       <div class="formula__result">
@@ -461,29 +481,54 @@
                   <ul class="formulas__list">
                     <li class="formula__element">
                       <div class="formula__type">
-                        <p class="formula__type__text">ДИАПАЗОН КАЛОРИЙ</p>
+                        <p class="formula__type__text bigtext">ДИАПАЗОН КАЛОРИЙ</p>
                       </div>
                       <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
                       <div class="formula__result">
-                        <p class="formula__result__text"><span id="kkWayMarkResult-lowerBound">3076</span> &#8212; <span id="kkWayMarkResult-upperBound">3356</span></p>
+                        <p class="formula__result__text">
+                          <span id="kkWayMarkResult-lowerBound">3076</span> 
+                          &#8212; 
+                          <span id="kkWayMarkResult-upperBound">3356</span>
+                        </p>
                       </div>
                     </li>
                     <li class="formula__element">
                       <div class="formula__type">
-                        <p class="formula__type__text">ПО ФОРМУЛЕ ХАРРИСА-БЕНЕДИКТА</p>
+                        <p class="formula__type__text bigtext">СУТОЧНАЯ НОРМА БЕЛКОВ</p>
                       </div>
                       <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
                       <div class="formula__result">
-                        <p class="formula__result__text" id="harrisBenedictWayMarkResult">2855</p>
+                        <p class="formula__result__text">
+                          <span id="proteins-lowerBound">3076</span> 
+                          &#8212; 
+                          <span id="proteins-upperBound">3356</span>
+                        </p>
                       </div>
                     </li>
                     <li class="formula__element">
                       <div class="formula__type">
-                        <p class="formula__type__text">ПО ФОРМУЛЕ МИФФЛИНА - САН ЖЕОРА</p>
+                        <p class="formula__type__text bigtext">СУТОЧНАЯ НОРМА ЖИРОВ</p>
                       </div>
                       <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
                       <div class="formula__result">
-                        <p class="formula__result__text" id="mifflinStJeorWayMarkResult">2736</p>
+                        <p class="formula__result__text">
+                          <span id="fats-lowerBound">3076</span> 
+                          &#8212; 
+                          <span id="fats-upperBound">3356</span>
+                        </p>
+                      </div>
+                    </li>
+                    <li class="formula__element">
+                      <div class="formula__type">
+                        <p class="formula__type__text bigtext">СУТОЧНАЯ НОРМА УГЛЕВОДОВ</p>
+                      </div>
+                      <div class="formula__delimeter"><img src="img/calc-result-delimeter.png" alt="" class="formula__delimeter__img"></div>
+                      <div class="formula__result">
+                        <p class="formula__result__text">
+                          <span id="carbohydrates-lowerBound">3076</span> 
+                          &#8212; 
+                          <span id="carbohydrates-upperBound">3356</span>
+                        </p>
                       </div>
                     </li>
                   </ul>
@@ -516,17 +561,17 @@
                   <ul class="we__are__list">
                       <li class="we__are__element">
                         <div class="text__wrapper">
-                          <p class="bigtext">ВЫБИРАЕТЕ ПРОГРАММУ ПОД ВАШИ ЦЕЛИ<br/>И ЗАДАЧИ</p>
+                          <p class="bigtext we__are__element__text">ВЫБИРАЕТЕ ПРОГРАММУ ПОД ВАШИ ЦЕЛИ<br/>И ЗАДАЧИ</p>
                         </div>
                       </li>
                       <li class="we__are__element">
                         <div class="text__wrapper">
-                          <p class="bigtext">ДЕЛЕАЕТЕ ЗАКАЗ ЧЕРЕЗ САЙТ ИЛИ ПО ТЕЛЕФОНУ</p>
+                          <p class="bigtext we__are__element__text">ДЕЛЕАЕТЕ ЗАКАЗ ЧЕРЕЗ САЙТ ИЛИ ПО ТЕЛЕФОНУ</p>
                         </div>
                       </li>
                       <li class="we__are__element">
                         <div class="text__wrapper">
-                          <p class="bigtext">ПРАВИЛЬНО ПИТАЕТЕСЬ В ТЕЧЕНИИ ВСЕГО ДНЯ</p>
+                          <p class="bigtext we__are__element__text">ПРАВИЛЬНО ПИТАЕТЕСЬ В ТЕЧЕНИИ <br class="display__hide"> ВСЕГО ДНЯ</p>
                         </div>
                       </li>
                   </ul>
@@ -540,17 +585,17 @@
                   <ul class="we__are__list">
                       <li class="we__are__element">
                         <div class="text__wrapper">
-                          <p class="bigtext">ОСУЩУСТВЛЯЕМ ПРИГОТОВЛЕНИЕ ЕДЫ</p>
+                          <p class="bigtext we__are__element__text">ОСУЩУСТВЛЯЕМ ПРИГОТОВЛЕНИЕ ЕДЫ</p>
                         </div>
                       </li>
                       <li class="we__are__element">
                         <div class="text__wrapper">
-                          <p class="bigtext">РАСКЛАДЫВАЕМ ЕЁ ПО ПОРЦИЯМ</p>
+                          <p class="bigtext we__are__element__text">РАСКЛАДЫВАЕМ ЕЁ ПО ПОРЦИЯМ</p>
                         </div>
                       </li>
                       <li class="we__are__element">
                         <div class="text__wrapper">
-                          <p class="bigtext">ОСУЩЕСТВЛЯЕМ ДОСТАВКУ В ЛЮБУЮ ТОЧКУ<br/>ГОРОДА</p>
+                          <p class="bigtext we__are__element__text">ОСУЩЕСТВЛЯЕМ ДОСТАВКУ В ЛЮБУЮ ТОЧКУ<br/>ГОРОДА</p>
                         </div>
                       </li>
                   </ul>
@@ -572,7 +617,7 @@
           </div>
           <div class="block__7__content">
             <div class="content__inner left__content">
-              <div class="message__form__icon">
+              <div class="message__form__icon mobile-hide">
                 <img src="img/message-icon.png" alt="" class="">
               </div>
               <div class="form__header">
@@ -580,7 +625,7 @@
                   ОТПРАВЬТЕ СООБЩЕНИЕ
                 </p>
               </div>
-              <form action="" class="messageform">
+              <div class="messageform">
                 <ul class="message_list bigtext">
                   <li class="massage__line">
                     <div class="message__parameter">
@@ -588,7 +633,9 @@
                         ВАШЕ ИМЯ
                       </p>
                     </div>
-                    <div class="message__input__wrapper"><input type="text"></div>
+                    <div class="message__input__wrapper">
+                      <input id="send-message-name" name="name" placeholder="Ваше имя">
+                    </div>
                   </li>
                   <li class="massage__line">
                     <div class="message__parameter">
@@ -596,7 +643,9 @@
                         E-MAIL
                       </p>
                     </div>
-                    <div class="message__input__wrapper"><input type="text"></div>
+                    <div class="message__input__wrapper">
+                      <input id="send-message-email" name="email" placeholder="e-mail">
+                    </div>
                   </li>
                   <li class="massage__line message__line__textarea">
                     <div class="message__parameter">
@@ -604,20 +653,22 @@
                         СООБЩЕНИЕ
                       </p>
                     </div>
-                    <div class="message__input__wrapper textarea__wrapper"><textarea type="text"></textarea>
+                    <div class="message__input__wrapper textarea__wrapper">
+                      <textarea id="send-message-message" type="text" name="message" placeholder="сообщение"></textarea>
+                    </div>
                   </li>
                 </ul>
                 <div class="button__submit__wrapper">
-                  <button class="button__red submit__button">ОТПРАВИТЬ</button>
+                  <button id="send-message-button" class="button__red submit__button">ОТПРАВИТЬ</button>
                 </div>
-              </form>
+              </div>
 
             </div>
-            <div class="block__7__content__delimeter">
+            <div class="block__7__content__delimeter mobile-hide">
               <img src="img/dashes.png" alt="" class="">
             </div>
             <div class="content__inner right__content">
-              <div class="message__form__icon">
+              <div class="message__form__icon mobile-hide">
                 <img src="img/phone-icon.png" alt="" class="">
               </div>
               <div class="form__header">
@@ -625,7 +676,7 @@
                   ЗАКАЖИТЕ ОБРАТНЫЙ ЗВОНОК
                 </p>
               </div>
-              <form action="" class="messageform">
+              <div class="messageform">
                 <ul class="message_list bigtext">
                   <li class="massage__line">
                     <div class="message__parameter">
@@ -633,7 +684,9 @@
                         ВАШЕ ИМЯ
                       </p>
                     </div>
-                    <div class="message__input__wrapper"><input type="text"></div>
+                    <div class="message__input__wrapper">
+                      <input id="back-call-name" placeholder="Ваше имя">
+                    </div>
                   </li>
                   <li class="massage__line">
                     <div class="message__parameter">
@@ -641,13 +694,18 @@
                         ТЕЛЕФОН
                       </p>
                     </div>
-                    <div class="message__input__wrapper"><input type="text"></div>
+                    <div class="message__input__wrapper">
+                      <input id="back-call-phone" type="tel" placeholder="телефон">
+                    </div>
                   </li>
                 </ul>
-                <div class="button__submit__wrapper">
-                  <button class="button__red submit__button">ЗАКАЗАТЬ ЗВОНОК</button>
+                <div class="button__submit__wrapper button__order__wrapper">
+                  <button id="back-call-button" class="button__red submit__button">ЗАКАЗАТЬ ЗВОНОК</button>
                 </div>
-              </form>
+                <div class="callback__wrapper bigtext">
+                  МЫ ВАМ ПЕРЕЗВОНИМ!
+                </div>
+              </div>
 
             </div>
           </div>
@@ -655,9 +713,9 @@
       </div>
     </div>
 
-    <footer class="footer" id="contacts">
+    <footer class="footer" id="footer">
       <div class="container">
-        <div class="contacts">
+        <div class="contacts contacts__hide" id="contacts">
           <div class="contacts__inner">
             <div class="contacts__header">
               <h2 class="h2header__min">
@@ -693,9 +751,9 @@
               </div>
               <div class="contacts__content">
                 <p class="contacts__content__text">
-                  <span class="contacts__highlight">Телефон:</span> +7 913 894-00-28 <br>
-                  <span  class="contacts__highlight">E-mail:</span>  info@mail.ru <br>
-                  <span  class="contacts__highlight">Офис:</span>  Новосибирск, ул. Новосибирская, 1 <br>
+                  <span class="contacts__highlight">Телефон:</span> +7 913 894-00-28<br>
+                  <span class="contacts__highlight">E-mail:</span> info@mail.ru<br>
+                  <!--<span class="contacts__highlight">Офис:</span> Новосибирск, ул. Новосибирская, 1<br>-->
                 </p>
               </div>
             </div>
@@ -704,20 +762,520 @@
       </div>
     </footer>
 
-    <!-- <div class="bottom__fix" id="bottom__fix">
-      <div class="container">
-        <div class="action">
-          <a href="" class="action__link">
-            <p class="action__text"><span class="text__h text__red">АКЦИЯ</span><span class="text__t action__white"> "ЗАКАЗ НА ОДИН ДЕНЬ"</span></p>
-          </a>
-        </div>
-        <div class="close__action" onclick="document.getElementById('bottom__fix').classList.add('bottom__fix__hide');">
-          <p class="close__action__text">
-            <span class="close__t">СКРЫТЬ</span>
-          </p>
+    <div class="button__scrollontop__wrapper">
+      <button class="button__red button__scrollontop button__scrollontop__hide"  onclick="scrollOnTop(1000);" id="on-top-button"></button>
+    </div>
+  </div>
+
+  <!--Старые акции-->
+  <!--<div class="bottom__fix bottom__fix__hide mobile-hide" id="bottom__fix__action">-->
+    <!--<div class="container">-->
+      <!--<div class="action">-->
+        <!--<a href="#modal__window" modal-button-show class="action__link" data-program-target="action" data-days-target="1" data-tabs-lock="" onclick="closeBottomFixAction()">-->
+          <!--<p class="action__text"><span class="text__h text__red">АКЦИЯ</span><span class="text__t action__white"> "ЗАКАЗ НА ОДИН ДЕНЬ"</span></p>-->
+        <!--</a>-->
+      <!--</div>-->
+      <!--<div class="close__action" onclick="closeBottomFixAction()">-->
+        <!--<p class="close__action__text">-->
+          <!--<span class="close__t">СКРЫТЬ</span>-->
+        <!--</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <div class="bottom__fix bottom__fix__hide mobile-hide" id="bottom__fix__30days">
+    <div class="container">
+      <div class="action">
+        <p class="action__text"><span class="text__h text__red">VIP</span><span class="text__t action__white"> "ИНДИВИДУАЛЬНЫЕ КОНСУЛЬТАЦИИ ПРИ ЗАКАЗЕ ОТ 14 ДНЕЙ"</span></p>
+      </div>
+      <div class="close__action" onclick="document.getElementById('bottom__fix__30days').classList.add('bottom__fix__hide');">
+        <p class="close__action__text">
+          <span class="close__t">СКРЫТЬ</span>
+        </p>
+      </div>
+    </div>
+  </div>
+<!-- modal-view="hide" -->
+  <div class="modal__window" id="modal__window" modal-view="hide" data-program="lose" data-days="2">
+    <div class="modal__window__inner">
+      <div class="img__wrapper">
+        <div class="modal__close" modal-button-hide="modal__window">
+          <img src="img/close-img.png" class="close-img" alt="close-img">
         </div>
       </div>
-    </div> -->
+      <div class="modal__body__wrapper">
+        <div class="modal__body__left__panel">
+          <ul class="days__list">
+            <li class="days__list__element ">
+              <div class="element__inner data__days__element" data-days-target="14">
+                <p class="element__inner__text" >14 ДНЕЙ</p>
+              </div>
+            </li>
+            <li class="days__list__element">
+              <div class="element__inner data__days__element" data-days-target="7">
+                <p class="element__inner__text" >7 ДНЕЙ</p>
+              </div>
+            </li>
+            <li class="days__list__element">
+              <div class="element__inner data__days__element" data-days-target="5">
+                <p class="element__inner__text" >5 ДНЕЙ</p>
+              </div>
+            </li>
+            <li class="days__list__element">
+              <div class="element__inner data__days__element" data-days-target="2">
+                <p class="element__inner__text" >2 ДНЯ</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="modal__body__center">
+          <div class="body__center__left">
+            <div class="body__left__center__inner">
+              <div class="body__center__left__header">
+                <div class="header__1__line" id="menu__header">ПИТАНИЕ НА СНИЖЕНИЕ ВЕСА</div>
+                <div class="header__2__line">
+
+                  <span class="header__2__line__inner" id="menu__days">НА 30 ДНЕЙ</span>
+                  <img src="img/modal-dots.png" alt="dots" class="modal__dots mobile-hide">
+                  
+                  <input id="women-kcal" class="women-kcal" type="radio" name="sex" value="women" data-sex>
+                  <label for="women-kcal" class="women-kcal-label">
+                    <span id="menu__women__kcal">1200</span> 
+                    ККАЛ
+                    <img src="img/sex-women-icon.png" class="sex-icon" alt="sex-men-icon.png">
+                  </label>
+
+                  <img src="img/modal-slash.png" alt="slash" class="modal__slash">
+
+                  <input id="men-kcal" class="men-kcal" type="radio" name="sex" checked value="men" data-sex>
+                  <label for="men-kcal" class="men-kcal-label">
+                    <span id="menu__men__kcal">1500</span> 
+                    ККАЛ
+                    <img src="img/sex-men-icon.png" class="sex-icon" alt="sex-men-icon.png">
+                  </label>
+
+                </div>
+              </div>
+              <div class="body__center__left__description mobile-hide">
+                <div class="description__wrapper">
+                  <p class="paragraph-text" id="menu__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti maiores, beatae ab. Suscipit exercitationem ipsum quo, accusantium quae sapiente harum est, rerum, perspiciatis sint eveniet delectus quia similique aliquam sit!
+                  </p>
+                </div>
+              </div>
+              <div class="body__center__left__facts mobile-hide">
+                <div class="modal__nutrition">
+                  <img src="img/modal-nutrition.png" alt="nutrition" class="nutririon-img">
+                  <span class="modal__nutrition__text">5 - РАЗОВОЕ ПИТАНИЕ</span>
+                </div>
+                <div class="modal__delivery">
+                  <img src="img/modal-delivery.png" alt="delivery" class="delivery-img">
+                  <span class="modal__delivery__text">ДОСТАВКА НА ДОМ</span>
+                </div>
+              </div>
+              <div class="body__center__left__delimiter__wrapper-1 mobile-hide">
+                <div class="body__center__left__delimiter"></div>
+              </div>
+              <div class="form__order__wrapper mobile-hide">
+                <form action="" onsubmit="return false;" class="form__order">
+                  <div class="list__wrapper">
+                    <ul class="form__list">
+                      <li class="list__element"><input type="text" class="form__order__input form__order__input__name" placeholder="ВВЕДИТЕ ВАШЕ ИМЯ"></li>
+                      <li class="list__element"><input type="tel" class="form__order__input form__order__input__phone" placeholder="ВАШЕ ТЕЛЕФОН"></li>
+                      <!-- <li class="list__element element__button"><button class="button__red button__modal form__order__button" >ЗАКАЗАТЬ ДОСТАВКУ</button></li> -->
+                    </ul>
+                  </div>
+                </form>
+              </div>
+              <div class="body__center__left__delimiter__wrapper-2 mobile-hide">
+                <div class="body__center__left__delimiter"></div>
+              </div>
+              <div class="body__center__left__priceandpaymant mobile-hide">
+                <span class="priceandpaymant__price" id="menu_price_desktop">3000</span>
+                <span class="priceandpaymant__rouble">Л</span>
+                <!--<div data-width="180px" class="typeofpayment__wrapper">-->
+                <!--<select required name="type-of-payment" class="typeofpayment__select" id="type-of-payment">-->
+                <!--<option data-width="180px" checked value="online">ОПЛАТА ОНЛАЙН</option>-->
+                <!--<option data-width="250px" value="cash">ОПЛАТА ПРИ ПОЛУЧЕНИИ</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <span class="typeofpayment__select">ОПЛАТА ПРИ ПОЛУЧЕНИИ</span>
+                <div class="typeofpayment__button__wrapper">
+                  <button id="button_order_desktop" class="button__red button__modal">ОФОРМИТЬ ЗАКАЗ</button>
+                </div>
+              </div>
+              <div class="comment__wrapper mobile-hide">
+                <div class="comment paragraph-text comment-text">
+                  Введите своё имя и номер телефона. Наш менеджер свяжется с вами для уточнения заказа и ответит на все ваши вопросы.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="body__center__right">
+            <div class="menu__wrapper">
+              <div class="menu__header">
+                МЕНЮ
+              </div>
+              <div class="menu__block">
+                <div class="menu__days__tabs">
+                  <input id="tab1" class="tab1" type="radio" name="tabs" checked>
+                  <label for="tab1" title="ПН">ПН</label>
+               
+                  <input id="tab2" class="tab2" type="radio" name="tabs">
+                  <label for="tab2" title="ВТ">ВТ</label>
+               
+                  <input id="tab3" class="tab3" type="radio" name="tabs">
+                  <label for="tab3" title="СР">СР</label>
+               
+                  <input id="tab4" class="tab4" type="radio" name="tabs">
+                  <label for="tab4" title="ЧТ">ЧТ</label>
+
+                  <input id="tab5" class="tab5" type="radio" name="tabs">
+                  <label for="tab5" title="ПТ">ПТ</label>
+
+                  <input id="tab6" class="tab6" type="radio" name="tabs">
+                  <label for="tab6" title="СБ">СБ</label>
+                  
+                  <input id="tab7" class="tab7" type="radio" name="tabs">
+                  <label for="tab7" title="ВС">ВС</label>
+              
+                  <div class="menu__content__wrapper" id="menu__content">
+                  
+                    <section class="content-monday">                    
+                      <ul class="menu__day__list">
+                        <li class="day__dish day__dish__1">
+                          <span class="dish__name"> <b>на набор<br>пастой</b> </span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__2">
+                          <span class="dish__name"><b>Твороженные маффины</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 153.6 ккал)</span></li>
+                        <li class="day__dish day__dish__3">
+                          <span class="dish__name"><b>Диетическая курочка с овощами и пастой</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 331.1 ккал)</span></li>
+                        <li class="day__dish day__dish__4">
+                          <span class="dish__name"><b>Сендвич с тунцом и авокадо</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 242.2 ккал)</span></li>
+                        <li class="day__dish day__dish__5">
+                          <span class="dish__name"><b>Индейка тушеная с зелёным горошком <br> и овощным рагу</b></span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span></li>
+                      </ul>
+                    
+                      <div class="day__result">
+                        <span class="day__result__bgu">
+                          Б:96г Ж:38г У:113г
+                        </span>
+                        <img src="img/modal-dots.png" alt="dots" class="modal__dots">
+                        <span class="day__result__kcal">
+                          1198 ККАЛ
+                        </span>
+                      </div>
+                    </section>  
+                    <section class="content-tuesday">
+                      <ul class="menu__day__list">
+                        <li class="day__dish day__dish__1">
+                          <span class="dish__name"> <b>Каши из 5 злаков и хлебцы с арахисовой<br>пастой</b> </span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__2">
+                          <span class="dish__name"><b>Твороженные маффины</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 153.6 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__3">
+                          <span class="dish__name"><b>Диетическая курочка с овощами и пастой</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 331.1 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__4">
+                          <span class="dish__name"><b>Сендвич с тунцом и авокадо</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 242.2 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__5">
+                          <span class="dish__name"><b>Индейка тушеная с зелёным горошком <br> и овощным рагу</b></span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                      </ul>
+                    
+                      <div class="day__result">
+                        <span class="day__result__bgu">
+                          Б:96г Ж:38г У:113г
+                        </span>
+                        <img src="img/modal-dots.png" alt="dots" class="modal__dots">
+                        <span class="day__result__kcal">
+                          1198 ККАЛ
+                        </span>
+                      </div>
+                    </section> 
+                    <section class="content-wednesday">
+                      <ul class="menu__day__list">
+                        <li class="day__dish day__dish__1">
+                          <span class="dish__name"> <b>Каши из 5 злаков и хлебцы с арахисовой<br>пастой</b> </span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__2">
+                          <span class="dish__name"><b>Твороженные маффины</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 153.6 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__3">
+                          <span class="dish__name"><b>Диетическая курочка с овощами и пастой</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 331.1 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__4">
+                          <span class="dish__name"><b>Сендвич с тунцом и авокадо</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 242.2 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__5">
+                          <span class="dish__name"><b>Индейка тушеная с зелёным горошком <br> и овощным рагу</b></span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                      </ul>
+                    
+                      <div class="day__result">
+                        <span class="day__result__bgu">
+                          Б:96г Ж:38г У:113г
+                        </span>
+                        <img src="img/modal-dots.png" alt="dots" class="modal__dots">
+                        <span class="day__result__kcal">
+                          1198 ККАЛ
+                        </span>
+                      </div>
+                    </section> 
+                    <section class="content-thursday">
+                      <ul class="menu__day__list">
+                        <li class="day__dish day__dish__1">
+                          <span class="dish__name"> <b>Каши из 5 злаков и хлебцы с арахисовой<br>пастой</b> </span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__2">
+                          <span class="dish__name"><b>Твороженные маффины</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 153.6 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__3">
+                          <span class="dish__name"><b>Диетическая курочка с овощами и пастой</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 331.1 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__4">
+                          <span class="dish__name"><b>Сендвич с тунцом и авокадо</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 242.2 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__5">
+                          <span class="dish__name"><b>Индейка тушеная с зелёным горошком <br> и овощным рагу</b></span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                      </ul>
+                    
+                      <div class="day__result">
+                        <span class="day__result__bgu">
+                          Б:96г Ж:38г У:113г
+                        </span>
+                        <img src="img/modal-dots.png" alt="dots" class="modal__dots">
+                        <span class="day__result__kcal">
+                          1198 ККАЛ
+                        </span>
+                      </div>
+                    </section>
+                    <section class="content-friday">
+                      <ul class="menu__day__list">
+                        <li class="day__dish day__dish__1">
+                          <span class="dish__name"> <b>Каши из 5 злаков и хлебцы с арахисовой<br>пастой</b> </span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__2">
+                          <span class="dish__name"><b>Твороженные маффины</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 153.6 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__3">
+                          <span class="dish__name"><b>Диетическая курочка с овощами и пастой</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 331.1 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__4">
+                          <span class="dish__name"><b>Сендвич с тунцом и авокадо</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 242.2 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__5">
+                          <span class="dish__name"><b>Индейка тушеная с зелёным горошком <br> и овощным рагу</b></span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                      </ul>
+                    
+                      <div class="day__result">
+                        <span class="day__result__bgu">
+                          Б:96г Ж:38г У:113г
+                        </span>
+                        <img src="img/modal-dots.png" alt="dots" class="modal__dots">
+                        <span class="day__result__kcal">
+                          1198 ККАЛ
+                        </span>
+                      </div>
+                    </section>
+                    <section class="content-saturday">
+                      <ul class="menu__day__list">
+                        <li class="day__dish day__dish__1">
+                          <span class="dish__name"> <b>Каши из 5 злаков и хлебцы с арахисовой<br>пастой</b> </span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__2">
+                          <span class="dish__name"><b>Твороженные маффины</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 153.6 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__3">
+                          <span class="dish__name"><b>Диетическая курочка с овощами и пастой</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 331.1 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__4">
+                          <span class="dish__name"><b>Сендвич с тунцом и авокадо</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 242.2 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__5">
+                          <span class="dish__name"><b>Индейка тушеная с зелёным горошком <br> и овощным рагу</b></span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                      </ul>
+                    
+                      <div class="day__result">
+                        <span class="day__result__bgu">
+                          Б:96г Ж:38г У:113г
+                        </span>
+                        <img src="img/modal-dots.png" alt="dots" class="modal__dots">
+                        <span class="day__result__kcal">
+                          1198 ККАЛ
+                        </span>
+                      </div>
+                    </section>
+                    <section class="content-sunday">
+                      <ul class="menu__day__list">
+                        <li class="day__dish day__dish__1">
+                          <span class="dish__name"> <b>Каши из 5 злаков и хлебцы с арахисовой<br>пастой</b> </span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__2">
+                          <span class="dish__name"><b>Твороженные маффины</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 153.6 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__3">
+                          <span class="dish__name"><b>Диетическая курочка с овощами и пастой</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 331.1 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__4">
+                          <span class="dish__name"><b>Сендвич с тунцом и авокадо</b></span>
+                          <br>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 242.2 ккал)</span>
+                        </li>
+                        <li class="day__dish day__dish__5">
+                          <span class="dish__name"><b>Индейка тушеная с зелёным горошком <br> и овощным рагу</b></span>
+                          <span class="dish__info"> (БЖУ 7,6/5,4/36 &ndash; 239.0 ккал)</span>
+                        </li>
+                      </ul>
+                    
+                      <div class="day__result">
+                        <span class="day__result__bgu">
+                          Б:96г Ж:38г У:113г
+                        </span>
+                        <img src="img/modal-dots.png" alt="dots" class="modal__dots">
+                        <span class="day__result__kcal">
+                          1198 ККАЛ
+                        </span>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="body__center__left display-hide">
+            <div class="body__left__center__inner">
+              <div class="body__center__left__facts display-hide">
+                <div class="modal__nutrition">
+                  <img src="img/modal-nutrition.png" alt="nutrition" class="nutririon-img">
+                  <span class="modal__nutrition__text">5 - РАЗОВОЕ ПИТАНИЕ</span>
+                </div>
+                <div class="modal__delivery">
+                  <img src="img/modal-delivery.png" alt="delivery" class="delivery-img">
+                  <span class="modal__delivery__text">ДОСТАВКА НА ДОМ</span>
+                </div>
+              </div>
+              <div class="body__center__left__delimiter__wrapper-2 display-hide">
+                <div class="body__center__left__delimiter"></div>
+              </div>
+              <div class="body__center__left__priceandpaymant display-hide">
+                <div class="price__wrapper">
+                  <span class="priceandpaymant__price" id="menu_price_mobile">3000</span>
+                  <span class="priceandpaymant__rouble">Л</span>
+                </div>
+                <div data-width="180px" class="typeofpayment__wrapper">
+                  <span class="priceandpaymant__price" id="menu_price_desktop">3000</span>
+                  <span class="priceandpaymant__rouble">Л</span>
+                  <!--<div data-width="180px" class="typeofpayment__wrapper">-->
+                  <!--<select required name="type-of-payment" class="typeofpayment__select" id="type-of-payment">-->
+                  <!--<option data-width="180px" checked value="online">ОПЛАТА ОНЛАЙН</option>-->
+                  <!--<option data-width="250px" value="cash">ОПЛАТА ПРИ ПОЛУЧЕНИИ</option>-->
+                  <!--</select>-->
+                  <!--</div>-->
+                  <span class="typeofpayment__select">ОПЛАТА ПРИ ПОЛУЧЕНИИ</span>
+                </div>
+              </div>
+              <div class="body__center__left__delimiter__wrapper-1 display-hide">
+                <div class="body__center__left__delimiter"></div>
+              </div>
+              <div class="comment__wrapper display-hide">
+                <div class="comment paragraph-text comment-text">
+                  Введите своё имя и номер телефона. Наш менеджер свяжется с вами для уточнения заказа и ответит на все ваши вопросы.
+                </div>
+              </div>
+              <div class="form__order__wrapper display-hide">
+                <form action="" onsubmit="return false;" class="form__order">
+                  <div class="list__wrapper">
+                    <ul class="form__list">
+                      <li class="list__element"><input type="text" class="form__order__input form__order__input__name" placeholder="ВВЕДИТЕ ВАШЕ ИМЯ"></li>
+                      <li class="list__element"><input type="tel" class="form__order__input form__order__input__phone" placeholder="ВАШЕ ТЕЛЕФОН"></li>
+                    </ul>
+                  </div>
+                  <div class="typeofpayment__button__wrapper">
+                    <button id="button_order_mobile" class="button__red button__modal">ПЕРЕЙТИ К ОПЛАТЕ КАРТОЙ</button>
+                  </div>
+                </form>
+              </div>
+
+              
+            </div>
+          </div>
+
+        </div>
+        <div hidden class="modal__body__right__panel">
+          <ul class="days__list">
+            <li class="days__list__element">
+              <div class="element__inner data__days__element" data-program-target="action" data-days-target="1">
+                <p class="element__inner__text" >АКЦИЯ</p>
+              </div>
+            </li>
+            <li class="days__list__element">
+              <div class="element__inner data__days__element" data-days-target="30">
+                <p class="element__inner__text" >30 ДНЕЙ</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
