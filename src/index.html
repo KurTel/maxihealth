@@ -17,7 +17,6 @@
 
   <link rel="stylesheet" type="text/css" href="css/main.css">
 
-  <script src="js/main.js"></script>
 
 </head>
 <body>
@@ -751,9 +750,9 @@
               </div>
               <div class="contacts__content">
                 <p class="contacts__content__text">
-                  <span class="contacts__highlight">Телефон:</span> +7 913 894-00-28 <br>
-                  <span  class="contacts__highlight">E-mail:</span>  info@mail.ru <br>
-                  <span  class="contacts__highlight">Офис:</span>  Новосибирск, ул. Новосибирская, 1 <br>
+                  <span class="contacts__highlight">Телефон:</span> +7 913 894-00-28<br>
+                  <span class="contacts__highlight">E-mail:</span> info@mail.ru<br>
+                  <!--<span class="contacts__highlight">Офис:</span> Новосибирск, ул. Новосибирская, 1<br>-->
                 </p>
               </div>
             </div>
@@ -767,25 +766,26 @@
     </div>
   </div>
 
-  <div class="bottom__fix bottom__fix__hide mobile-hide" id="bottom__fix__action">
-    <div class="container">
-      <div class="action">
-        <a href="#modal__window" modal-button-show class="action__link" data-program-target="action" data-days-target="1" data-tabs-lock="" onclick="closeBottomFixAction()">
-          <p class="action__text"><span class="text__h text__red">АКЦИЯ</span><span class="text__t action__white"> "ЗАКАЗ НА ОДИН ДЕНЬ"</span></p>
-        </a>
-      </div>
-      <div class="close__action" onclick="closeBottomFixAction()">
-        <p class="close__action__text">
-          <span class="close__t">СКРЫТЬ</span>
-        </p>
-      </div>
-    </div>
-  </div>
+  <!--Старые акции-->
+  <!--<div class="bottom__fix bottom__fix__hide mobile-hide" id="bottom__fix__action">-->
+    <!--<div class="container">-->
+      <!--<div class="action">-->
+        <!--<a href="#modal__window" modal-button-show class="action__link" data-program-target="action" data-days-target="1" data-tabs-lock="" onclick="closeBottomFixAction()">-->
+          <!--<p class="action__text"><span class="text__h text__red">АКЦИЯ</span><span class="text__t action__white"> "ЗАКАЗ НА ОДИН ДЕНЬ"</span></p>-->
+        <!--</a>-->
+      <!--</div>-->
+      <!--<div class="close__action" onclick="closeBottomFixAction()">-->
+        <!--<p class="close__action__text">-->
+          <!--<span class="close__t">СКРЫТЬ</span>-->
+        <!--</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
 
   <div class="bottom__fix bottom__fix__hide mobile-hide" id="bottom__fix__30days">
     <div class="container">
       <div class="action">
-        <p class="action__text"><span class="text__h text__red">VIP</span><span class="text__t action__white"> "ИНДИВИДУАЛЬНЫЕ КОНСУЛЬТАЦИИ ПРИ ЗАКАЗЕ ОТ 30 ДНЕЙ"</span></p>
+        <p class="action__text"><span class="text__h text__red">VIP</span><span class="text__t action__white"> "ИНДИВИДУАЛЬНЫЕ КОНСУЛЬТАЦИИ ПРИ ЗАКАЗЕ ОТ 14 ДНЕЙ"</span></p>
       </div>
       <div class="close__action" onclick="document.getElementById('bottom__fix__30days').classList.add('bottom__fix__hide');">
         <p class="close__action__text">
@@ -799,7 +799,7 @@
     <div class="modal__window__inner">
       <div class="img__wrapper">
         <div class="modal__close" modal-button-hide="modal__window">
-          <img src="/img/close-img.png" class="close-img" alt="close-img">
+          <img src="img/close-img.png" class="close-img" alt="close-img">
         </div>
       </div>
       <div class="modal__body__wrapper">
@@ -841,16 +841,13 @@
                   <label for="women-kcal" class="women-kcal-label">
                     <span id="menu__women__kcal">1200</span> 
                     ККАЛ
-                    <img src="/img/sex-women-icon.png" class="sex-icon" alt="sex-men-icon.png">
                   </label>
-
-                  <img src="img/modal-slash.png" alt="slash" class="modal__slash">
+                  <label>-</label>
 
                   <input id="men-kcal" class="men-kcal" type="radio" name="sex" checked value="men" data-sex>
                   <label for="men-kcal" class="men-kcal-label">
                     <span id="menu__men__kcal">1500</span> 
                     ККАЛ
-                    <img src="/img/sex-men-icon.png" class="sex-icon" alt="sex-men-icon.png">
                   </label>
 
                 </div>
@@ -863,11 +860,11 @@
               </div>
               <div class="body__center__left__facts mobile-hide">
                 <div class="modal__nutrition">
-                  <img src="/img/modal-nutrition.png" alt="nutrition" class="nutririon-img">
+                  <img src="img/modal-nutrition.png" alt="nutrition" class="nutririon-img">
                   <span class="modal__nutrition__text">5 - РАЗОВОЕ ПИТАНИЕ</span>
                 </div>
                 <div class="modal__delivery">
-                  <img src="/img/modal-delivery.png" alt="delivery" class="delivery-img">
+                  <img src="img/modal-delivery.png" alt="delivery" class="delivery-img">
                   <span class="modal__delivery__text">ДОСТАВКА НА ДОМ</span>
                 </div>
               </div>
@@ -891,14 +888,15 @@
               <div class="body__center__left__priceandpaymant mobile-hide">
                 <span class="priceandpaymant__price" id="menu_price_desktop">3000</span>
                 <span class="priceandpaymant__rouble">Л</span>
-                <div data-width="180px" class="typeofpayment__wrapper">
-                  <select required name="type-of-payment" class="typeofpayment__select" id="type-of-payment">
-                    <option data-width="180px" checked value="online">ОПЛАТА ОНЛАЙН</option>
-                    <option data-width="250px" value="cash">ОПЛАТА ПРИ ПОЛУЧЕНИИ</option>
-                  </select>
-                </div>
+                <!--<div data-width="180px" class="typeofpayment__wrapper">-->
+                <!--<select required name="type-of-payment" class="typeofpayment__select" id="type-of-payment">-->
+                <!--<option data-width="180px" checked value="online">ОПЛАТА ОНЛАЙН</option>-->
+                <!--<option data-width="250px" value="cash">ОПЛАТА ПРИ ПОЛУЧЕНИИ</option>-->
+                <!--</select>-->
+                <!--</div>-->
+                <span class="typeofpayment__select">ОПЛАТА ПРИ ПОЛУЧЕНИИ</span>
                 <div class="typeofpayment__button__wrapper">
-                  <button id="button_order_desktop" class="button__red button__modal">ПЕРЕЙТИ К ОПЛАТЕ КАРТОЙ</button>
+                  <button id="button_order_desktop" class="button__red button__modal">ОФОРМИТЬ ЗАКАЗ</button>
                 </div>
               </div>
               <div class="comment__wrapper mobile-hide">
@@ -1202,11 +1200,11 @@
             <div class="body__left__center__inner">
               <div class="body__center__left__facts display-hide">
                 <div class="modal__nutrition">
-                  <img src="/img/modal-nutrition.png" alt="nutrition" class="nutririon-img">
+                  <img src="img/modal-nutrition.png" alt="nutrition" class="nutririon-img">
                   <span class="modal__nutrition__text">5 - РАЗОВОЕ ПИТАНИЕ</span>
                 </div>
                 <div class="modal__delivery">
-                  <img src="/img/modal-delivery.png" alt="delivery" class="delivery-img">
+                  <img src="img/modal-delivery.png" alt="delivery" class="delivery-img">
                   <span class="modal__delivery__text">ДОСТАВКА НА ДОМ</span>
                 </div>
               </div>
@@ -1219,10 +1217,15 @@
                   <span class="priceandpaymant__rouble">Л</span>
                 </div>
                 <div data-width="180px" class="typeofpayment__wrapper">
-                  <select required name="type-of-payment" class="typeofpayment__select" id="type-of-payment">
-                    <option data-width="180px" data-width-xsmall="160px" checked value="online">ОПЛАТА ОНЛАЙН</option>
-                    <option data-width="250px" data-width-xsmall="200px" value="cash">ОПЛАТА ПРИ ПОЛУЧЕНИИ</option>
-                  </select>
+                  <span class="priceandpaymant__price" id="menu_price_desktop">3000</span>
+                  <span class="priceandpaymant__rouble">Л</span>
+                  <!--<div data-width="180px" class="typeofpayment__wrapper">-->
+                  <!--<select required name="type-of-payment" class="typeofpayment__select" id="type-of-payment">-->
+                  <!--<option data-width="180px" checked value="online">ОПЛАТА ОНЛАЙН</option>-->
+                  <!--<option data-width="250px" value="cash">ОПЛАТА ПРИ ПОЛУЧЕНИИ</option>-->
+                  <!--</select>-->
+                  <!--</div>-->
+                  <span class="typeofpayment__select">ОПЛАТА ПРИ ПОЛУЧЕНИИ</span>
                 </div>
               </div>
               <div class="body__center__left__delimiter__wrapper-1 display-hide">
@@ -1270,5 +1273,6 @@
     </div>
   </div>
 
+  <script src="js/main.js"></script>
 </body>
 </html>

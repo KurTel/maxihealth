@@ -1,6 +1,6 @@
 <?php
 
-const def_mail = 'vzbdonchik2@mail.ru';
+const def_mail = 'maxihealth54@gmail.com';
 
 $name = $_POST["name"];
 $email = $_POST["email"];

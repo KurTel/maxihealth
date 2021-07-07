@@ -22,7 +22,7 @@ function MenuControl(){
   var menuSex         =   document.querySelector('input[name="sex"]:checked');
   var menuPrice       =   document.getElementById("menu_price_mobile");
 
-  var typeOfPayment   =   document.querySelector('select[name="type-of-payment"]');
+  // var typeOfPayment   =   document.querySelector('select[name="type-of-payment"]');
   var buttonOrderDes  =   document.getElementById("button_order_desktop");
   var buttonOrderMob  =   document.getElementById("button_order_mobile");
 
@@ -147,12 +147,12 @@ function MenuControl(){
   var currentProgram = programs.main;
   var lastProgram = currentProgram;
   var currentDays = 2;
-  var currentTypeOfPayment = typeOfPayment.value;
+  // var currentTypeOfPayment = typeOfPayment.value;
   var currentSex = sex.men;
 
-  this.updateTypeOfPayment = function(){
-    currentTypeOfPayment = typeOfPayment.value;
-  }
+  // this.updateTypeOfPayment = function(){
+  //   currentTypeOfPayment = typeOfPayment.value;
+  // }
 
   // function setCurrentProgram(program){
   //   currentProgram = program;
@@ -251,6 +251,13 @@ function MenuControl(){
     }
   }
 
+  const request = new XMLHttpRequest();
+  request.open('GET', '/data/dishes.json', false);  // `false` makes the request synchronous
+  request.send(null);
+
+  // TODO сделать логику, если придет плохой ответ
+
+  const dishes = JSON.parse(request.responseText);
 
   var menu = {
     monday:{
